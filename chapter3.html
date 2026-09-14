@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3 - A Peek Beyond the Point</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eef2f7;
+    color:#172033;
+    font-weight:700;
+    line-height:1.6;
+}
+
+header{
+    background:#172033;
+    color:white;
+    padding:35px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:17px;
+    opacity:.9;
+}
+
+.container{
+    max-width:1100px;
+    margin:30px auto;
+    padding:0 18px;
+}
+
+.instructions{
+    background:white;
+    border-left:6px solid #172033;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:28px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.section-title{
+    background:#172033;
+    color:white;
+    padding:15px 20px;
+    border-radius:10px;
+    margin:30px 0 18px;
+    font-size:22px;
+}
+
+.question{
+    background:white;
+    padding:22px;
+    margin:16px 0;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.question h3{
+    margin-bottom:15px;
+    font-size:17px;
+}
+
+.options{
+    display:grid;
+    gap:10px;
+}
+
+label{
+    display:block;
+    background:#f4f6fa;
+    padding:11px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    border:1px solid #dce1e9;
+}
+
+label:hover{
+    background:#e9edf4;
+}
+
+input{
+    margin-right:9px;
+}
+
+.answer{
+    display:none;
+    margin-top:15px;
+    padding:13px 15px;
+    background:#eaf7ee;
+    border-left:5px solid #248b45;
+    border-radius:7px;
+}
+
+.question:has(input:checked) .answer{
+    display:block;
+}
+
+.hint{
+    font-size:14px;
+    color:#4d596d;
+    margin-top:8px;
+}
+
+.match-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:12px 0;
+}
+
+.match-row{
+    display:contents;
+}
+
+.match-left,
+.match-right{
+    background:#f4f6fa;
+    padding:11px;
+    border-radius:7px;
+}
+
+.score-card{
+    background:white;
+    margin:40px 0;
+    padding:30px;
+    text-align:center;
+    border-radius:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,.1);
+}
+
+.score-card h2{
+    margin-bottom:12px;
+}
+
+.score-number{
+    font-size:38px;
+    color:#172033;
+}
+
+.quiz{
+    counter-reset:score;
+}
+
+.question:not(.match):has(.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){
+    counter-increment:score;
+}
+
+.score-number::after{
+    content:counter(score) " / 55";
+}
+
+footer{
+    background:#172033;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:700px){
+    header h1{
+        font-size:26px;
+    }
+
+    .match-grid{
+        grid-template-columns:1fr;
+    }
+
+    .question{
+        padding:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Chapter 3: A Peek Beyond the Point</h1>
+    <p>Class 8 Mathematics • Ganita Prakash • Half-Yearly Question Bank</p>
+</header>
+
+<div class="container">
+
+<div class="instructions">
+    <h2>Instructions</h2>
+    <p>• Total Questions: 55</p>
+    <p>• Choose the best answer in MCQs.</p>
+    <p>• Select the appropriate option in True/False and Assertion–Reason.</p>
+    <p>• For Match the Following, select all four correct pairs.</p>
+    <p>• The correct answer appears immediately after you select an option.</p>
+    <p>• Your score is calculated automatically using CSS.</p>
+</div>
+
+<div class="quiz">
+
+<!-- ================= MCQs ================= -->
+
+<div class="section-title">Section A — Multiple Choice Questions (15)</div>
+
+<div class="question">
+<h3>1. Which decimal represents seven tenths?</h3>
+<div class="options">
+<label><input type="radio" name="q1"> 0.07</label>
+<label><input type="radio" name="q1" class="correct"> 0.7</label>
+<label><input type="radio" name="q1"> 7.0</label>
+<label><input type="radio" name="q1"> 0.007</label>
+</div>
+<div class="answer">Correct Answer: 0.7</div>
+</div>
+
+<div class="question">
+<h3>2. In 4.583, the digit 8 is in which place?</h3>
+<div class="options">
+<label><input type="radio" name="q2"> Tenths</label>
+<label><input type="radio" name="q2" class="correct"> Hundredths</label>
+<label><input type="radio" name="q2"> Thousandths</label>
+<label><input type="radio" name="q2"> Ones</label>
+</div>
+<div class="answer">Correct Answer: Hundredths</div>
+</div>
+
+<div class="question">
+<h3>3. Which is greater?</h3>
+<div class="options">
+<label><input type="radio" name="q3"> 5.09</label>
+<label><input type="radio" name="q3"> 5.009</label>
+<label><input type="radio" name="q3" class="correct"> 5.9</label>
+<label><input type="radio" name="q3"> 5.099</label>
+</div>
+<div class="answer">Correct Answer: 5.9</div>
+</div>
+
+<div class="question">
+<h3>4. What is the decimal form of 3 + 4/10 + 7/100?</h3>
+<div class="options">
+<label><input type="radio" name="q4"> 3.047</label>
+<label><input type="radio" name="q4" class="correct"> 3.47</label>
+<label><input type="radio" name="q4"> 3.407</label>
+<label><input type="radio" name="q4"> 3.74</label>
+</div>
+<div class="answer">Correct Answer: 3.47</div>
+</div>
+
+<div class="question">
+<h3>5. Which decimal is equivalent to 2.50?</h3>
+<div class="options">
+<label><input type="radio" name="q5"> 2.05</label>
+<label><input type="radio" name="q5"> 2.005</label>
+<label><input type="radio" name="q5" class="correct"> 2.5</label>
+<label><input type="radio" name="q5"> 25</label>
+</div>
+<div class="answer">Correct Answer: 2.5</div>
+</div>
+
+<div class="question">
+<h3>6. What is 6.25 + 2.7?</h3>
+<div class="options">
+<label><input type="radio" name="q6"> 8.52</label>
+<label><input type="radio" name="q6" class="correct"> 8.95</label>
+<label><input type="radio" name="q6"> 9.25</label>
+<label><input type="radio" name="q6"> 8.75</label>
+</div>
+<div class="answer">Correct Answer: 8.95</div>
+</div>
+
+<div class="question">
+<h3>7. Find 12.5 − 3.78.</h3>
+<div class="options">
+<label><input type="radio" name="q7"> 8.62</label>
+<label><input type="radio" name="q7" class="correct"> 8.72</label>
+<label><input type="radio" name="q7"> 9.28</label>
+<label><input type="radio" name="q7"> 8.82</label>
+</div>
+<div class="answer">Correct Answer: 8.72</div>
+</div>
+
+<div class="question">
+<h3>8. Which fraction has the decimal representation 0.125?</h3>
+<div class="options">
+<label><input type="radio" name="q8"> 1/4</label>
+<label><input type="radio" name="q8"> 1/5</label>
+<label><input type="radio" name="q8" class="correct"> 1/8</label>
+<label><input type="radio" name="q8"> 1/10</label>
+</div>
+<div class="answer">Correct Answer: 1/8</div>
+</div>
+
+<div class="question">
+<h3>9. Which number is exactly halfway between 2.4 and 2.6?</h3>
+<div class="options">
+<label><input type="radio" name="q9"> 2.45</label>
+<label><input type="radio" name="q9" class="correct"> 2.5</label>
+<label><input type="radio" name="q9"> 2.55</label>
+<label><input type="radio" name="q9"> 2.52</label>
+</div>
+<div class="answer">Correct Answer: 2.5</div>
+</div>
+
+<div class="question">
+<h3>10. If 1 unit is divided into 100 equal parts, each part represents:</h3>
+<div class="options">
+<label><input type="radio" name="q10"> 0.1</label>
+<label><input type="radio" name="q10" class="correct"> 0.01</label>
+<label><input type="radio" name="q10"> 0.001</label>
+<label><input type="radio" name="q10"> 1.00</label>
+</div>
+<div class="answer">Correct Answer: 0.01</div>
+</div>
+
+<div class="question">
+<h3>11. Which statement about 7.30 and 7.3 is correct?</h3>
+<div class="options">
+<label><input type="radio" name="q11"> 7.30 is greater</label>
+<label><input type="radio" name="q11"> 7.3 is greater</label>
+<label><input type="radio" name="q11" class="correct"> They are equal</label>
+<label><input type="radio" name="q11"> They differ by 0.03</label>
+</div>
+<div class="answer">Correct Answer: They are equal.</div>
+</div>
+
+<div class="question">
+<h3>12. What is the value of the digit 6 in 9.064?</h3>
+<div class="options">
+<label><input type="radio" name="q12"> 6 tenths</label>
+<label><input type="radio" name="q12" class="correct"> 6 hundredths</label>
+<label><input type="radio" name="q12"> 6 thousandths</label>
+<label><input type="radio" name="q12"> 6 ones</label>
+</div>
+<div class="answer">Correct Answer: 6 hundredths</div>
+</div>
+
+<div class="question">
+<h3>13. Which decimal is the smallest?</h3>
+<div class="options">
+<label><input type="radio" name="q13"> 0.45</label>
+<label><input type="radio" name="q13"> 0.405</label>
+<label><input type="radio" name="q13" class="correct"> 0.045</label>
+<label><input type="radio" name="q13"> 0.504</label>
+</div>
+<div class="answer">Correct Answer: 0.045</div>
+</div>
+
+<div class="question">
+<h3>14. A rope is 8.75 m long. If 2.5 m is cut off, how much remains?</h3>
+<div class="options">
+<label><input type="radio" name="q14"> 5.25 m</label>
+<label><input type="radio" name="q14" class="correct"> 6.25 m</label>
+<label><input type="radio" name="q14"> 6.75 m</label>
+<label><input type="radio" name="q14"> 5.75 m</label>
+</div>
+<div class="answer">Correct Answer: 6.25 m</div>
+</div>
+
+<div class="question">
+<h3>15. Which expression gives 4.306?</h3>
+<div class="options">
+<label><input type="radio" name="q15"> 4 + 3/10 + 6/100</label>
+<label><input type="radio" name="q15"> 4 + 3/100 + 6/10</label>
+<label><input type="radio" name="q15" class="correct"> 4 + 3/10 + 6/1000</label>
+<label><input type="radio" name="q15"> 4 + 30/1000 + 6/100</label>
+</div>
+<div class="answer">Correct Answer: 4 + 3/10 + 6/1000</div>
+</div>
+
+
+<!-- ================= TRUE FALSE ================= -->
+
+<div class="section-title">Section B — True / False (10)</div>
+
+<div class="question">
+<h3>16. 0.8 is greater than 0.75.</h3>
+<div class="options">
+<label><input type="radio" name="q16" class="correct"> True</label>
+<label><input type="radio" name="q16"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>17. 3.40 and 3.4 represent the same number.</h3>
+<div class="options">
+<label><input type="radio" name="q17" class="correct"> True</label>
+<label><input type="radio" name="q17"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>18. In 5.027, the digit 2 represents two tenths.</h3>
+<div class="options">
+<label><input type="radio" name="q18"> True</label>
+<label><input type="radio" name="q18" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. The digit 2 is in the hundredths place.</div>
+</div>
+
+<div class="question">
+<h3>19. 0.09 is greater than 0.1.</h3>
+<div class="options">
+<label><input type="radio" name="q19"> True</label>
+<label><input type="radio" name="q19" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. 0.1 = 0.10, which is greater than 0.09.</div>
+</div>
+
+<div class="question">
+<h3>20. Adding zeroes to the right of a decimal does not change its value.</h3>
+<div class="options">
+<label><input type="radio" name="q20" class="correct"> True</label>
+<label><input type="radio" name="q20"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>21. 4.999 is greater than 5.</h3>
+<div class="options">
+<label><input type="radio" name="q21"> True</label>
+<label><input type="radio" name="q21" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. 4.999 is less than 5.</div>
+</div>
+
+<div class="question">
+<h3>22. 2.50 can be written as 2.500.</h3>
+<div class="options">
+<label><input type="radio" name="q22" class="correct"> True</label>
+<label><input type="radio" name="q22"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>23. The decimal 0.006 has 6 in the thousandths place.</h3>
+<div class="options">
+<label><input type="radio" name="q23" class="correct"> True</label>
+<label><input type="radio" name="q23"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>24. 6.07 is smaller than 6.007.</h3>
+<div class="options">
+<label><input type="radio" name="q24"> True</label>
+<label><input type="radio" name="q24" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. 6.07 = 6.070, which is greater than 6.007.</div>
+</div>
+
+<div class="question">
+<h3>25. 0.5 is equal to 5/100.</h3>
+<div class="options">
+<label><input type="radio" name="q25"> True</label>
+<label><input type="radio" name="q25" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. 0.5 = 5/10 = 50/100.</div>
+</div>
+
+
+<!-- ================= ASSERTION REASON ================= -->
+
+<div class="section-title">Section C — Assertion & Reasoning (5)</div>
+
+<p class="hint">Choose: A = Both true and R explains A | B = Both true but R does not explain A | C = A true, R false | D = A false, R true</p>
+
+<div class="question">
+<h3>26. Assertion (A): 0.70 = 0.7.<br>
+Reason (R): Zeroes written at the end of a decimal do not change its value.</h3>
+<div class="options">
+<label><input type="radio" name="q26" class="correct"> A</label>
+<label><input type="radio" name="q26"> B</label>
+<label><input type="radio" name="q26"> C</label>
+<label><input type="radio" name="q26"> D</label>
+</div>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<h3>27. Assertion (A): 0.48 is greater than 0.5.<br>
+Reason (R): 48 hundredths is less than 50 hundredths.</h3>
+<div class="options">
+<label><input type="radio" name="q27"> A</label>
+<label><input type="radio" name="q27"> B</label>
+<label><input type="radio" name="q27"> C</label>
+<label><input type="radio" name="q27" class="correct"> D</label>
+</div>
+<div class="answer">Correct Answer: D</div>
+</div>
+
+<div class="question">
+<h3>28. Assertion (A): 3.06 is greater than 3.006.<br>
+Reason (R): 3.06 can be written as 3.060.</h3>
+<div class="options">
+<label><input type="radio" name="q28" class="correct"> A</label>
+<label><input type="radio" name="q28"> B</label>
+<label><input type="radio" name="q28"> C</label>
+<label><input type="radio" name="q28"> D</label>
+</div>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<h3>29. Assertion (A): 5.2 + 0.08 = 5.28.<br>
+Reason (R): 0.2 and 0.08 have different place values.</h3>
+<div class="options">
+<label><input type="radio" name="q29"> A</label>
+<label><input type="radio" name="q29" class="correct"> B</label>
+<label><input type="radio" name="q29"> C</label>
+<label><input type="radio" name="q29"> D</label>
+</div>
+<div class="answer">Correct Answer: B. Both statements are true, but the reason does not fully explain the addition.</div>
+</div>
+
+<div class="question">
+<h3>30. Assertion (A): 0.125 is greater than 0.2.<br>
+Reason (R): 0.125 represents 125 thousandths.</h3>
+<div class="options">
+<label><input type="radio" name="q30"> A</label>
+<label><input type="radio" name="q30"> B</label>
+<label><input type="radio" name="q30"> C</label>
+<label><input type="radio" name="q30" class="correct"> D</label>
+</div>
+<div class="answer">Correct Answer: D</div>
+</div>
+
+
+<!-- ================= FILL UPS ================= -->
+
+<div class="section-title">Section D — Fill in the Blanks (5)</div>
+
+<div class="question">
+<h3>31. The decimal form of 7/10 is ______.</h3>
+<div class="options">
+<label><input type="radio" name="q31"> 0.07</label>
+<label><input type="radio" name="q31" class="correct"> 0.7</label>
+<label><input type="radio" name="q31"> 7.10</label>
+<label><input type="radio" name="q31"> 0.007</label>
+</div>
+<div class="answer">Correct Answer: 0.7</div>
+</div>
+
+<div class="question">
+<h3>32. 4.56 contains ______ hundredths.</h3>
+<div class="options">
+<label><input type="radio" name="q32"> 4</label>
+<label><input type="radio" name="q32"> 5</label>
+<label><input type="radio" name="q32" class="correct"> 6</label>
+<label><input type="radio" name="q32"> 56</label>
+</div>
+<div class="answer">Correct Answer: 6</div>
+</div>
+
+<div class="question">
+<h3>33. 2.75 = 2 + ______/100.</h3>
+<div class="options">
+<label><input type="radio" name="q33"> 7</label>
+<label><input type="radio" name="q33" class="correct"> 75</label>
+<label><input type="radio" name="q33"> 25</label>
+<label><input type="radio" name="q33"> 275</label>
+</div>
+<div class="answer">Correct Answer: 75</div>
+</div>
+
+<div class="question">
+<h3>34. The decimal equivalent of 3/1000 is ______.</h3>
+<div class="options">
+<label><input type="radio" name="q34"> 0.3</label>
+<label><input type="radio" name="q34"> 0.03</label>
+<label><input type="radio" name="q34" class="correct"> 0.003</label>
+<label><input type="radio" name="q34"> 3.000</label>
+</div>
+<div class="answer">Correct Answer: 0.003</div>
+</div>
+
+<div class="question">
+<h3>35. 9.4 can be written as 9.40 because a zero added to the ______ does not alter the decimal's value.</h3>
+<div class="options">
+<label><input type="radio" name="q35"> left side</label>
+<label><input type="radio" name="q35" class="correct"> right side</label>
+<label><input type="radio" name="q35"> whole-number part</label>
+<label><input type="radio" name="q35"> decimal point</label>
+</div>
+<div class="answer">Correct Answer: right side</div>
+</div>
+
+
+<!-- ================= MATCH ================= -->
+
+<div class="section-title">Section E — Match the Following (5)</div>
+
+<div class="question match">
+<h3>36. Match each decimal with its fractional form.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 0.5</div>
+<div class="match-right"><label><input type="radio" name="m1a" class="m1a correct"> 1/2</label></div>
+
+<div class="match-left">B. 0.25</div>
+<div class="match-right"><label><input type="radio" name="m1b" class="m1b correct"> 1/4</label></div>
+
+<div class="match-left">C. 0.75</div>
+<div class="match-right"><label><input type="radio" name="m1c" class="m1c correct"> 3/4</label></div>
+
+<div class="match-left">D. 0.2</div>
+<div class="match-right"><label><input type="radio" name="m1d" class="m1d correct"> 1/5</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–1/2, B–1/4, C–3/4, D–1/5</div>
+</div>
+
+<div class="question match">
+<h3>37. Match the decimal with its place-value description.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 4.7</div>
+<div class="match-right"><label><input type="radio" name="m2a" class="m2a correct"> 7 tenths</label></div>
+
+<div class="match-left">B. 6.03</div>
+<div class="match-right"><label><input type="radio" name="m2b" class="m2b correct"> 3 hundredths</label></div>
+
+<div class="match-left">C. 8.004</div>
+<div class="match-right"><label><input type="radio" name="m2c" class="m2c correct"> 4 thousandths</label></div>
+
+<div class="match-left">D. 2.09</div>
+<div class="match-right"><label><input type="radio" name="m2d" class="m2d correct"> 9 hundredths</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–7 tenths, B–3 hundredths, C–4 thousandths, D–9 hundredths</div>
+</div>
+
+<div class="question match">
+<h3>38. Match each operation with its result.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 2.4 + 1.6</div>
+<div class="match-right"><label><input type="radio" name="m3a" class="m3a correct"> 4</label></div>
+
+<div class="match-left">B. 5.8 − 2.3</div>
+<div class="match-right"><label><input type="radio" name="m3b" class="m3b correct"> 3.5</label></div>
+
+<div class="match-left">C. 0.75 + 0.25</div>
+<div class="match-right"><label><input type="radio" name="m3c" class="m3c correct"> 1</label></div>
+
+<div class="match-left">D. 7.2 − 0.2</div>
+<div class="match-right"><label><input type="radio" name="m3d" class="m3d correct"> 7</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–4, B–3.5, C–1, D–7</div>
+</div>
+
+<div class="question match">
+<h3>39. Match each fraction with its decimal representation.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 3/10</div>
+<div class="match-right"><label><input type="radio" name="m4a" class="m4a correct"> 0.3</label></div>
+
+<div class="match-left">B. 7/100</div>
+<div class="match-right"><label><input type="radio" name="m4b" class="m4b correct"> 0.07</label></div>
+
+<div class="match-left">C. 9/10</div>
+<div class="match-right"><label><input type="radio" name="m4c" class="m4c correct"> 0.9</label></div>
+
+<div class="match-left">D. 13/100</div>
+<div class="match-right"><label><input type="radio" name="m4d" class="m4d correct"> 0.13</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–0.3, B–0.07, C–0.9, D–0.13</div>
+</div>
+
+<div class="question match">
+<h3>40. Match the comparison with its correct conclusion.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 0.6 ___ 0.60</div>
+<div class="match-right"><label><input type="radio" name="m5a" class="m5a correct"> =</label></div>
+
+<div class="match-left">B. 0.45 ___ 0.5</div>
+<div class="match-right"><label><input type="radio" name="m5b" class="m5b correct"> &lt;</label></div>
+
+<div class="match-left">C. 1.08 ___ 1.008</div>
+<div class="match-right"><label><input type="radio" name="m5c" class="m5c correct"> &gt;</label></div>
+
+<div class="match-left">D. 3.2 ___ 3.20</div>
+<div class="match-right"><label><input type="radio" name="m5d" class="m5d correct"> =</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–=, B–&lt;, C–&gt;, D–=</div>
+</div>
+
+
+<!-- ================= DRAG STYLE ================= -->
+
+<div class="section-title">Section F — Drag & Drop Style Questions (5)</div>
+
+<div class="question">
+<h3>41. Place the decimals in ascending order. Select the correct sequence.</h3>
+<div class="options">
+<label><input type="radio" name="q41"> 0.7, 0.07, 0.77, 0.707</label>
+<label><input type="radio" name="q41" class="correct"> 0.07, 0.7, 0.707, 0.77</label>
+<label><input type="radio" name="q41"> 0.77, 0.707, 0.7, 0.07</label>
+<label><input type="radio" name="q41"> 0.707, 0.07, 0.7, 0.77</label>
+</div>
+<div class="answer">Correct Sequence: 0.07, 0.7, 0.707, 0.77</div>
+</div>
+
+<div class="question">
+<h3>42. Arrange from greatest to smallest: 2.05, 2.5, 2.005, 2.55.</h3>
+<div class="options">
+<label><input type="radio" name="q42" class="correct"> 2.55, 2.5, 2.05, 2.005</label>
+<label><input type="radio" name="q42"> 2.5, 2.55, 2.005, 2.05</label>
+<label><input type="radio" name="q42"> 2.005, 2.05, 2.5, 2.55</label>
+<label><input type="radio" name="q42"> 2.55, 2.05, 2.5, 2.005</label>
+</div>
+<div class="answer">Correct Sequence: 2.55, 2.5, 2.05, 2.005</div>
+</div>
+
+<div class="question">
+<h3>43. Arrange the following place values from smallest to largest.</h3>
+<div class="options">
+<label><input type="radio" name="q43"> Ones, tenths, hundredths, thousandths</label>
+<label><input type="radio" name="q43" class="correct"> Thousandths, hundredths, tenths, ones</label>
+<label><input type="radio" name="q43"> Hundredths, thousandths, tenths, ones</label>
+<label><input type="radio" name="q43"> Tenths, thousandths, hundredths, ones</label>
+</div>
+<div class="answer">Correct Answer: Thousandths, hundredths, tenths, ones.</div>
+</div>
+
+<div class="question">
+<h3>44. Choose the correct sequence for converting 3/10 → decimal → percentage.</h3>
+<div class="options">
+<label><input type="radio" name="q44"> 0.03 → 3%</label>
+<label><input type="radio" name="q44" class="correct"> 0.3 → 30%</label>
+<label><input type="radio" name="q44"> 3.0 → 300%</label>
+<label><input type="radio" name="q44"> 0.03 → 30%</label>
+</div>
+<div class="answer">Correct Sequence: 3/10 → 0.3 → 30%</div>
+</div>
+
+<div class="question">
+<h3>45. Arrange these numbers from smallest to greatest: 4.04, 4.4, 4.004, 4.44.</h3>
+<div class="options">
+<label><input type="radio" name="q45" class="correct"> 4.004, 4.04, 4.4, 4.44</label>
+<label><input type="radio" name="q45"> 4.04, 4.004, 4.44, 4.4</label>
+<label><input type="radio" name="q45"> 4.4, 4.44, 4.04, 4.004</label>
+<label><input type="radio" name="q45"> 4.004, 4.4, 4.04, 4.44</label>
+</div>
+<div class="answer">Correct Sequence: 4.004, 4.04, 4.4, 4.44</div>
+</div>
+
+
+<!-- ================= HOTS ================= -->
+
+<div class="section-title">Section G — HOTS / Higher Order Thinking Skills (10)</div>
+
+<div class="question">
+<h3>46. A student says 0.62 &gt; 0.7 because 62 is greater than 7. Is the student correct?</h3>
+<div class="options">
+<label><input type="radio" name="q46"> Yes, because 62 &gt; 7</label>
+<label><input type="radio" name="q46" class="correct"> No, because 0.7 = 0.70 and 0.62 &lt; 0.70</label>
+<label><input type="radio" name="q46"> Yes, because 0.62 has two digits</label>
+<label><input type="radio" name="q46"> No, because decimals cannot be compared</label>
+</div>
+<div class="answer">Correct Answer: No. Write 0.7 as 0.70; then 0.62 &lt; 0.70.</div>
+</div>
+
+<div class="question">
+<h3>47. Riya travelled 3.75 km in the morning and 2.6 km in the evening. What total distance did she travel?</h3>
+<div class="options">
+<label><input type="radio" name="q47"> 5.35 km</label>
+<label><input type="radio" name="q47" class="correct"> 6.35 km</label>
+<label><input type="radio" name="q47"> 6.25 km</label>
+<label><input type="radio" name="q47"> 5.95 km</label>
+</div>
+<div class="answer">Correct Answer: 6.35 km</div>
+</div>
+
+<div class="question">
+<h3>48. A decimal number has 5 ones, 3 tenths and 8 thousandths. Which number is formed?</h3>
+<div class="options">
+<label><input type="radio" name="q48"> 5.38</label>
+<label><input type="radio" name="q48" class="correct"> 5.308</label>
+<label><input type="radio" name="q48"> 5.803</label>
+<label><input type="radio" name="q48"> 5.038</label>
+</div>
+<div class="answer">Correct Answer: 5.308</div>
+</div>
+
+<div class="question">
+<h3>49. Without performing full addition, which is closest to 8? 3.98 + 4.05</h3>
+<div class="options">
+<label><input type="radio" name="q49" class="correct"> 8</label>
+<label><input type="radio" name="q49"> 7</label>
+<label><input type="radio" name="q49"> 9</label>
+<label><input type="radio" name="q49"> 6</label>
+</div>
+<div class="answer">Correct Answer: 8. The exact sum is 8.03.</div>
+</div>
+
+<div class="question">
+<h3>50. A number is between 6.2 and 6.3. Which could be the number?</h3>
+<div class="options">
+<label><input type="radio" name="q50"> 6.03</label>
+<label><input type="radio" name="q50" class="correct"> 6.27</label>
+<label><input type="radio" name="q50"> 6.31</label>
+<label><input type="radio" name="q50"> 6.02</label>
+</div>
+<div class="answer">Correct Answer: 6.27</div>
+</div>
+
+<div class="question">
+<h3>51. A tank contains 12.5 L of water. If 4.75 L is used, how much water remains?</h3>
+<div class="options">
+<label><input type="radio" name="q51"> 7.25 L</label>
+<label><input type="radio" name="q51" class="correct"> 7.75 L</label>
+<label><input type="radio" name="q51"> 8.25 L</label>
+<label><input type="radio" name="q51"> 6.75 L</label>
+</div>
+<div class="answer">Correct Answer: 7.75 L</div>
+</div>
+
+<div class="question">
+<h3>52. Find the missing number: 7.8 + □ = 10.</h3>
+<div class="options">
+<label><input type="radio" name="q52"> 1.2</label>
+<label><input type="radio" name="q52" class="correct"> 2.2</label>
+<label><input type="radio" name="q52"> 2.8</label>
+<label><input type="radio" name="q52"> 3.2</label>
+</div>
+<div class="answer">Correct Answer: 2.2</div>
+</div>
+
+<div class="question">
+<h3>53. A measuring scale shows 2.37 m. Which statement is correct about the digit 7?</h3>
+<div class="options">
+<label><input type="radio" name="q53"> It represents 7 tenths</label>
+<label><input type="radio" name="q53" class="correct"> It represents 7 hundredths</label>
+<label><input type="radio" name="q53"> It represents 7 thousandths</label>
+<label><input type="radio" name="q53"> It represents 7 ones</label>
+</div>
+<div class="answer">Correct Answer: It represents 7 hundredths.</div>
+</div>
+
+<div class="question">
+<h3>54. Which number must be added to 5.46 to obtain 7?</h3>
+<div class="options">
+<label><input type="radio" name="q54"> 1.44</label>
+<label><input type="radio" name="q54" class="correct"> 1.54</label>
+<label><input type="radio" name="q54"> 2.46</label>
+<label><input type="radio" name="q54"> 1.64</label>
+</div>
+<div class="answer">Correct Answer: 1.54</div>
+</div>
+
+<div class="question">
+<h3>55. A student writes 4.5 as 4.05. What place-value mistake has been made?</h3>
+<div class="options">
+<label><input type="radio" name="q55"> The 4 was placed incorrectly</label>
+<label><input type="radio" name="q55" class="correct"> The 5 was moved from tenths to hundredths</label>
+<label><input type="radio" name="q55"> The decimal point was removed</label>
+<label><input type="radio" name="q55"> Zeroes can never be used in decimals</label>
+</div>
+<div class="answer">Correct Answer: The 5 was moved from tenths to hundredths.</div>
+</div>
+
+
+<!-- ================= SCORE ================= -->
+
+<div class="score-card">
+<h2>Your Score</h2>
+<p>Correctly answered questions:</p>
+<div class="score-number"></div>
+<p style="margin-top:15px;">
+Try every question again to improve your score.
+</p>
+</div>
+
+</div>
+</div>
+
+<footer>
+    <p>Class 8 Mathematics • Ganita Prakash • Chapter 3</p>
+</footer>
+
+</body>
+</html>

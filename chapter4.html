@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 4 - Expressions using Letter-Numbers</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eef2f7;
+    color:#172033;
+    font-weight:700;
+    line-height:1.6;
+}
+
+header{
+    background:#172033;
+    color:white;
+    padding:35px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:17px;
+    opacity:.9;
+}
+
+.container{
+    max-width:1100px;
+    margin:30px auto;
+    padding:0 18px;
+}
+
+.instructions{
+    background:white;
+    border-left:6px solid #172033;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:28px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.section-title{
+    background:#172033;
+    color:white;
+    padding:15px 20px;
+    border-radius:10px;
+    margin:30px 0 18px;
+    font-size:22px;
+}
+
+.question{
+    background:white;
+    padding:22px;
+    margin:16px 0;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.question h3{
+    margin-bottom:15px;
+    font-size:17px;
+}
+
+.options{
+    display:grid;
+    gap:10px;
+}
+
+label{
+    display:block;
+    background:#f4f6fa;
+    padding:11px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    border:1px solid #dce1e9;
+}
+
+label:hover{
+    background:#e9edf4;
+}
+
+input{
+    margin-right:9px;
+}
+
+.answer{
+    display:none;
+    margin-top:15px;
+    padding:13px 15px;
+    background:#eaf7ee;
+    border-left:5px solid #248b45;
+    border-radius:7px;
+}
+
+.question:has(input:checked) .answer{
+    display:block;
+}
+
+.hint{
+    font-size:14px;
+    color:#4d596d;
+    margin-top:8px;
+}
+
+.match-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:12px 0;
+}
+
+.match-left,
+.match-right{
+    background:#f4f6fa;
+    padding:11px;
+    border-radius:7px;
+}
+
+.quiz{
+    counter-reset:score;
+}
+
+.question:not(.match):has(.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){
+    counter-increment:score;
+}
+
+.match:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){
+    counter-increment:score;
+}
+
+.score-card{
+    background:white;
+    margin:40px 0;
+    padding:30px;
+    text-align:center;
+    border-radius:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,.1);
+}
+
+.score-card h2{
+    margin-bottom:12px;
+}
+
+.score-number{
+    font-size:38px;
+}
+
+.score-number::after{
+    content:counter(score) " / 55";
+}
+
+footer{
+    background:#172033;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:700px){
+    header h1{
+        font-size:26px;
+    }
+
+    .match-grid{
+        grid-template-columns:1fr;
+    }
+
+    .question{
+        padding:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Chapter 4: Expressions using Letter-Numbers</h1>
+    <p>Class 8 Mathematics • Ganita Prakash • Half-Yearly Question Bank</p>
+</header>
+
+<div class="container">
+
+<div class="instructions">
+    <h2>Instructions</h2>
+    <p>• Total Questions: 55</p>
+    <p>• Each question has one intended correct answer.</p>
+    <p>• Select an option to reveal the answer.</p>
+    <p>• Match the Following: all four pairs must be correct.</p>
+    <p>• Score is calculated automatically.</p>
+</div>
+
+<div class="quiz">
+
+<!-- ================= MCQs ================= -->
+
+<div class="section-title">Section A — Multiple Choice Questions (15)</div>
+
+<div class="question">
+<h3>1. Which expression represents a number increased by 7?</h3>
+<div class="options">
+<label><input type="radio" name="q1"> x − 7</label>
+<label><input type="radio" name="q1" class="correct"> x + 7</label>
+<label><input type="radio" name="q1"> 7x</label>
+<label><input type="radio" name="q1"> x ÷ 7</label>
+</div>
+<div class="answer">Correct Answer: x + 7</div>
+</div>
+
+<div class="question">
+<h3>2. Which expression represents 5 times a number n?</h3>
+<div class="options">
+<label><input type="radio" name="q2"> n + 5</label>
+<label><input type="radio" name="q2"> n − 5</label>
+<label><input type="radio" name="q2" class="correct"> 5n</label>
+<label><input type="radio" name="q2"> n/5</label>
+</div>
+<div class="answer">Correct Answer: 5n</div>
+</div>
+
+<div class="question">
+<h3>3. If x = 6, what is the value of 3x + 2?</h3>
+<div class="options">
+<label><input type="radio" name="q3"> 18</label>
+<label><input type="radio" name="q3" class="correct"> 20</label>
+<label><input type="radio" name="q3"> 22</label>
+<label><input type="radio" name="q3"> 24</label>
+</div>
+<div class="answer">Correct Answer: 20</div>
+</div>
+
+<div class="question">
+<h3>4. Which expression represents the sum of p and 12?</h3>
+<div class="options">
+<label><input type="radio" name="q4" class="correct"> p + 12</label>
+<label><input type="radio" name="q4"> p − 12</label>
+<label><input type="radio" name="q4"> 12p</label>
+<label><input type="radio" name="q4"> p/12</label>
+</div>
+<div class="answer">Correct Answer: p + 12</div>
+</div>
+
+<div class="question">
+<h3>5. What is the coefficient of y in 9y + 4?</h3>
+<div class="options">
+<label><input type="radio" name="q5"> 4</label>
+<label><input type="radio" name="q5" class="correct"> 9</label>
+<label><input type="radio" name="q5"> y</label>
+<label><input type="radio" name="q5"> 13</label>
+</div>
+<div class="answer">Correct Answer: 9</div>
+</div>
+
+<div class="question">
+<h3>6. Which expression means “twice a number decreased by 3”?</h3>
+<div class="options">
+<label><input type="radio" name="q6"> 2(x − 3)</label>
+<label><input type="radio" name="q6" class="correct"> 2x − 3</label>
+<label><input type="radio" name="q6"> x − 6</label>
+<label><input type="radio" name="q6"> 3x − 2</label>
+</div>
+<div class="answer">Correct Answer: 2x − 3</div>
+</div>
+
+<div class="question">
+<h3>7. If a = 8, find a − 5.</h3>
+<div class="options">
+<label><input type="radio" name="q7" class="correct"> 3</label>
+<label><input type="radio" name="q7"> 2</label>
+<label><input type="radio" name="q7"> 13</label>
+<label><input type="radio" name="q7"> 4</label>
+</div>
+<div class="answer">Correct Answer: 3</div>
+</div>
+
+<div class="question">
+<h3>8. Which expression represents the perimeter of a square of side s?</h3>
+<div class="options">
+<label><input type="radio" name="q8"> s + 4</label>
+<label><input type="radio" name="q8"> s²</label>
+<label><input type="radio" name="q8" class="correct"> 4s</label>
+<label><input type="radio" name="q8"> 2s</label>
+</div>
+<div class="answer">Correct Answer: 4s</div>
+</div>
+
+<div class="question">
+<h3>9. Simplify: 7m + 2m.</h3>
+<div class="options">
+<label><input type="radio" name="q9"> 9</label>
+<label><input type="radio" name="q9" class="correct"> 9m</label>
+<label><input type="radio" name="q9"> 14m</label>
+<label><input type="radio" name="q9"> 7m²</label>
+</div>
+<div class="answer">Correct Answer: 9m</div>
+</div>
+
+<div class="question">
+<h3>10. Which expression has two terms?</h3>
+<div class="options">
+<label><input type="radio" name="q10"> 7x</label>
+<label><input type="radio" name="q10"> 12</label>
+<label><input type="radio" name="q10" class="correct"> 4x + 9</label>
+<label><input type="radio" name="q10"> 5x²</label>
+</div>
+<div class="answer">Correct Answer: 4x + 9</div>
+</div>
+
+<div class="question">
+<h3>11. If b = 4, what is 5b − 1?</h3>
+<div class="options">
+<label><input type="radio" name="q11"> 15</label>
+<label><input type="radio" name="q11" class="correct"> 19</label>
+<label><input type="radio" name="q11"> 21</label>
+<label><input type="radio" name="q11"> 24</label>
+</div>
+<div class="answer">Correct Answer: 19</div>
+</div>
+
+<div class="question">
+<h3>12. Which expression represents a number divided by 4?</h3>
+<div class="options">
+<label><input type="radio" name="q12"> 4x</label>
+<label><input type="radio" name="q12" class="correct"> x/4</label>
+<label><input type="radio" name="q12"> x + 4</label>
+<label><input type="radio" name="q12"> x − 4</label>
+</div>
+<div class="answer">Correct Answer: x/4</div>
+</div>
+
+<div class="question">
+<h3>13. What is the constant term in 6x + 11?</h3>
+<div class="options">
+<label><input type="radio" name="q13"> 6</label>
+<label><input type="radio" name="q13"> x</label>
+<label><input type="radio" name="q13" class="correct"> 11</label>
+<label><input type="radio" name="q13"> 17</label>
+</div>
+<div class="answer">Correct Answer: 11</div>
+</div>
+
+<div class="question">
+<h3>14. Which expression represents 3 more than twice z?</h3>
+<div class="options">
+<label><input type="radio" name="q14"> 3z + 2</label>
+<label><input type="radio" name="q14" class="correct"> 2z + 3</label>
+<label><input type="radio" name="q14"> 2(z + 3)</label>
+<label><input type="radio" name="q14"> z + 6</label>
+</div>
+<div class="answer">Correct Answer: 2z + 3</div>
+</div>
+
+<div class="question">
+<h3>15. If n = 10, what is 2n + 5?</h3>
+<div class="options">
+<label><input type="radio" name="q15"> 20</label>
+<label><input type="radio" name="q15"> 22</label>
+<label><input type="radio" name="q15" class="correct"> 25</label>
+<label><input type="radio" name="q15"> 30</label>
+</div>
+<div class="answer">Correct Answer: 25</div>
+</div>
+
+
+<!-- ================= TRUE/FALSE ================= -->
+
+<div class="section-title">Section B — True / False (10)</div>
+
+<div class="question">
+<h3>16. 4x means 4 multiplied by x.</h3>
+<div class="options">
+<label><input type="radio" name="q16" class="correct"> True</label>
+<label><input type="radio" name="q16"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>17. x + x = x².</h3>
+<div class="options">
+<label><input type="radio" name="q17"> True</label>
+<label><input type="radio" name="q17" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. x + x = 2x.</div>
+</div>
+
+<div class="question">
+<h3>18. 7a and a7 represent the same product.</h3>
+<div class="options">
+<label><input type="radio" name="q18" class="correct"> True</label>
+<label><input type="radio" name="q18"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>19. In 8p + 3, p is the constant term.</h3>
+<div class="options">
+<label><input type="radio" name="q19"> True</label>
+<label><input type="radio" name="q19" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. 3 is the constant term.</div>
+</div>
+
+<div class="question">
+<h3>20. 5y − 2 and 2 − 5y are always equal.</h3>
+<div class="options">
+<label><input type="radio" name="q20"> True</label>
+<label><input type="radio" name="q20" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False.</div>
+</div>
+
+<div class="question">
+<h3>21. An expression can contain a variable and a constant.</h3>
+<div class="options">
+<label><input type="radio" name="q21" class="correct"> True</label>
+<label><input type="radio" name="q21"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>22. 3x + 4 has two terms.</h3>
+<div class="options">
+<label><input type="radio" name="q22" class="correct"> True</label>
+<label><input type="radio" name="q22"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>23. The coefficient of x in x is 0.</h3>
+<div class="options">
+<label><input type="radio" name="q23"> True</label>
+<label><input type="radio" name="q23" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. The coefficient of x is 1.</div>
+</div>
+
+<div class="question">
+<h3>24. 2(a + 3) is equal to 2a + 6.</h3>
+<div class="options">
+<label><input type="radio" name="q24" class="correct"> True</label>
+<label><input type="radio" name="q24"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+<div class="question">
+<h3>25. 9 + x is an algebraic expression.</h3>
+<div class="options">
+<label><input type="radio" name="q25" class="correct"> True</label>
+<label><input type="radio" name="q25"> False</label>
+</div>
+<div class="answer">Correct Answer: True</div>
+</div>
+
+
+<!-- ================= ASSERTION REASON ================= -->
+
+<div class="section-title">Section C — Assertion & Reasoning (5)</div>
+
+<p class="hint">
+A = Both A and R are true and R explains A |
+B = Both A and R are true but R does not explain A |
+C = A is true but R is false |
+D = A is false but R is true
+</p>
+
+<div class="question">
+<h3>26. Assertion: 5x + 2 has two terms.<br>
+Reason: Terms are separated by addition or subtraction signs.</h3>
+<div class="options">
+<label><input type="radio" name="q26" class="correct"> A</label>
+<label><input type="radio" name="q26"> B</label>
+<label><input type="radio" name="q26"> C</label>
+<label><input type="radio" name="q26"> D</label>
+</div>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<h3>27. Assertion: 3x + 4 and 4 + 3x have the same value.<br>
+Reason: Addition is commutative.</h3>
+<div class="options">
+<label><input type="radio" name="q27" class="correct"> A</label>
+<label><input type="radio" name="q27"> B</label>
+<label><input type="radio" name="q27"> C</label>
+<label><input type="radio" name="q27"> D</label>
+</div>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<h3>28. Assertion: The coefficient of 7y is 7.<br>
+Reason: The coefficient is the numerical factor multiplying the variable.</h3>
+<div class="options">
+<label><input type="radio" name="q28" class="correct"> A</label>
+<label><input type="radio" name="q28"> B</label>
+<label><input type="radio" name="q28"> C</label>
+<label><input type="radio" name="q28"> D</label>
+</div>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<h3>29. Assertion: x + 5 and x − 5 are equal for every value of x.<br>
+Reason: Subtracting 5 is different from adding 5.</h3>
+<div class="options">
+<label><input type="radio" name="q29"> A</label>
+<label><input type="radio" name="q29"> B</label>
+<label><input type="radio" name="q29"> C</label>
+<label><input type="radio" name="q29" class="correct"> D</label>
+</div>
+<div class="answer">Correct Answer: D</div>
+</div>
+
+<div class="question">
+<h3>30. Assertion: If x = 3, then 2x + 4 = 10.<br>
+Reason: The value of x can be substituted in an expression.</h3>
+<div class="options">
+<label><input type="radio" name="q30" class="correct"> A</label>
+<label><input type="radio" name="q30"> B</label>
+<label><input type="radio" name="q30"> C</label>
+<label><input type="radio" name="q30"> D</label>
+</div>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+
+<!-- ================= FILL UPS ================= -->
+
+<div class="section-title">Section D — Fill in the Blanks (5)</div>
+
+<div class="question">
+<h3>31. The numerical factor of 8m is ______.</h3>
+<div class="options">
+<label><input type="radio" name="q31"> m</label>
+<label><input type="radio" name="q31" class="correct"> 8</label>
+<label><input type="radio" name="q31"> 1</label>
+<label><input type="radio" name="q31"> 0</label>
+</div>
+<div class="answer">Correct Answer: 8</div>
+</div>
+
+<div class="question">
+<h3>32. If x = 7, then x + 9 = ______.</h3>
+<div class="options">
+<label><input type="radio" name="q32"> 14</label>
+<label><input type="radio" name="q32" class="correct"> 16</label>
+<label><input type="radio" name="q32"> 17</label>
+<label><input type="radio" name="q32"> 18</label>
+</div>
+<div class="answer">Correct Answer: 16</div>
+</div>
+
+<div class="question">
+<h3>33. The constant term in 9p − 6 is ______.</h3>
+<div class="options">
+<label><input type="radio" name="q33"> 9</label>
+<label><input type="radio" name="q33"> p</label>
+<label><input type="radio" name="q33" class="correct"> −6</label>
+<label><input type="radio" name="q33"> 15</label>
+</div>
+<div class="answer">Correct Answer: −6</div>
+</div>
+
+<div class="question">
+<h3>34. The expression for “7 more than t” is ______.</h3>
+<div class="options">
+<label><input type="radio" name="q34"> t − 7</label>
+<label><input type="radio" name="q34" class="correct"> t + 7</label>
+<label><input type="radio" name="q34"> 7t</label>
+<label><input type="radio" name="q34"> t/7</label>
+</div>
+<div class="answer">Correct Answer: t + 7</div>
+</div>
+
+<div class="question">
+<h3>35. If y = 5, then 4y = ______.</h3>
+<div class="options">
+<label><input type="radio" name="q35"> 9</label>
+<label><input type="radio" name="q35"> 15</label>
+<label><input type="radio" name="q35" class="correct"> 20</label>
+<label><input type="radio" name="q35"> 25</label>
+</div>
+<div class="answer">Correct Answer: 20</div>
+</div>
+
+
+<!-- ================= MATCH ================= -->
+
+<div class="section-title">Section E — Match the Following (5)</div>
+
+<div class="question match">
+<h3>36. Match each expression with its verbal form.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. x + 5</div>
+<div class="match-right"><label><input type="radio" name="m1a" class="m1a correct"> 5 more than x</label></div>
+
+<div class="match-left">B. x − 3</div>
+<div class="match-right"><label><input type="radio" name="m1b" class="m1b correct"> 3 less than x</label></div>
+
+<div class="match-left">C. 4x</div>
+<div class="match-right"><label><input type="radio" name="m1c" class="m1c correct"> Four times x</label></div>
+
+<div class="match-left">D. x/2</div>
+<div class="match-right"><label><input type="radio" name="m1d" class="m1d correct"> Half of x</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–5 more than x, B–3 less than x, C–Four times x, D–Half of x.</div>
+</div>
+
+<div class="question match">
+<h3>37. Match the expression with its value for the given variable.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. a + 4, a = 6</div>
+<div class="match-right"><label><input type="radio" name="m2a" class="m2a correct"> 10</label></div>
+
+<div class="match-left">B. 3b, b = 5</div>
+<div class="match-right"><label><input type="radio" name="m2b" class="m2b correct"> 15</label></div>
+
+<div class="match-left">C. c − 2, c = 9</div>
+<div class="match-right"><label><input type="radio" name="m2c" class="m2c correct"> 7</label></div>
+
+<div class="match-left">D. d/2, d = 14</div>
+<div class="match-right"><label><input type="radio" name="m2d" class="m2d correct"> 7</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–10, B–15, C–7, D–7.</div>
+</div>
+
+<div class="question match">
+<h3>38. Match each algebraic term with its coefficient.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 6p</div>
+<div class="match-right"><label><input type="radio" name="m3a" class="m3a correct"> 6</label></div>
+
+<div class="match-left">B. 11q</div>
+<div class="match-right"><label><input type="radio" name="m3b" class="m3b correct"> 11</label></div>
+
+<div class="match-left">C. 3r</div>
+<div class="match-right"><label><input type="radio" name="m3c" class="m3c correct"> 3</label></div>
+
+<div class="match-left">D. 9s</div>
+<div class="match-right"><label><input type="radio" name="m3d" class="m3d correct"> 9</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–6, B–11, C–3, D–9.</div>
+</div>
+
+<div class="question match">
+<h3>39. Match each situation with its expression.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. Cost of x pencils at ₹5 each</div>
+<div class="match-right"><label><input type="radio" name="m4a" class="m4a correct"> 5x</label></div>
+
+<div class="match-left">B. Number increased by 8</div>
+<div class="match-right"><label><input type="radio" name="m4b" class="m4b correct"> n + 8</label></div>
+
+<div class="match-left">C. Number decreased by 6</div>
+<div class="match-right"><label><input type="radio" name="m4c" class="m4c correct"> n − 6</label></div>
+
+<div class="match-left">D. Twice a number</div>
+<div class="match-right"><label><input type="radio" name="m4d" class="m4d correct"> 2n</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–5x, B–n+8, C–n−6, D–2n.</div>
+</div>
+
+<div class="question match">
+<h3>40. Match each expression with the number of terms it contains.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 7x</div>
+<div class="match-right"><label><input type="radio" name="m5a" class="m5a correct"> 1 term</label></div>
+
+<div class="match-left">B. x + 4</div>
+<div class="match-right"><label><input type="radio" name="m5b" class="m5b correct"> 2 terms</label></div>
+
+<div class="match-left">C. 3a + 2b + 7</div>
+<div class="match-right"><label><input type="radio" name="m5c" class="m5c correct"> 3 terms</label></div>
+
+<div class="match-left">D. 12</div>
+<div class="match-right"><label><input type="radio" name="m5d" class="m5d correct"> 1 term</label></div>
+</div>
+
+<div class="answer">Correct pairs: A–1 term, B–2 terms, C–3 terms, D–1 term.</div>
+</div>
+
+
+<!-- ================= DRAG STYLE ================= -->
+
+<div class="section-title">Section F — Drag & Drop Style Questions (5)</div>
+
+<div class="question">
+<h3>41. Arrange the steps for evaluating 3x + 2 when x = 4.</h3>
+<div class="options">
+<label><input type="radio" name="q41"> 3 + 4 + 2 → 9</label>
+<label><input type="radio" name="q41" class="correct"> x = 4 → 3(4) + 2 → 12 + 2 → 14</label>
+<label><input type="radio" name="q41"> 3(2) + 4 → 10</label>
+<label><input type="radio" name="q41"> 4 + 2 → 6 → 3 × 6 → 18</label>
+</div>
+<div class="answer">Correct Sequence: x = 4 → 3(4)+2 → 12+2 → 14.</div>
+</div>
+
+<div class="question">
+<h3>42. Arrange from simplest to most expanded form: 2(x + 3).</h3>
+<div class="options">
+<label><input type="radio" name="q42"> 2x + 3 → 2x + 6</label>
+<label><input type="radio" name="q42" class="correct"> 2(x + 3) → 2x + 6</label>
+<label><input type="radio" name="q42"> x + 6 → 2x + 3</label>
+<label><input type="radio" name="q42"> 2x + 6 → 2(x + 3)</label>
+</div>
+<div class="answer">Correct Sequence: 2(x + 3) → 2x + 6.</div>
+</div>
+
+<div class="question">
+<h3>43. Arrange the operations for evaluating 5a − 4 when a = 6.</h3>
+<div class="options">
+<label><input type="radio" name="q43"> 5 + 6 − 4 → 7</label>
+<label><input type="radio" name="q43"> 6 − 4 → 2 → 5 × 2 → 10</label>
+<label><input type="radio" name="q43" class="correct"> 5 × 6 → 30 → 30 − 4 → 26</label>
+<label><input type="radio" name="q43"> 5 × 4 → 20 → 20 + 6 → 26</label>
+</div>
+<div class="answer">Correct Sequence: 5×6 → 30 → 30−4 → 26.</div>
+</div>
+
+<div class="question">
+<h3>44. Choose the correct sequence for finding the perimeter of a square of side x.</h3>
+<div class="options">
+<label><input type="radio" name="q44"> x + 4 → x + 4</label>
+<label><input type="radio" name="q44" class="correct"> Four sides of x → x+x+x+x → 4x</label>
+<label><input type="radio" name="q44"> x × x → x²</label>
+<label><input type="radio" name="q44"> x ÷ 4 → x/4</label>
+</div>
+<div class="answer">Correct Sequence: x+x+x+x = 4x.</div>
+</div>
+
+<div class="question">
+<h3>45. Arrange the expressions in increasing number of terms.</h3>
+<div class="options">
+<label><input type="radio" name="q45" class="correct"> 7x → x+3 → 2a+b+5</label>
+<label><input type="radio" name="q45"> x+3 → 7x → 2a+b+5</label>
+<label><input type="radio" name="q45"> 2a+b+5 → x+3 → 7x</label>
+<label><input type="radio" name="q45"> 7x → 2a+b+5 → x+3</label>
+</div>
+<div class="answer">Correct Sequence: 7x (1 term) → x+3 (2 terms) → 2a+b+5 (3 terms).</div>
+</div>
+
+
+<!-- ================= HOTS ================= -->
+
+<div class="section-title">Section G — HOTS / Higher Order Thinking (10)</div>
+
+<div class="question">
+<h3>46. A rectangle has length x cm and breadth 5 cm. Which expression gives its perimeter?</h3>
+<div class="options">
+<label><input type="radio" name="q46"> x + 5</label>
+<label><input type="radio" name="q46"> 5x</label>
+<label><input type="radio" name="q46" class="correct"> 2x + 10</label>
+<label><input type="radio" name="q46"> x² + 25</label>
+</div>
+<div class="answer">Correct Answer: 2(x+5) = 2x+10.</div>
+</div>
+
+<div class="question">
+<h3>47. A number is represented by n. If 7 is subtracted from it and the result is doubled, which expression represents the result?</h3>
+<div class="options">
+<label><input type="radio" name="q47"> 2n − 7</label>
+<label><input type="radio" name="q47" class="correct"> 2(n − 7)</label>
+<label><input type="radio" name="q47"> n − 14</label>
+<label><input type="radio" name="q47"> 7(n − 2)</label>
+</div>
+<div class="answer">Correct Answer: 2(n − 7).</div>
+</div>
+
+<div class="question">
+<h3>48. If x + 8 = 15, what is the value of 2x?</h3>
+<div class="options">
+<label><input type="radio" name="q48"> 7</label>
+<label><input type="radio" name="q48"> 10</label>
+<label><input type="radio" name="q48" class="correct"> 14</label>
+<label><input type="radio" name="q48"> 30</label>
+</div>
+<div class="answer">x = 7, therefore 2x = 14.</div>
+</div>
+
+<div class="question">
+<h3>49. Two consecutive numbers are represented by n and n+1. Which expression gives their sum?</h3>
+<div class="options">
+<label><input type="radio" name="q49"> 2n</label>
+<label><input type="radio" name="q49" class="correct"> 2n + 1</label>
+<label><input type="radio" name="q49"> n + 1</label>
+<label><input type="radio" name="q49"> n² + 1</label>
+</div>
+<div class="answer">Correct Answer: n + (n+1) = 2n+1.</div>
+</div>
+
+<div class="question">
+<h3>50. The cost of one notebook is ₹p. What is the cost of 6 notebooks and a pen costing ₹12?</h3>
+<div class="options">
+<label><input type="radio" name="q50"> 6p</label>
+<label><input type="radio" name="q50"> p + 12</label>
+<label><input type="radio" name="q50" class="correct"> 6p + 12</label>
+<label><input type="radio" name="q50"> 12p + 6</label>
+</div>
+<div class="answer">Correct Answer: 6p + 12.</div>
+</div>
+
+<div class="question">
+<h3>51. If a = 3 and b = 5, which expression has the greatest value?</h3>
+<div class="options">
+<label><input type="radio" name="q51"> a + b</label>
+<label><input type="radio" name="q51"> ab</label>
+<label><input type="radio" name="q51" class="correct"> 2a + 2b</label>
+<label><input type="radio" name="q51"> 3a</label>
+</div>
+<div class="answer">Values: 8, 15, 16, 9. Therefore 2a+2b is greatest.</div>
+</div>
+
+<div class="question">
+<h3>52. A student says 3x + 4x = 7x². Is the student correct?</h3>
+<div class="options">
+<label><input type="radio" name="q52"> Yes, because 3+4=7 and x×x=x²</label>
+<label><input type="radio" name="q52" class="correct"> No, 3x + 4x = 7x</label>
+<label><input type="radio" name="q52"> No, the answer is 12x</label>
+<label><input type="radio" name="q52"> Yes, all algebraic terms become squared</label>
+</div>
+<div class="answer">Correct Answer: No. Like terms are added by adding their coefficients: 3x+4x=7x.</div>
+</div>
+
+<div class="question">
+<h3>53. The perimeter of an equilateral triangle is 3s. If s = 8 cm, what is the perimeter?</h3>
+<div class="options">
+<label><input type="radio" name="q53"> 11 cm</label>
+<label><input type="radio" name="q53"> 16 cm</label>
+<label><input type="radio" name="q53" class="correct"> 24 cm</label>
+<label><input type="radio" name="q53"> 32 cm</label>
+</div>
+<div class="answer">Correct Answer: 3 × 8 = 24 cm.</div>
+</div>
+
+<div class="question">
+<h3>54. If y = 4, compare 3y + 2 and 2y + 7. Which statement is correct?</h3>
+<div class="options">
+<label><input type="radio" name="q54"> 3y + 2 is greater by 1</label>
+<label><input type="radio" name="q54" class="correct"> 2y + 7 is greater by 1</label>
+<label><input type="radio" name="q54"> Both are equal</label>
+<label><input type="radio" name="q54"> Their difference is 3</label>
+</div>
+<div class="answer">Correct Answer: 2y + 7 is greater by 1. 3(4)+2 = 14 and 2(4)+7 = 15.</div>
+</div>
+
+<div class="question">
+<h3>55. A pattern has 4 matchsticks in Figure 1, 7 in Figure 2 and 10 in Figure 3. Which expression gives the number of matchsticks in Figure n?</h3>
+<div class="options">
+<label><input type="radio" name="q55"> n + 3</label>
+<label><input type="radio" name="q55"> 3n</label>
+<label><input type="radio" name="q55" class="correct"> 3n + 1</label>
+<label><input type="radio" name="q55"> 4n</label>
+</div>
+<div class="answer">Correct Answer: 3n + 1. For n=1,2,3 it gives 4,7,10.</div>
+</div>
+
+
+<!-- ================= SCORE ================= -->
+
+<div class="score-card">
+<h2>🎯 Your Score</h2>
+<p>Correctly answered questions:</p>
+<div class="score-number"></div>
+<p style="margin-top:15px;">
+Keep practising to improve your half-yearly preparation.
+</p>
+</div>
+
+</div>
+</div>
+
+<footer>
+<p>Class 8 Mathematics • Ganita Prakash • Chapter 4</p>
+</footer>
+
+</body>
+</html>

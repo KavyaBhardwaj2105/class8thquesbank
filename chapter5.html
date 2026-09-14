@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chapter 5 - Parallel and Intersecting Lines</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#eef2f7;
+color:#172033;
+font-weight:700;
+line-height:1.6
+}
+
+header{
+background:#172033;
+color:white;
+padding:35px 20px;
+text-align:center
+}
+
+header h1{font-size:34px;margin-bottom:8px}
+header p{font-size:17px;opacity:.9}
+
+.container{
+max-width:1100px;
+margin:30px auto;
+padding:0 18px
+}
+
+.instructions,.question,.score-card{
+background:white;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.07)
+}
+
+.instructions{
+border-left:6px solid #172033;
+padding:20px;
+margin-bottom:28px
+}
+
+.section-title{
+background:#172033;
+color:white;
+padding:15px 20px;
+border-radius:10px;
+margin:30px 0 18px;
+font-size:22px
+}
+
+.question{
+padding:22px;
+margin:16px 0
+}
+
+.question h3{
+margin-bottom:15px;
+font-size:17px
+}
+
+.options{
+display:grid;
+gap:10px
+}
+
+label{
+display:block;
+background:#f4f6fa;
+padding:11px 14px;
+border-radius:8px;
+cursor:pointer;
+border:1px solid #dce1e9
+}
+
+label:hover{background:#e9edf4}
+
+input{margin-right:9px}
+
+.answer{
+display:none;
+margin-top:15px;
+padding:13px 15px;
+background:#eaf7ee;
+border-left:5px solid #248b45;
+border-radius:7px
+}
+
+.question:has(input:checked) .answer{display:block}
+
+.hint{
+font-size:14px;
+color:#4d596d;
+margin-top:8px
+}
+
+.match-grid{
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:8px;
+margin-top:15px
+}
+
+.match-left,.match-right{
+background:#f4f6fa;
+padding:10px;
+border-radius:7px
+}
+
+.quiz{counter-reset:score}
+
+.question:not(.match):has(.correct:checked){
+counter-increment:score
+}
+
+.match:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){counter-increment:score}
+.match:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){counter-increment:score}
+.match:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){counter-increment:score}
+.match:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){counter-increment:score}
+.match:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){counter-increment:score}
+
+.score-card{
+margin:40px 0;
+padding:30px;
+text-align:center
+}
+
+.score-number{
+font-size:40px;
+margin:10px
+}
+
+.score-number::after{
+content:counter(score) " / 55"
+}
+
+footer{
+background:#172033;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px
+}
+
+@media(max-width:700px){
+header h1{font-size:26px}
+.match-grid{grid-template-columns:1fr}
+.question{padding:17px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Chapter 5: Parallel and Intersecting Lines</h1>
+<p>Class 8 Mathematics • Ganita Prakash • Half-Yearly Question Bank</p>
+</header>
+
+<div class="container">
+
+<div class="instructions">
+<h2>Instructions</h2>
+<p>• Total Questions: 55</p>
+<p>• MCQs: 15 | True/False: 10 | Assertion–Reason: 5</p>
+<p>• Fill in the Blanks: 5 | Match the Following: 5</p>
+<p>• Drag & Drop Style: 5 | HOTS: 10</p>
+<p>• Select an answer to reveal the solution.</p>
+</div>
+
+<div class="quiz">
+
+<!-- ================= MCQ ================= -->
+
+<div class="section-title">Section A — Multiple Choice Questions (15)</div>
+
+<div class="question">
+<h3>1. Two lines that meet at exactly one point are called:</h3>
+<div class="options">
+<label><input type="radio" name="q1"> Parallel lines</label>
+<label><input type="radio" name="q1" class="correct"> Intersecting lines</label>
+<label><input type="radio" name="q1"> Coincident lines</label>
+<label><input type="radio" name="q1"> Curved lines</label>
+</div>
+<div class="answer">Correct Answer: Intersecting lines.</div>
+</div>
+
+<div class="question">
+<h3>2. Parallel lines remain:</h3>
+<div class="options">
+<label><input type="radio" name="q2"> At different angles always</label>
+<label><input type="radio" name="q2" class="correct"> The same distance apart</label>
+<label><input type="radio" name="q2"> Perpendicular to each other</label>
+<label><input type="radio" name="q2"> Joined at one endpoint</label>
+</div>
+<div class="answer">Correct Answer: The same distance apart.</div>
+</div>
+
+<div class="question">
+<h3>3. Two lines forming an angle of 90° are:</h3>
+<div class="options">
+<label><input type="radio" name="q3"> Parallel</label>
+<label><input type="radio" name="q3"> Oblique</label>
+<label><input type="radio" name="q3" class="correct"> Perpendicular</label>
+<label><input type="radio" name="q3"> Coincident</label>
+</div>
+<div class="answer">Correct Answer: Perpendicular.</div>
+</div>
+
+<div class="question">
+<h3>4. How many points do two distinct parallel lines have in common?</h3>
+<div class="options">
+<label><input type="radio" name="q4" class="correct"> No point</label>
+<label><input type="radio" name="q4"> One point</label>
+<label><input type="radio" name="q4"> Two points</label>
+<label><input type="radio" name="q4"> Infinitely many points</label>
+</div>
+<div class="answer">Correct Answer: No point.</div>
+</div>
+
+<div class="question">
+<h3>5. Which symbol represents two lines being parallel?</h3>
+<div class="options">
+<label><input type="radio" name="q5"> ⟂</label>
+<label><input type="radio" name="q5" class="correct"> ∥</label>
+<label><input type="radio" name="q5"> ∠</label>
+<label><input type="radio" name="q5"> ≠</label>
+</div>
+<div class="answer">Correct Answer: ∥</div>
+</div>
+
+<div class="question">
+<h3>6. If two lines intersect, the point where they meet is called the:</h3>
+<div class="options">
+<label><input type="radio" name="q6"> Midpoint</label>
+<label><input type="radio" name="q6"> Endpoint</label>
+<label><input type="radio" name="q6" class="correct"> Point of intersection</label>
+<label><input type="radio" name="q6"> Centre</label>
+</div>
+<div class="answer">Correct Answer: Point of intersection.</div>
+</div>
+
+<div class="question">
+<h3>7. Which pair of objects best represents parallel lines?</h3>
+<div class="options">
+<label><input type="radio" name="q7"> Hands of a clock at 3:00</label>
+<label><input type="radio" name="q7"> Two crossing roads</label>
+<label><input type="radio" name="q7" class="correct"> Opposite edges of a ruler</label>
+<label><input type="radio" name="q7"> Scissors blades crossing</label>
+</div>
+<div class="answer">Correct Answer: Opposite edges of a ruler.</div>
+</div>
+
+<div class="question">
+<h3>8. If one line crosses two parallel lines, it is called a:</h3>
+<div class="options">
+<label><input type="radio" name="q8"> Radius</label>
+<label><input type="radio" name="q8"> Diameter</label>
+<label><input type="radio" name="q8" class="correct"> Transversal</label>
+<label><input type="radio" name="q8"> Bisector</label>
+</div>
+<div class="answer">Correct Answer: Transversal.</div>
+</div>
+
+<div class="question">
+<h3>9. Two perpendicular lines form how many right angles at their intersection?</h3>
+<div class="options">
+<label><input type="radio" name="q9"> One</label>
+<label><input type="radio" name="q9"> Two</label>
+<label><input type="radio" name="q9" class="correct"> Four</label>
+<label><input type="radio" name="q9"> Three</label>
+</div>
+<div class="answer">Correct Answer: Four.</div>
+</div>
+
+<div class="question">
+<h3>10. If two parallel lines are cut by a transversal, corresponding angles are:</h3>
+<div class="options">
+<label><input type="radio" name="q10" class="correct"> Equal</label>
+<label><input type="radio" name="q10"> Always supplementary</label>
+<label><input type="radio" name="q10"> Always 90°</label>
+<label><input type="radio" name="q10"> Always unequal</label>
+</div>
+<div class="answer">Correct Answer: Equal.</div>
+</div>
+
+<div class="question">
+<h3>11. Vertically opposite angles formed by two intersecting lines are:</h3>
+<div class="options">
+<label><input type="radio" name="q11"> Supplementary only</label>
+<label><input type="radio" name="q11" class="correct"> Equal</label>
+<label><input type="radio" name="q11"> Complementary only</label>
+<label><input type="radio" name="q11"> Always 45°</label>
+</div>
+<div class="answer">Correct Answer: Equal.</div>
+</div>
+
+<div class="question">
+<h3>12. If one angle at an intersection is 65°, its vertically opposite angle is:</h3>
+<div class="options">
+<label><input type="radio" name="q12"> 25°</label>
+<label><input type="radio" name="q12"> 115°</label>
+<label><input type="radio" name="q12" class="correct"> 65°</label>
+<label><input type="radio" name="q12"> 125°</label>
+</div>
+<div class="answer">Correct Answer: 65°.</div>
+</div>
+
+<div class="question">
+<h3>13. If two adjacent angles form a straight line and one is 72°, the other is:</h3>
+<div class="options">
+<label><input type="radio" name="q13"> 72°</label>
+<label><input type="radio" name="q13"> 98°</label>
+<label><input type="radio" name="q13" class="correct"> 108°</label>
+<label><input type="radio" name="q13"> 118°</label>
+</div>
+<div class="answer">Correct Answer: 108°, because 180° − 72° = 108°.</div>
+</div>
+
+<div class="question">
+<h3>14. Which condition proves that two lines are perpendicular?</h3>
+<div class="options">
+<label><input type="radio" name="q14"> They never meet</label>
+<label><input type="radio" name="q14"> They meet at 45°</label>
+<label><input type="radio" name="q14" class="correct"> They meet at 90°</label>
+<label><input type="radio" name="q14"> They have equal lengths</label>
+</div>
+<div class="answer">Correct Answer: They meet at 90°.</div>
+</div>
+
+<div class="question">
+<h3>15. If one of two supplementary angles is 127°, the other is:</h3>
+<div class="options">
+<label><input type="radio" name="q15"> 43°</label>
+<label><input type="radio" name="q15" class="correct"> 53°</label>
+<label><input type="radio" name="q15"> 63°</label>
+<label><input type="radio" name="q15"> 73°</label>
+</div>
+<div class="answer">Correct Answer: 53°.</div>
+</div>
+
+
+<!-- ================= TRUE FALSE ================= -->
+
+<div class="section-title">Section B — True / False (10)</div>
+
+<div class="question">
+<h3>16. Two parallel lines never intersect.</h3>
+<div class="options">
+<label><input type="radio" name="q16" class="correct"> True</label>
+<label><input type="radio" name="q16"> False</label>
+</div>
+<div class="answer">Correct Answer: True.</div>
+</div>
+
+<div class="question">
+<h3>17. Perpendicular lines always make an angle of 90°.</h3>
+<div class="options">
+<label><input type="radio" name="q17" class="correct"> True</label>
+<label><input type="radio" name="q17"> False</label>
+</div>
+<div class="answer">Correct Answer: True.</div>
+</div>
+
+<div class="question">
+<h3>18. Intersecting lines must always be perpendicular.</h3>
+<div class="options">
+<label><input type="radio" name="q18"> True</label>
+<label><input type="radio" name="q18" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. Intersecting lines can form angles other than 90°.</div>
+</div>
+
+<div class="question">
+<h3>19. Vertically opposite angles are equal.</h3>
+<div class="options">
+<label><input type="radio" name="q19" class="correct"> True</label>
+<label><input type="radio" name="q19"> False</label>
+</div>
+<div class="answer">Correct Answer: True.</div>
+</div>
+
+<div class="question">
+<h3>20. Two distinct parallel lines have one common point.</h3>
+<div class="options">
+<label><input type="radio" name="q20"> True</label>
+<label><input type="radio" name="q20" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False.</div>
+</div>
+
+<div class="question">
+<h3>21. A transversal can intersect two parallel lines.</h3>
+<div class="options">
+<label><input type="radio" name="q21" class="correct"> True</label>
+<label><input type="radio" name="q21"> False</label>
+</div>
+<div class="answer">Correct Answer: True.</div>
+</div>
+
+<div class="question">
+<h3>22. Adjacent angles on a straight line add up to 180°.</h3>
+<div class="options">
+<label><input type="radio" name="q22" class="correct"> True</label>
+<label><input type="radio" name="q22"> False</label>
+</div>
+<div class="answer">Correct Answer: True.</div>
+</div>
+
+<div class="question">
+<h3>23. Corresponding angles are equal when a transversal cuts parallel lines.</h3>
+<div class="options">
+<label><input type="radio" name="q23" class="correct"> True</label>
+<label><input type="radio" name="q23"> False</label>
+</div>
+<div class="answer">Correct Answer: True.</div>
+</div>
+
+<div class="question">
+<h3>24. A right angle measures 180°.</h3>
+<div class="options">
+<label><input type="radio" name="q24"> True</label>
+<label><input type="radio" name="q24" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False. A right angle measures 90°.</div>
+</div>
+
+<div class="question">
+<h3>25. Two lines can intersect at more than one point and still be distinct straight lines.</h3>
+<div class="options">
+<label><input type="radio" name="q25"> True</label>
+<label><input type="radio" name="q25" class="correct"> False</label>
+</div>
+<div class="answer">Correct Answer: False.</div>
+</div>
+
+
+<!-- ================= ASSERTION ================= -->
+
+<div class="section-title">Section C — Assertion & Reasoning (5)</div>
+
+<p class="hint">
+A = Both true and R explains A |
+B = Both true but R does not explain A |
+C = A true, R false |
+D = A false, R true
+</p>
+
+<div class="question">
+<h3>26. Assertion: Vertically opposite angles are equal.<br>
+Reason: They are formed by the same two intersecting lines on opposite sides.</h3>
+<div class="options">
+<label><input type="radio" name="q26" class="correct"> A</label>
+<label><input type="radio" name="q26"> B</label>
+<label><input type="radio" name="q26"> C</label>
+<label><input type="radio" name="q26"> D</label>
+</div>
+<div class="answer">Correct Answer: A.</div>
+</div>
+
+<div class="question">
+<h3>27. Assertion: Parallel lines do not meet.<br>
+Reason: The perpendicular distance between them remains constant.</h3>
+<div class="options">
+<label><input type="radio" name="q27" class="correct"> A</label>
+<label><input type="radio" name="q27"> B</label>
+<label><input type="radio" name="q27"> C</label>
+<label><input type="radio" name="q27"> D</label>
+</div>
+<div class="answer">Correct Answer: A.</div>
+</div>
+
+<div class="question">
+<h3>28. Assertion: Two intersecting lines can form four right angles.<br>
+Reason: This happens when the lines are perpendicular.</h3>
+<div class="options">
+<label><input type="radio" name="q28" class="correct"> A</label>
+<label><input type="radio" name="q28"> B</label>
+<label><input type="radio" name="q28"> C</label>
+<label><input type="radio" name="q28"> D</label>
+</div>
+<div class="answer">Correct Answer: A.</div>
+</div>
+
+<div class="question">
+<h3>29. Assertion: If one angle of a linear pair is 40°, the other is 140°.<br>
+Reason: Angles forming a linear pair have a sum of 180°.</h3>
+<div class="options">
+<label><input type="radio" name="q29" class="correct"> A</label>
+<label><input type="radio" name="q29"> B</label>
+<label><input type="radio" name="q29"> C</label>
+<label><input type="radio" name="q29"> D</label>
+</div>
+<div class="answer">Correct Answer: A.</div>
+</div>
+
+<div class="question">
+<h3>30. Assertion: Corresponding angles are equal even when the two lines are not parallel.<br>
+Reason: Equality of corresponding angles can be used to establish that two lines are parallel.</h3>
+<div class="options">
+<label><input type="radio" name="q30"> A</label>
+<label><input type="radio" name="q30"> B</label>
+<label><input type="radio" name="q30" class="correct"> C</label>
+<label><input type="radio" name="q30"> D</label>
+</div>
+<div class="answer">Correct Answer: C. The assertion is false, while the reason is true.</div>
+</div>
+
+
+<!-- ================= FILL ================= -->
+
+<div class="section-title">Section D — Fill in the Blanks (5)</div>
+
+<div class="question">
+<h3>31. Lines that never meet are called ______ lines.</h3>
+<div class="options">
+<label><input type="radio" name="q31"> Intersecting</label>
+<label><input type="radio" name="q31" class="correct"> Parallel</label>
+<label><input type="radio" name="q31"> Perpendicular</label>
+<label><input type="radio" name="q31"> Slanting</label>
+</div>
+<div class="answer">Correct Answer: Parallel.</div>
+</div>
+
+<div class="question">
+<h3>32. The angle between perpendicular lines is ______.</h3>
+<div class="options">
+<label><input type="radio" name="q32"> 45°</label>
+<label><input type="radio" name="q32"> 60°</label>
+<label><input type="radio" name="q32" class="correct"> 90°</label>
+<label><input type="radio" name="q32"> 180°</label>
+</div>
+<div class="answer">Correct Answer: 90°.</div>
+</div>
+
+<div class="question">
+<h3>33. A line crossing two or more lines is called a ______.</h3>
+<div class="options">
+<label><input type="radio" name="q33"> Segment</label>
+<label><input type="radio" name="q33" class="correct"> Transversal</label>
+<label><input type="radio" name="q33"> Radius</label>
+<label><input type="radio" name="q33"> Chord</label>
+</div>
+<div class="answer">Correct Answer: Transversal.</div>
+</div>
+
+<div class="question">
+<h3>34. The sum of angles in a linear pair is ______.</h3>
+<div class="options">
+<label><input type="radio" name="q34"> 90°</label>
+<label><input type="radio" name="q34"> 120°</label>
+<label><input type="radio" name="q34" class="correct"> 180°</label>
+<label><input type="radio" name="q34"> 360°</label>
+</div>
+<div class="answer">Correct Answer: 180°.</div>
+</div>
+
+<div class="question">
+<h3>35. Opposite angles formed by two intersecting lines are called ______ angles.</h3>
+<div class="options">
+<label><input type="radio" name="q35"> Adjacent</label>
+<label><input type="radio" name="q35"> Supplementary</label>
+<label><input type="radio" name="q35" class="correct"> Vertically opposite</label>
+<label><input type="radio" name="q35"> Reflex</label>
+</div>
+<div class="answer">Correct Answer: Vertically opposite.</div>
+</div>
+
+
+<!-- ================= MATCH ================= -->
+
+<div class="section-title">Section E — Match the Following (5)</div>
+
+<div class="question match">
+<h3>36. Match the geometric term with its meaning.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. Parallel lines</div>
+<div class="match-right">
+<label><input type="radio" name="m1a" class="m1a correct"> Never meet</label>
+</div>
+
+<div class="match-left">B. Perpendicular lines</div>
+<div class="match-right">
+<label><input type="radio" name="m1b" class="m1b correct"> Meet at 90°</label>
+</div>
+
+<div class="match-left">C. Transversal</div>
+<div class="match-right">
+<label><input type="radio" name="m1c" class="m1c correct"> Crosses two or more lines</label>
+</div>
+
+<div class="match-left">D. Intersection</div>
+<div class="match-right">
+<label><input type="radio" name="m1d" class="m1d correct"> Common meeting point</label>
+</div>
+</div>
+
+<div class="answer">Correct pairs: A–Never meet, B–Meet at 90°, C–Crosses two or more lines, D–Common meeting point.</div>
+</div>
+
+<div class="question match">
+<h3>37. Match each angle measure with its type.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 90°</div>
+<div class="match-right">
+<label><input type="radio" name="m2a" class="m2a correct"> Right angle</label>
+</div>
+
+<div class="match-left">B. 45°</div>
+<div class="match-right">
+<label><input type="radio" name="m2b" class="m2b correct"> Acute angle</label>
+</div>
+
+<div class="match-left">C. 120°</div>
+<div class="match-right">
+<label><input type="radio" name="m2c" class="m2c correct"> Obtuse angle</label>
+</div>
+
+<div class="match-left">D. 180°</div>
+<div class="match-right">
+<label><input type="radio" name="m2d" class="m2d correct"> Straight angle</label>
+</div>
+</div>
+
+<div class="answer">Correct pairs: A–Right, B–Acute, C–Obtuse, D–Straight.</div>
+</div>
+
+<div class="question match">
+<h3>38. Match the angle relationship with the correct property.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. Vertically opposite angles</div>
+<div class="match-right">
+<label><input type="radio" name="m3a" class="m3a correct"> Equal</label>
+</div>
+
+<div class="match-left">B. Linear pair</div>
+<div class="match-right">
+<label><input type="radio" name="m3b" class="m3b correct"> Sum is 180°</label>
+</div>
+
+<div class="match-left">C. Complementary angles</div>
+<div class="match-right">
+<label><input type="radio" name="m3c" class="m3c correct"> Sum is 90°</label>
+</div>
+
+<div class="match-left">D. Supplementary angles</div>
+<div class="match-right">
+<label><input type="radio" name="m3d" class="m3d correct"> Sum is 180°</label>
+</div>
+</div>
+
+<div class="answer">Correct pairs: A–Equal, B–Sum 180°, C–Sum 90°, D–Sum 180°.</div>
+</div>
+
+<div class="question match">
+<h3>39. Match each situation with the appropriate lines.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. Railway tracks</div>
+<div class="match-right">
+<label><input type="radio" name="m4a" class="m4a correct"> Parallel</label>
+</div>
+
+<div class="match-left">B. Two sides of a right-angle corner</div>
+<div class="match-right">
+<label><input type="radio" name="m4b" class="m4b correct"> Perpendicular</label>
+</div>
+
+<div class="match-left">C. Crossing roads</div>
+<div class="match-right">
+<label><input type="radio" name="m4c" class="m4c correct"> Intersecting</label>
+</div>
+
+<div class="match-left">D. Grid lines crossing at right angles</div>
+<div class="match-right">
+<label><input type="radio" name="m4d" class="m4d correct"> Perpendicular</label>
+</div>
+</div>
+
+<div class="answer">Correct pairs: A–Parallel, B–Perpendicular, C–Intersecting, D–Perpendicular.</div>
+</div>
+
+<div class="question match">
+<h3>40. Match the given angle with the angle opposite it.</h3>
+
+<div class="match-grid">
+<div class="match-left">A. 35°</div>
+<div class="match-right">
+<label><input type="radio" name="m5a" class="m5a correct"> 35°</label>
+</div>
+
+<div class="match-left">B. 78°</div>
+<div class="match-right">
+<label><input type="radio" name="m5b" class="m5b correct"> 78°</label>
+</div>
+
+<div class="match-left">C. 112°</div>
+<div class="match-right">
+<label><input type="radio" name="m5c" class="m5c correct"> 112°</label>
+</div>
+
+<div class="match-left">D. 146°</div>
+<div class="match-right">
+<label><input type="radio" name="m5d" class="m5d correct"> 146°</label>
+</div>
+</div>
+
+<div class="answer">Vertically opposite angles are equal, so each opposite angle has the same measure.</div>
+</div>
+
+
+<!-- ================= DRAG ================= -->
+
+<div class="section-title">Section F — Drag & Drop Style Questions (5)</div>
+
+<div class="question">
+<h3>41. Arrange the reasoning steps to find the missing angle if a linear pair contains 68°.</h3>
+<div class="options">
+<label><input type="radio" name="q41"> 68° + 90° = 158°</label>
+<label><input type="radio" name="q41" class="correct"> Linear pair → sum 180° → 180° − 68° = 112°</label>
+<label><input type="radio" name="q41"> 180° + 68° = 248°</label>
+<label><input type="radio" name="q41"> 68° ÷ 2 = 34°</label>
+</div>
+<div class="answer">Correct sequence: Linear pair → 180° → 180°−68° = 112°.</div>
+</div>
+
+<div class="question">
+<h3>42. Arrange the steps for finding the vertically opposite angle to 83°.</h3>
+<div class="options">
+<label><input type="radio" name="q42"> 180° − 83° = 97°</label>
+<label><input type="radio" name="q42" class="correct"> Identify vertically opposite angles → opposite angles are equal → 83°</label>
+<label><input type="radio" name="q42"> 83° + 83° = 166°</label>
+<label><input type="radio" name="q42"> 83° ÷ 2 = 41.5°</label>
+</div>
+<div class="answer">Correct sequence gives 83°.</div>
+</div>
+
+<div class="question">
+<h3>43. Arrange from smallest angle to largest angle.</h3>
+<div class="options">
+<label><input type="radio" name="q43"> 120°, 45°, 90°, 30°</label>
+<label><input type="radio" name="q43" class="correct"> 30°, 45°, 90°, 120°</label>
+<label><input type="radio" name="q43"> 45°, 30°, 120°, 90°</label>
+<label><input type="radio" name="q43"> 90°, 30°, 45°, 120°</label>
+</div>
+<div class="answer">Correct Sequence: 30°, 45°, 90°, 120°.</div>
+</div>
+
+<div class="question">
+<h3>44. Choose the correct sequence for identifying perpendicular lines.</h3>
+<div class="options">
+<label><input type="radio" name="q44"> Lines never meet → parallel</label>
+<label><input type="radio" name="q44" class="correct"> Lines meet → angle is 90° → perpendicular</label>
+<label><input type="radio" name="q44"> Lines meet → angle is 45° → perpendicular</label>
+<label><input type="radio" name="q44"> Lines have equal lengths → perpendicular</label>
+</div>
+<div class="answer">Correct Sequence: Lines meet → angle 90° → perpendicular.</div>
+</div>
+
+<div class="question">
+<h3>45. Arrange the steps for checking whether two lines are parallel using corresponding angles.</h3>
+<div class="options">
+<label><input type="radio" name="q45"> Measure one angle → ignore the other</label>
+<label><input type="radio" name="q45"> Draw a circle → measure radius</label>
+<label><input type="radio" name="q45" class="correct"> Identify corresponding angles → compare them → if equal, lines can be parallel</label>
+<label><input type="radio" name="q45"> Add corresponding angles → divide by 2</label>
+</div>
+<div class="answer">Correct Sequence: Identify corresponding angles → compare → equality establishes parallelism.</div>
+</div>
+
+
+<!-- ================= HOTS ================= -->
+
+<div class="section-title">Section G — HOTS / Higher Order Thinking (10)</div>
+
+<div class="question">
+<h3>46. Two parallel lines are cut by a transversal. One corresponding angle is 74°. What is the other corresponding angle?</h3>
+<div class="options">
+<label><input type="radio" name="q46"> 106°</label>
+<label><input type="radio" name="q46" class="correct"> 74°</label>
+<label><input type="radio" name="q46"> 90°</label>
+<label><input type="radio" name="q46"> 148°</label>
+</div>
+<div class="answer">Correct Answer: 74°.</div>
+</div>
+
+<div class="question">
+<h3>47. Two lines intersect. One angle is 118°. Find the adjacent angle.</h3>
+<div class="options">
+<label><input type="radio" name="q47"> 118°</label>
+<label><input type="radio" name="q47"> 72°</label>
+<label><input type="radio" name="q47" class="correct"> 62°</label>
+<label><input type="radio" name="q47"> 52°</label>
+</div>
+<div class="answer">Adjacent angles form a linear pair: 180°−118° = 62°.</div>
+</div>
+
+<div class="question">
+<h3>48. A transversal makes an angle of 56° with one of two parallel lines. What is the corresponding angle at the other line?</h3>
+<div class="options">
+<label><input type="radio" name="q48"> 124°</label>
+<label><input type="radio" name="q48" class="correct"> 56°</label>
+<label><input type="radio" name="q48"> 34°</label>
+<label><input type="radio" name="q48"> 90°</label>
+</div>
+<div class="answer">Correct Answer: 56°.</div>
+</div>
+
+<div class="question">
+<h3>49. Two angles form a linear pair. Their measures are (3x + 10)° and (2x + 20)°. Find x.</h3>
+<div class="options">
+<label><input type="radio" name="q49"> 20</label>
+<label><input type="radio" name="q49"> 25</label>
+<label><input type="radio" name="q49" class="correct"> 30</label>
+<label><input type="radio" name="q49"> 35</label>
+</div>
+<div class="answer">3x+10+2x+20=180 → 5x=150 → x=30.</div>
+</div>
+
+<div class="question">
+<h3>50. At an intersection, one angle is twice another angle. If the two are adjacent, what are their measures?</h3>
+<div class="options">
+<label><input type="radio" name="q50"> 30° and 60°</label>
+<label><input type="radio" name="q50" class="correct"> 60° and 120°</label>
+<label><input type="radio" name="q50"> 45° and 135°</label>
+<label><input type="radio" name="q50"> 50° and 100°</label>
+</div>
+<div class="answer">Let the smaller angle be x. x+2x=180°, so x=60°. The angles are 60° and 120°.</div>
+</div>
+
+<div class="question">
+<h3>51. A student says two intersecting lines are parallel because they look almost parallel. What is the best mathematical response?</h3>
+<div class="options">
+<label><input type="radio" name="q51"> Appearance alone proves parallelism</label>
+<label><input type="radio" name="q51"> All straight lines are parallel</label>
+<label><input type="radio" name="q51" class="correct"> Parallelism must be established by geometric properties, not appearance</label>
+<label><input type="radio" name="q51"> Parallel lines must have equal lengths</label>
+</div>
+<div class="answer">Correct Answer: Parallelism must be established by geometric properties.</div>
+</div>
+
+<div class="question">
+<h3>52. If two lines are perpendicular, what is the measure of every angle formed at their intersection?</h3>
+<div class="options">
+<label><input type="radio" name="q52"> 45°</label>
+<label><input type="radio" name="q52"> 60°</label>
+<label><input type="radio" name="q52" class="correct"> 90°</label>
+<label><input type="radio" name="q52"> 180°</label>
+</div>
+<div class="answer">Correct Answer: 90°.</div>
+</div>
+
+<div class="question">
+<h3>53. Corresponding angles made by a transversal are 3x° and (x + 40)°. If the lines are parallel, find x.</h3>
+<div class="options">
+<label><input type="radio" name="q53"> 10</label>
+<label><input type="radio" name="q53"> 15</label>
+<label><input type="radio" name="q53" class="correct"> 20</label>
+<label><input type="radio" name="q53"> 25</label>
+</div>
+<div class="answer">Corresponding angles are equal: 3x=x+40 → 2x=40 → x=20.</div>
+</div>
+
+<div class="question">
+<h3>54. Two adjacent angles are (4x − 10)° and (2x + 10)°. They form a straight line. Find the larger angle.</h3>
+<div class="options">
+<label><input type="radio" name="q54"> 100°</label>
+<label><input type="radio" name="q54" class="correct"> 110°</label>
+<label><input type="radio" name="q54"> 120°</label>
+<label><input type="radio" name="q54"> 130°</label>
+</div>
+<div class="answer">4x−10+2x+10=180 → 6x=180 → x=30. Angles are 110° and 70°. Larger angle = 110°.</div>
+</div>
+
+<div class="question">
+<h3>55. A pair of corresponding angles are (5x − 15)° and (3x + 25)°. If the lines are parallel, what is the common angle?</h3>
+<div class="options">
+<label><input type="radio" name="q55"> 70°</label>
+<label><input type="radio" name="q55"> 80°</label>
+<label><input type="radio" name="q55" class="correct"> 85°</label>
+<label><input type="radio" name="q55"> 95°</label>
+</div>
+<div class="answer">5x−15 = 3x+25 → 2x=40 → x=20. Common angle = 5(20)−15 = 85°.</div>
+</div>
+
+
+<!-- ================= SCORE ================= -->
+
+<div class="score-card">
+<h2>🎯 Your Score</h2>
+<p>Correctly answered questions:</p>
+<div class="score-number"></div>
+<p>Keep practising for your half-yearly examination.</p>
+</div>
+
+</div>
+</div>
+
+<footer>
+<p>Class 8 Mathematics • Ganita Prakash • Chapter 5</p>
+</footer>
+
+</body>
+</html>

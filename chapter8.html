@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Class 8 Maths - Chapter 8</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:#eef3f8;
+ color:#17202a;
+}
+header{
+ background:#172b4d;
+ color:white;
+ padding:28px 20px;
+ text-align:center;
+}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0}
+.container{max-width:1000px;margin:25px auto;padding:0 15px}
+.section{
+ background:white;
+ padding:20px;
+ margin-bottom:22px;
+ border-radius:14px;
+ box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+.section h2{
+ color:#173b67;
+ border-bottom:2px solid #d8e3ef;
+ padding-bottom:10px;
+}
+.question{
+ padding:16px;
+ margin:15px 0;
+ background:#f7f9fc;
+ border-left:5px solid #356a9f;
+ border-radius:9px;
+}
+.question p{font-weight:bold;line-height:1.5}
+label{
+ display:block;
+ padding:9px;
+ margin:5px 0;
+ background:white;
+ border:1px solid #d7dee7;
+ border-radius:7px;
+ cursor:pointer;
+}
+label:hover{background:#edf4fb}
+input{margin-right:8px}
+.answer{
+ display:none;
+ margin-top:12px;
+ padding:11px;
+ background:#e9f7ed;
+ border-left:4px solid #218739;
+ font-weight:bold;
+}
+.question:has(input:checked) .answer{display:block}
+
+.quiz{counter-reset:score}
+.question:not(.match):has(.correct:checked){counter-increment:score}
+
+.match.m1:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){counter-increment:score}
+.match.m2:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){counter-increment:score}
+.match.m3:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){counter-increment:score}
+.match.m4:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){counter-increment:score}
+.match.m5:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){counter-increment:score}
+
+.score{
+ text-align:center;
+ background:#172b4d;
+ color:white;
+ padding:25px;
+ border-radius:15px;
+ margin:30px 0;
+}
+.score-number{font-size:32px;font-weight:bold}
+.score-number::after{content:counter(score) " / 55"}
+.drag{border:2px dashed #527da8;background:#f0f6fc}
+.note{
+ background:#fff7dc;
+ padding:12px;
+ border-radius:8px;
+ font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Class 8 Mathematics</h1>
+<p>Chapter 8 — Working with Fractions</p>
+</header>
+
+<div class="container quiz">
+
+<div class="section">
+<h2>Section A — Multiple Choice Questions (15)</h2>
+
+<div class="question">
+<p>1. Which fraction is equivalent to 3/5?</p>
+<label><input type="radio" name="q1"> 6/15</label>
+<label class="correct"><input class="correct" type="radio" name="q1"> 9/15</label>
+<label><input type="radio" name="q1"> 12/25</label>
+<label><input type="radio" name="q1"> 15/20</label>
+<div class="answer">Correct Answer: 9/15</div>
+</div>
+
+<div class="question">
+<p>2. What is 2/3 + 1/6?</p>
+<label><input type="radio" name="q2"> 1/2</label>
+<label><input class="correct" type="radio" name="q2"> 5/6</label>
+<label><input type="radio" name="q2"> 2/9</label>
+<label><input type="radio" name="q2"> 3/6</label>
+<div class="answer">Correct Answer: 5/6</div>
+</div>
+
+<div class="question">
+<p>3. What is 7/8 − 3/8?</p>
+<label><input type="radio" name="q3"> 1/8</label>
+<label class="correct"><input class="correct" type="radio" name="q3"> 1/2</label>
+<label><input type="radio" name="q3"> 3/8</label>
+<label><input type="radio" name="q3"> 5/8</label>
+<div class="answer">Correct Answer: 1/2</div>
+</div>
+
+<div class="question">
+<p>4. The reciprocal of 5/7 is:</p>
+<label><input type="radio" name="q4"> 5/7</label>
+<label><input type="radio" name="q4"> −5/7</label>
+<label class="correct"><input class="correct" type="radio" name="q4"> 7/5</label>
+<label><input type="radio" name="q4"> 2/5</label>
+<div class="answer">Correct Answer: 7/5</div>
+</div>
+
+<div class="question">
+<p>5. Which is greater?</p>
+<label><input type="radio" name="q5"> 5/12</label>
+<label class="correct"><input class="correct" type="radio" name="q5"> 7/12</label>
+<label><input type="radio" name="q5"> 3/12</label>
+<label><input type="radio" name="q5"> 1/12</label>
+<div class="answer">Correct Answer: 7/12</div>
+</div>
+
+<div class="question">
+<p>6. 3/4 × 2/5 equals:</p>
+<label class="correct"><input class="correct" type="radio" name="q6"> 3/10</label>
+<label><input type="radio" name="q6"> 2/9</label>
+<label><input type="radio" name="q6"> 5/8</label>
+<label><input type="radio" name="q6"> 7/10</label>
+<div class="answer">Correct Answer: 3/10</div>
+</div>
+
+<div class="question">
+<p>7. 5/6 ÷ 10/9 equals:</p>
+<label><input type="radio" name="q7"> 2/3</label>
+<label class="correct"><input class="correct" type="radio" name="q7"> 3/4</label>
+<label><input type="radio" name="q7"> 4/5</label>
+<label><input type="radio" name="q7"> 5/9</label>
+<div class="answer">Correct Answer: 3/4</div>
+</div>
+
+<div class="question">
+<p>8. Which fraction is already in simplest form?</p>
+<label><input type="radio" name="q8"> 12/18</label>
+<label><input type="radio" name="q8"> 15/25</label>
+<label class="correct"><input class="correct" type="radio" name="q8"> 7/11</label>
+<label><input type="radio" name="q8"> 18/24</label>
+<div class="answer">Correct Answer: 7/11</div>
+</div>
+
+<div class="question">
+<p>9. 1 2/5 expressed as an improper fraction is:</p>
+<label><input type="radio" name="q9"> 5/7</label>
+<label><input type="radio" name="q9"> 6/5</label>
+<label class="correct"><input class="correct" type="radio" name="q9"> 7/5</label>
+<label><input type="radio" name="q9"> 8/5</label>
+<div class="answer">Correct Answer: 7/5</div>
+</div>
+
+<div class="question">
+<p>10. 11/4 expressed as a mixed number is:</p>
+<label><input type="radio" name="q10"> 1 3/4</label>
+<label class="correct"><input class="correct" type="radio" name="q10"> 2 3/4</label>
+<label><input type="radio" name="q10"> 2 1/4</label>
+<label><input type="radio" name="q10"> 3 1/4</label>
+<div class="answer">Correct Answer: 2 3/4</div>
+</div>
+
+<div class="question">
+<p>11. Which fraction is equal to 1?</p>
+<label><input type="radio" name="q11"> 4/5</label>
+<label><input type="radio" name="q11"> 5/6</label>
+<label class="correct"><input class="correct" type="radio" name="q11"> 9/9</label>
+<label><input type="radio" name="q11"> 7/8</label>
+<div class="answer">Correct Answer: 9/9</div>
+</div>
+
+<div class="question">
+<p>12. What is 5/9 + 2/3?</p>
+<label><input type="radio" name="q12"> 7/12</label>
+<label><input type="radio" name="q12"> 8/9</label>
+<label class="correct"><input class="correct" type="radio" name="q12"> 11/9</label>
+<label><input type="radio" name="q12"> 10/9</label>
+<div class="answer">Correct Answer: 11/9</div>
+</div>
+
+<div class="question">
+<p>13. What is 7/10 − 1/4?</p>
+<label class="correct"><input class="correct" type="radio" name="q13"> 9/20</label>
+<label><input type="radio" name="q13"> 11/20</label>
+<label><input type="radio" name="q13"> 13/20</label>
+<label><input type="radio" name="q13"> 7/20</label>
+<div class="answer">Correct Answer: 9/20</div>
+</div>
+
+<div class="question">
+<p>14. Which fraction lies between 1/3 and 1/2?</p>
+<label><input type="radio" name="q14"> 1/5</label>
+<label class="correct"><input class="correct" type="radio" name="q14"> 5/12</label>
+<label><input type="radio" name="q14"> 7/12</label>
+<label><input type="radio" name="q14"> 2/3</label>
+<div class="answer">Correct Answer: 5/12</div>
+</div>
+
+<div class="question">
+<p>15. If 3/7 of a number is 12, the number is:</p>
+<label><input type="radio" name="q15"> 21</label>
+<label><input type="radio" name="q15"> 24</label>
+<label class="correct"><input class="correct" type="radio" name="q15"> 28</label>
+<label><input type="radio" name="q15"> 35</label>
+<div class="answer">Correct Answer: 28</div>
+</div>
+</div>
+
+
+<div class="section">
+<h2>Section B — True / False (10)</h2>
+
+<div class="question"><p>16. 4/8 and 1/2 are equivalent fractions.</p>
+<label><input class="correct" type="radio" name="q16"> True</label><label><input type="radio" name="q16"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>17. The reciprocal of a non-zero fraction is obtained by interchanging numerator and denominator.</p>
+<label><input class="correct" type="radio" name="q17"> True</label><label><input type="radio" name="q17"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>18. 2/5 + 1/5 = 3/10.</p>
+<label><input type="radio" name="q18"> True</label><label><input class="correct" type="radio" name="q18"> False</label>
+<div class="answer">Correct Answer: False. It equals 3/5.</div></div>
+
+<div class="question"><p>19. Every improper fraction is greater than or equal to 1.</p>
+<label><input class="correct" type="radio" name="q19"> True</label><label><input type="radio" name="q19"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>20. 3/7 × 0 = 3/7.</p>
+<label><input type="radio" name="q20"> True</label><label><input class="correct" type="radio" name="q20"> False</label>
+<div class="answer">Correct Answer: False. The product is 0.</div></div>
+
+<div class="question"><p>21. To add fractions with different denominators, we can first convert them to equivalent fractions with a common denominator.</p>
+<label><input class="correct" type="radio" name="q21"> True</label><label><input type="radio" name="q21"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>22. 5/6 is less than 3/4.</p>
+<label><input type="radio" name="q22"> True</label><label><input class="correct" type="radio" name="q22"> False</label>
+<div class="answer">Correct Answer: False. 5/6 is greater than 3/4.</div></div>
+
+<div class="question"><p>23. Division by a non-zero fraction is equivalent to multiplication by its reciprocal.</p>
+<label><input class="correct" type="radio" name="q23"> True</label><label><input type="radio" name="q23"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>24. 7/3 can be written as 2 1/3.</p>
+<label><input class="correct" type="radio" name="q24"> True</label><label><input type="radio" name="q24"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>25. Multiplying a fraction by 1 changes its value.</p>
+<label><input type="radio" name="q25"> True</label><label><input class="correct" type="radio" name="q25"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+</div>
+
+
+<div class="section">
+<h2>Section C — Assertion & Reasoning (5)</h2>
+<div class="note">A = Both true and R explains A | B = Both true but R does not explain A | C = A true, R false | D = A false, R true</div>
+
+<div class="question">
+<p>26. Assertion: 2/3 + 1/3 = 1.<br>Reason: Fractions with the same denominator are added by adding their numerators.</p>
+<label class="correct"><input class="correct" type="radio" name="q26"> A</label>
+<label><input type="radio" name="q26"> B</label><label><input type="radio" name="q26"> C</label><label><input type="radio" name="q26"> D</label>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<p>27. Assertion: 3/5 × 5/3 = 1.<br>Reason: A non-zero number multiplied by its reciprocal equals 1.</p>
+<label class="correct"><input class="correct" type="radio" name="q27"> A</label>
+<label><input type="radio" name="q27"> B</label><label><input type="radio" name="q27"> C</label><label><input type="radio" name="q27"> D</label>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<p>28. Assertion: 4/7 is greater than 4/9.<br>Reason: For positive fractions with the same numerator, the fraction with the smaller denominator is greater.</p>
+<label class="correct"><input class="correct" type="radio" name="q28"> A</label>
+<label><input type="radio" name="q28"> B</label><label><input type="radio" name="q28"> C</label><label><input type="radio" name="q28"> D</label>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<p>29. Assertion: 5/8 + 1/8 = 6/16.<br>Reason: When denominators are equal, add the numerators and keep the denominator unchanged.</p>
+<label><input type="radio" name="q29"> A</label><label><input type="radio" name="q29"> B</label><label><input type="radio" name="q29"> C</label><label class="correct"><input class="correct" type="radio" name="q29"> D</label>
+<div class="answer">Correct Answer: D</div>
+</div>
+
+<div class="question">
+<p>30. Assertion: 7/10 ÷ 7/5 = 1/2.<br>Reason: Dividing by a non-zero fraction means multiplying by its reciprocal.</p>
+<label class="correct"><input class="correct" type="radio" name="q30"> A</label>
+<label><input type="radio" name="q30"> B</label><label><input type="radio" name="q30"> C</label><label><input type="radio" name="q30"> D</label>
+<div class="answer">Correct Answer: A</div>
+</div>
+</div>
+
+
+<div class="section">
+<h2>Section D — Fill in the Blanks (5)</h2>
+
+<div class="question"><p>31. A fraction whose numerator is smaller than its denominator is called a ______ fraction.</p>
+<label class="correct"><input class="correct" type="radio" name="q31"> proper</label>
+<label><input type="radio" name="q31"> improper</label><label><input type="radio" name="q31"> mixed</label><label><input type="radio" name="q31"> whole</label>
+<div class="answer">Correct Answer: Proper</div></div>
+
+<div class="question"><p>32. The reciprocal of 8/11 is ______.</p>
+<label><input type="radio" name="q32"> 8/11</label><label class="correct"><input class="correct" type="radio" name="q32"> 11/8</label><label><input type="radio" name="q32"> 3/8</label><label><input type="radio" name="q32"> 19/8</label>
+<div class="answer">Correct Answer: 11/8</div></div>
+
+<div class="question"><p>33. 1/4 + 1/4 = ______.</p>
+<label><input type="radio" name="q33"> 1/8</label><label class="correct"><input class="correct" type="radio" name="q33"> 1/2</label><label><input type="radio" name="q33"> 2/8</label><label><input type="radio" name="q33"> 3/4</label>
+<div class="answer">Correct Answer: 1/2</div></div>
+
+<div class="question"><p>34. A fraction equivalent to 2/3 with denominator 15 is ______.</p>
+<label><input type="radio" name="q34"> 8/15</label><label class="correct"><input class="correct" type="radio" name="q34"> 10/15</label><label><input type="radio" name="q34"> 12/15</label><label><input type="radio" name="q34"> 6/15</label>
+<div class="answer">Correct Answer: 10/15</div></div>
+
+<div class="question"><p>35. The reciprocal of a non-zero whole number n is ______.</p>
+<label><input type="radio" name="q35"> n</label><label><input type="radio" name="q35"> n²</label><label class="correct"><input class="correct" type="radio" name="q35"> 1/n</label><label><input type="radio" name="q35"> n+1</label>
+<div class="answer">Correct Answer: 1/n</div></div>
+</div>
+
+
+<div class="section">
+<h2>Section E — Match the Following (5)</h2>
+
+<div class="question match m1">
+<p>36. Match each fraction operation with its result.</p>
+
+<p>1/2 + 1/4</p>
+<label><input type="radio" name="m1a"> 1/4</label><label class="correct"><input class="correct m1a" type="radio" name="m1a"> 3/4</label><label><input type="radio" name="m1a"> 2/3</label><label><input type="radio" name="m1a"> 5/6</label>
+
+<p>3/5 − 1/5</p>
+<label><input type="radio" name="m1b"> 1/5</label><label><input type="radio" name="m1b"> 1/2</label><label class="correct"><input class="correct m1b" type="radio" name="m1b"> 2/5</label><label><input type="radio" name="m1b"> 3/5</label>
+
+<p>2/3 × 3/4</p>
+<label><input type="radio" name="m1c"> 1/3</label><label class="correct"><input class="correct m1c" type="radio" name="m1c"> 1/2</label><label><input type="radio" name="m1c"> 2/5</label><label><input type="radio" name="m1c"> 3/5</label>
+
+<p>4/7 ÷ 2/7</p>
+<label><input type="radio" name="m1d"> 1</label><label><input type="radio" name="m1d"> 3/2</label><label class="correct"><input class="correct m1d" type="radio" name="m1d"> 2</label><label><input type="radio" name="m1d"> 4</label>
+
+<div class="answer">Correct matching: 3/4, 2/5, 1/2, 2.</div>
+</div>
+
+<div class="question match m2">
+<p>37. Match each improper fraction with its mixed form.</p>
+
+<p>7/3</p>
+<label class="correct"><input class="correct m2a" type="radio" name="m2a"> 2 1/3</label><label><input type="radio" name="m2a"> 1 2/3</label><label><input type="radio" name="m2a"> 3 1/2</label><label><input type="radio" name="m2a"> 2 2/3</label>
+
+<p>11/4</p>
+<label><input type="radio" name="m2b"> 2 1/4</label><label class="correct"><input class="correct m2b" type="radio" name="m2b"> 2 3/4</label><label><input type="radio" name="m2b"> 3 1/4</label><label><input type="radio" name="m2b"> 1 3/4</label>
+
+<p>13/5</p>
+<label><input type="radio" name="m2c"> 1 3/5</label><label><input type="radio" name="m2c"> 2 2/5</label><label class="correct"><input class="correct m2c" type="radio" name="m2c"> 2 3/5</label><label><input type="radio" name="m2c"> 3 2/5</label>
+
+<p>17/6</p>
+<label><input type="radio" name="m2d"> 2 1/6</label><label><input type="radio" name="m2d"> 2 4/6</label><label class="correct"><input class="correct m2d" type="radio" name="m2d"> 2 5/6</label><label><input type="radio" name="m2d"> 3 1/6</label>
+
+<div class="answer">Correct matching: 7/3→2 1/3; 11/4→2 3/4; 13/5→2 3/5; 17/6→2 5/6.</div>
+</div>
+
+<div class="question match m3">
+<p>38. Match each fraction with an equivalent fraction.</p>
+
+<p>2/5</p>
+<label><input type="radio" name="m3a"> 4/15</label><label class="correct"><input class="correct m3a" type="radio" name="m3a"> 6/15</label><label><input type="radio" name="m3a"> 8/25</label><label><input type="radio" name="m3a"> 10/20</label>
+
+<p>3/7</p>
+<label><input type="radio" name="m3b"> 5/14</label><label><input type="radio" name="m3b"> 8/21</label><label class="correct"><input class="correct m3b" type="radio" name="m3b"> 9/21</label><label><input type="radio" name="m3b"> 12/28</label>
+
+<p>4/9</p>
+<label><input type="radio" name="m3c"> 6/18</label><label class="correct"><input class="correct m3c" type="radio" name="m3c"> 8/18</label><label><input type="radio" name="m3c"> 10/27</label><label><input type="radio" name="m3c"> 12/36</label>
+
+<p>5/8</p>
+<label><input type="radio" name="m3d"> 10/12</label><label><input type="radio" name="m3d"> 12/18</label><label class="correct"><input class="correct m3d" type="radio" name="m3d"> 15/24</label><label><input type="radio" name="m3d"> 20/40</label>
+
+<div class="answer">Correct matching: 2/5→6/15; 3/7→9/21; 4/9→8/18; 5/8→15/24.</div>
+</div>
+
+<div class="question match m4">
+<p>39. Match each fraction with its reciprocal.</p>
+
+<p>2/9</p>
+<label><input type="radio" name="m4a"> 2/9</label><label class="correct"><input class="correct m4a" type="radio" name="m4a"> 9/2</label><label><input type="radio" name="m4a"> 7/2</label><label><input type="radio" name="m4a"> 9/4</label>
+
+<p>4/11</p>
+<label class="correct"><input class="correct m4b" type="radio" name="m4b"> 11/4</label>
+<label><input type="radio" name="m4b"> 4/11</label>
+<label><input type="radio" name="m4b"> 7/4</label>
+<label><input type="radio" name="m4b"> 11/7</label>
+<p>5/12</p>
+<label class="correct"><input class="correct m4c" type="radio" name="m4c"> 12/5</label><label><input type="radio" name="m4c"> 5/12</label><label><input type="radio" name="m4c"> 10/5</label><label><input type="radio" name="m4c"> 12/7</label>
+
+<p>7/13</p>
+<label><input type="radio" name="m4d"> 13/5</label><label><input type="radio" name="m4d"> 7/13</label><label><input type="radio" name="m4d"> 12/7</label><label class="correct"><input class="correct m4d" type="radio" name="m4d"> 13/7</label>
+
+<div class="answer">Correct matching: 2/9→9/2; 4/11→11/4; 5/12→12/5; 7/13→13/7.</div>
+</div>
+
+<div class="question match m5">
+<p>40. Match each fraction with its decimal value.</p>
+
+<p>1/2</p>
+<label class="correct"><input class="correct m5a" type="radio" name="m5a"> 0.5</label><label><input type="radio" name="m5a"> 0.25</label><label><input type="radio" name="m5a"> 0.75</label><label><input type="radio" name="m5a"> 0.2</label>
+
+<p>1/4</p>
+<label><input type="radio" name="m5b"> 0.5</label><label class="correct"><input class="correct m5b" type="radio" name="m5b"> 0.25</label><label><input type="radio" name="m5b"> 0.4</label><label><input type="radio" name="m5b"> 0.75</label>
+
+<p>3/4</p>
+<label><input type="radio" name="m5c"> 0.25</label><label><input type="radio" name="m5c"> 0.5</label><label class="correct"><input class="correct m5c" type="radio" name="m5c"> 0.75</label><label><input type="radio" name="m5c"> 0.8</label>
+
+<p>1/5</p>
+<label><input type="radio" name="m5d"> 0.1</label><label><input type="radio" name="m5d"> 0.25</label><label><input type="radio" name="m5d"> 0.4</label><label class="correct"><input class="correct m5d" type="radio" name="m5d"> 0.2</label>
+
+<div class="answer">Correct matching: 1/2→0.5; 1/4→0.25; 3/4→0.75; 1/5→0.2.</div>
+</div>
+</div>
+
+
+<div class="section">
+<h2>Section F — Drag & Drop Style Questions (5)</h2>
+<p class="note">CSS-only version: select the option you would drag into the answer box.</p>
+
+<div class="question drag">
+<p>41. Drag the result: 2/7 + 3/7 = ?</p>
+<label><input type="radio" name="q41"> 4/7</label>
+<label class="correct"><input class="correct" type="radio" name="q41"> 5/7</label>
+<label><input type="radio" name="q41"> 5/14</label>
+<label><input type="radio" name="q41"> 6/7</label>
+<div class="answer">Correct Answer: 5/7</div>
+</div>
+
+<div class="question drag">
+<p>42. Drag the result: 5/6 − 1/3 = ?</p>
+<label><input type="radio" name="q42"> 1/6</label>
+<label><input type="radio" name="q42"> 1/3</label>
+<label class="correct"><input class="correct" type="radio" name="q42"> 1/2</label>
+<label><input type="radio" name="q42"> 2/3</label>
+<div class="answer">Correct Answer: 1/2</div>
+</div>
+
+<div class="question drag">
+<p>43. Drag the result: 4/9 × 3/8 = ?</p>
+<label class="correct"><input class="correct" type="radio" name="q43"> 1/6</label>
+<label><input type="radio" name="q43"> 1/4</label>
+<label><input type="radio" name="q43"> 2/9</label>
+<label><input type="radio" name="q43"> 3/8</label>
+<div class="answer">Correct Answer: 1/6</div>
+</div>
+
+
+<div class="question drag">
+<p>44. Drag the result: 3/5 ÷ 6/25 = ?</p>
+<label><input type="radio" name="q44"> 2</label>
+<label class="correct"><input class="correct" type="radio" name="q44"> 5/2</label>
+<label><input type="radio" name="q44"> 3/2</label>
+<label><input type="radio" name="q44"> 4/5</label>
+<div class="answer">Correct Answer: 5/2</div>
+</div>
+
+<div class="question drag">
+<p>45. Drag the fraction equal to 0.75.</p>
+<label><input type="radio" name="q45"> 1/2</label>
+<label><input type="radio" name="q45"> 2/5</label>
+<label class="correct"><input class="correct" type="radio" name="q45"> 3/4</label>
+<label><input type="radio" name="q45"> 4/5</label>
+<div class="answer">Correct Answer: 3/4</div>
+</div>
+</div>
+
+
+<div class="section">
+<h2>Section G — HOTS / Higher Order Thinking (10)</h2>
+
+<div class="question">
+<p>46. Riya ate 2/5 of a cake and her brother ate 1/4 of the same cake. What fraction of the cake was eaten altogether?</p>
+<label><input type="radio" name="q46"> 11/20</label>
+<label class="correct"><input class="correct" type="radio" name="q46"> 13/20</label>
+<label><input type="radio" name="q46"> 3/9</label>
+<label><input type="radio" name="q46"> 7/20</label>
+<div class="answer">Correct Answer: 13/20.</div>
+</div>
+
+<div class="question">
+<p>47. A tank is 5/6 full. If 1/3 of the tank's capacity is used, what fraction of the tank remains full?</p>
+<label class="correct"><input class="correct" type="radio" name="q47"> 1/2</label>
+<label><input type="radio" name="q47"> 1/3</label>
+<label><input type="radio" name="q47"> 2/3</label>
+<label><input type="radio" name="q47"> 3/4</label>
+<div class="answer">Correct Answer: 1/2. 5/6 − 1/3 = 5/6 − 2/6 = 3/6 = 1/2.</div>
+</div>
+
+<div class="question">
+<p>48. A ribbon is 7/8 metre long. It is cut into pieces of 1/8 metre each. How many pieces are obtained?</p>
+<label><input type="radio" name="q48"> 6</label>
+<label class="correct"><input class="correct" type="radio" name="q48"> 7</label>
+<label><input type="radio" name="q48"> 8</label>
+<label><input type="radio" name="q48"> 9</label>
+<div class="answer">Correct Answer: 7 pieces.</div>
+</div>
+
+<div class="question">
+<p>49. A student has ₹240 and spends 3/8 of it. How much money is left?</p>
+<label><input type="radio" name="q49"> ₹120</label>
+<label><input type="radio" name="q49"> ₹135</label>
+<label class="correct"><input class="correct" type="radio" name="q49"> ₹150</label>
+<label><input type="radio" name="q49"> ₹160</label>
+<div class="answer">Correct Answer: ₹150. Spent = 3/8 × 240 = ₹90, so remaining = ₹150.</div>
+</div>
+
+<div class="question">
+<p>50. Which is greater: 5/8 or 7/12, and by how much?</p>
+<label><input type="radio" name="q50"> 7/12 by 1/24</label>
+<label class="correct"><input class="correct" type="radio" name="q50"> 5/8 by 1/24</label>
+<label><input type="radio" name="q50"> 5/8 by 1/12</label>
+<label><input type="radio" name="q50"> They are equal</label>
+<div class="answer">Correct Answer: 5/8 is greater by 1/24.</div>
+</div>
+
+<div class="question">
+<p>51. A recipe needs 3/4 cup of flour. Meera makes half the recipe. How much flour does she need?</p>
+<label><input type="radio" name="q51"> 1/4 cup</label>
+<label class="correct"><input class="correct" type="radio" name="q51"> 3/8 cup</label>
+<label><input type="radio" name="q51"> 1/2 cup</label>
+<label><input type="radio" name="q51"> 5/8 cup</label>
+<div class="answer">Correct Answer: 3/8 cup.</div>
+</div>
+
+<div class="question">
+<p>52. A path is 2 1/2 km long. A person walks 1 3/4 km. How much farther must the person walk?</p>
+<label><input type="radio" name="q52"> 1/2 km</label>
+<label class="correct"><input class="correct" type="radio" name="q52"> 3/4 km</label>
+<label><input type="radio" name="q52"> 1 km</label>
+<label><input type="radio" name="q52"> 1 1/4 km</label>
+<div class="answer">Correct Answer: 3/4 km.</div>
+</div>
+
+<div class="question">
+<p>53. A number is multiplied by 3/5 and the result is 18. What is the original number?</p>
+<label><input type="radio" name="q53"> 24</label>
+<label class="correct"><input class="correct" type="radio" name="q53"> 30</label>
+<label><input type="radio" name="q53"> 36</label>
+<label><input type="radio" name="q53"> 45</label>
+<div class="answer">Correct Answer: 30. Number = 18 ÷ 3/5 = 18 × 5/3 = 30.</div>
+</div>
+
+<div class="question">
+<p>54. A jar contains 3/4 kg of sugar. It is divided equally among 6 packets. How much sugar is in each packet?</p>
+<label><input type="radio" name="q54"> 1/6 kg</label>
+<label class="correct"><input class="correct" type="radio" name="q54"> 1/8 kg</label>
+<label><input type="radio" name="q54"> 1/10 kg</label>
+<label><input type="radio" name="q54"> 1/12 kg</label>
+<div class="answer">Correct Answer: 1/8 kg.</div>
+</div>
+
+<div class="question">
+<p>55. A student solves 2/3 + 3/4 as 5/7. What is the main error in the student's method?</p>
+<label><input type="radio" name="q55"> The numerators should never be added.</label>
+<label class="correct"><input class="correct" type="radio" name="q55"> Fractions with different denominators must first be expressed using a common denominator.</label>
+<label><input type="radio" name="q55"> The answer should always be a whole number.</label>
+<label><input type="radio" name="q55"> The larger denominator should simply be ignored.</label>
+<div class="answer">Correct Answer: A common denominator is required. 2/3 = 8/12 and 3/4 = 9/12, so the correct sum is 17/12.</div>
+</div>
+
+</div>
+
+<div class="score">
+<h2>Final Score</h2>
+<div class="score-number"></div>
+<p>Select answers to reveal answers. Score is calculated automatically out of 55.</p>
+</div>
+
+</div>
+</body>
+</html>

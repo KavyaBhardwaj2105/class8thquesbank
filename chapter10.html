@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Class 7 Maths - Operations with Integers</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#17202a}
+header{background:#172b4d;color:white;padding:28px 20px;text-align:center}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0}
+.container{max-width:1000px;margin:25px auto;padding:0 15px}
+.section{background:white;padding:20px;margin-bottom:22px;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.section h2{color:#173b67;border-bottom:2px solid #d8e3ef;padding-bottom:10px}
+.question{padding:16px;margin:15px 0;background:#f7f9fc;border-left:5px solid #356a9f;border-radius:9px}
+.question p{font-weight:bold;line-height:1.5}
+label{display:block;padding:9px;margin:5px 0;background:white;border:1px solid #d7dee7;border-radius:7px;cursor:pointer}
+label:hover{background:#edf4fb}
+input{margin-right:8px}
+.answer{display:none;margin-top:12px;padding:11px;background:#e9f7ed;border-left:4px solid #218739;font-weight:bold}
+.question:has(input:checked) .answer{display:block}
+.quiz{counter-reset:score}
+.question:not(.match):has(.correct:checked){counter-increment:score}
+.match.m1:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){counter-increment:score}
+.match.m2:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){counter-increment:score}
+.match.m3:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){counter-increment:score}
+.match.m4:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){counter-increment:score}
+.match.m5:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){counter-increment:score}
+.drag{border:2px dashed #527da8;background:#f0f6fc}
+.note{background:#fff7dc;padding:12px;border-radius:8px;font-size:14px}
+.score{text-align:center;background:#172b4d;color:white;padding:25px;border-radius:15px;margin:30px 0}
+.score-number{font-size:32px;font-weight:bold}
+.score-number::after{content:counter(score) " / 55"}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Class 7 Mathematics</h1>
+<p>Chapter 10 — Operations with Integers</p>
+</header>
+
+<div class="container quiz">
+
+<div class="section">
+<h2>Section A — Multiple Choice Questions (15)</h2>
+
+<div class="question">
+<p>1. What is −8 + 13?</p>
+<label><input type="radio" name="q1"> −21</label>
+<label class="correct"><input class="correct" type="radio" name="q1"> 5</label>
+<label><input type="radio" name="q1"> −5</label>
+<label><input type="radio" name="q1"> 21</label>
+<div class="answer">Correct Answer: 5</div>
+</div>
+
+<div class="question">
+<p>2. What is −17 − 6?</p>
+<label><input type="radio" name="q2"> −11</label>
+<label class="correct"><input class="correct" type="radio" name="q2"> −23</label>
+<label><input type="radio" name="q2"> 23</label>
+<label><input type="radio" name="q2"> −13</label>
+<div class="answer">Correct Answer: −23</div>
+</div>
+
+<div class="question">
+<p>3. What is 9 − (−4)?</p>
+<label><input type="radio" name="q3"> 5</label>
+<label><input type="radio" name="q3"> −5</label>
+<label class="correct"><input class="correct" type="radio" name="q3"> 13</label>
+<label><input type="radio" name="q3"> −13</label>
+<div class="answer">Correct Answer: 13</div>
+</div>
+
+<div class="question">
+<p>4. What is (−7) × 6?</p>
+<label class="correct"><input class="correct" type="radio" name="q4"> −42</label>
+<label><input type="radio" name="q4"> 42</label>
+<label><input type="radio" name="q4"> −13</label>
+<label><input type="radio" name="q4"> 13</label>
+<div class="answer">Correct Answer: −42</div>
+</div>
+
+<div class="question">
+<p>5. What is (−48) ÷ (−6)?</p>
+<label><input type="radio" name="q5"> −8</label>
+<label class="correct"><input class="correct" type="radio" name="q5"> 8</label>
+<label><input type="radio" name="q5"> −54</label>
+<label><input type="radio" name="q5"> 54</label>
+<div class="answer">Correct Answer: 8</div>
+</div>
+
+<div class="question">
+<p>6. Which expression has a positive result?</p>
+<label><input type="radio" name="q6"> (−5)×4</label>
+<label><input type="radio" name="q6"> −18+7</label>
+<label class="correct"><input class="correct" type="radio" name="q6"> (−9)×(−2)</label>
+<label><input type="radio" name="q6"> −24−3</label>
+<div class="answer">Correct Answer: (−9)×(−2)</div>
+</div>
+
+<div class="question">
+<p>7. Which integer is the greatest?</p>
+<label><input type="radio" name="q7"> −12</label>
+<label><input type="radio" name="q7"> −3</label>
+<label class="correct"><input class="correct" type="radio" name="q7"> 2</label>
+<label><input type="radio" name="q7"> −1</label>
+<div class="answer">Correct Answer: 2</div>
+</div>
+
+<div class="question">
+<p>8. What is −15 + (−9)?</p>
+<label><input type="radio" name="q8"> −6</label>
+<label class="correct"><input class="correct" type="radio" name="q8"> −24</label>
+<label><input type="radio" name="q8"> 24</label>
+<label><input type="radio" name="q8"> 6</label>
+<div class="answer">Correct Answer: −24</div>
+</div>
+
+<div class="question">
+<p>9. What is 36 ÷ (−4)?</p>
+<label><input type="radio" name="q9"> 9</label>
+<label class="correct"><input class="correct" type="radio" name="q9"> −9</label>
+<label><input type="radio" name="q9"> −8</label>
+<label><input type="radio" name="q9"> 8</label>
+<div class="answer">Correct Answer: −9</div>
+</div>
+
+<div class="question">
+<p>10. What is (−3) × (−4) × 5?</p>
+<label><input type="radio" name="q10"> −60</label>
+<label class="correct"><input class="correct" type="radio" name="q10"> 60</label>
+<label><input type="radio" name="q10"> −20</label>
+<label><input type="radio" name="q10"> 20</label>
+<div class="answer">Correct Answer: 60</div>
+</div>
+
+<div class="question">
+<p>11. The additive inverse of −19 is:</p>
+<label><input type="radio" name="q11"> −19</label>
+<label><input type="radio" name="q11"> −1/19</label>
+<label class="correct"><input class="correct" type="radio" name="q11"> 19</label>
+<label><input type="radio" name="q11"> 0</label>
+<div class="answer">Correct Answer: 19</div>
+</div>
+
+<div class="question">
+<p>12. What is −25 − (−10)?</p>
+<label><input type="radio" name="q12"> −35</label>
+<label class="correct"><input class="correct" type="radio" name="q12"> −15</label>
+<label><input type="radio" name="q12"> 15</label>
+<label><input type="radio" name="q12"> 35</label>
+<div class="answer">Correct Answer: −15</div>
+</div>
+
+<div class="question">
+<p>13. Which number lies between −7 and −2?</p>
+<label><input type="radio" name="q13"> −9</label>
+<label class="correct"><input class="correct" type="radio" name="q13"> −5</label>
+<label><input type="radio" name="q13"> −1</label>
+<label><input type="radio" name="q13"> 4</label>
+<div class="answer">Correct Answer: −5</div>
+</div>
+
+<div class="question">
+<p>14. What is 7 + (−12) − (−5)?</p>
+<label><input type="radio" name="q14"> −10</label>
+<label><input type="radio" name="q14"> −5</label>
+<label class="correct"><input class="correct" type="radio" name="q14"> 0</label>
+<label><input type="radio" name="q14"> 10</label>
+<div class="answer">Correct Answer: 0</div>
+</div>
+
+<div class="question">
+<p>15. What is (−72) ÷ 8?</p>
+<label class="correct"><input class="correct" type="radio" name="q15"> −9</label>
+<label><input type="radio" name="q15"> 9</label>
+<label><input type="radio" name="q15"> −8</label>
+<label><input type="radio" name="q15"> 8</label>
+<div class="answer">Correct Answer: −9</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Section B — True / False (10)</h2>
+
+<div class="question"><p>16. The sum of two negative integers is negative.</p>
+<label class="correct"><input class="correct" type="radio" name="q16"> True</label><label><input type="radio" name="q16"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>17. The product of two negative integers is positive.</p>
+<label class="correct"><input class="correct" type="radio" name="q17"> True</label><label><input type="radio" name="q17"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>18. Subtracting a negative integer is equivalent to adding its positive value.</p>
+<label class="correct"><input class="correct" type="radio" name="q18"> True</label><label><input type="radio" name="q18"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>19. The product of a positive and a negative integer is positive.</p>
+<label><input type="radio" name="q19"> True</label><label class="correct"><input class="correct" type="radio" name="q19"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><p>20. Zero is neither positive nor negative.</p>
+<label class="correct"><input class="correct" type="radio" name="q20"> True</label><label><input type="radio" name="q20"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>21. Every integer divided by 1 remains unchanged.</p>
+<label class="correct"><input class="correct" type="radio" name="q21"> True</label><label><input type="radio" name="q21"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>22. −8 is greater than −3.</p>
+<label><input type="radio" name="q22"> True</label><label class="correct"><input class="correct" type="radio" name="q22"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><p>23. The additive identity for integers is 0.</p>
+<label class="correct"><input class="correct" type="radio" name="q23"> True</label><label><input type="radio" name="q23"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>24. Multiplying any integer by zero gives zero.</p>
+<label class="correct"><input class="correct" type="radio" name="q24"> True</label><label><input type="radio" name="q24"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><p>25. Division by zero is defined for integers.</p>
+<label><input type="radio" name="q25"> True</label><label class="correct"><input class="correct" type="radio" name="q25"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+</div>
+
+<div class="section">
+<h2>Section C — Assertion & Reasoning (5)</h2>
+<div class="note">A = Both true and R explains A | B = Both true but R does not explain A | C = A true, R false | D = A false, R true</div>
+
+<div class="question">
+<p>26. Assertion: (−6)+(−4)=−10.<br>Reason: Adding two negative integers gives a negative integer whose magnitude is the sum of their magnitudes.</p>
+<label class="correct"><input class="correct" type="radio" name="q26"> A</label><label><input type="radio" name="q26"> B</label><label><input type="radio" name="q26"> C</label><label><input type="radio" name="q26"> D</label>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<p>27. Assertion: (−7)×(−3)=21.<br>Reason: The product of two negative integers is positive.</p>
+<label class="correct"><input class="correct" type="radio" name="q27"> A</label><label><input type="radio" name="q27"> B</label><label><input type="radio" name="q27"> C</label><label><input type="radio" name="q27"> D</label>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<p>28. Assertion: 12−(−5)=17.<br>Reason: Subtracting a negative integer is equivalent to adding its opposite.</p>
+<label class="correct"><input class="correct" type="radio" name="q28"> A</label><label><input type="radio" name="q28"> B</label><label><input type="radio" name="q28"> C</label><label><input type="radio" name="q28"> D</label>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+<div class="question">
+<p>29. Assertion: (−20)÷5=4.<br>Reason: A negative integer divided by a positive integer gives a negative result.</p>
+<label><input type="radio" name="q29"> A</label><label><input type="radio" name="q29"> B</label><label><input type="radio" name="q29"> C</label><label class="correct"><input class="correct" type="radio" name="q29"> D</label>
+<div class="answer">Correct Answer: D</div>
+</div>
+
+<div class="question">
+<p>30. Assertion: 0 is the additive identity for integers.<br>Reason: Adding 0 to any integer leaves that integer unchanged.</p>
+<label class="correct"><input class="correct" type="radio" name="q30"> A</label><label><input type="radio" name="q30"> B</label><label><input type="radio" name="q30"> C</label><label><input type="radio" name="q30"> D</label>
+<div class="answer">Correct Answer: A</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Section D — Fill in the Blanks (5)</h2>
+
+<div class="question"><p>31. The integer immediately before 0 is ______.</p>
+<label><input type="radio" name="q31"> 1</label><label class="correct"><input class="correct" type="radio" name="q31"> −1</label><label><input type="radio" name="q31"> −2</label><label><input type="radio" name="q31"> 2</label>
+<div class="answer">Correct Answer: −1</div></div>
+
+<div class="question"><p>32. The additive inverse of 27 is ______.</p>
+<label><input type="radio" name="q32"> 27</label><label class="correct"><input class="correct" type="radio" name="q32"> −27</label><label><input type="radio" name="q32"> 0</label><label><input type="radio" name="q32"> 1/27</label>
+<div class="answer">Correct Answer: −27</div></div>
+
+<div class="question"><p>33. (−14)+14 = ______.</p>
+<label><input type="radio" name="q33"> −28</label><label><input type="radio" name="q33"> 28</label><label class="correct"><input class="correct" type="radio" name="q33"> 0</label><label><input type="radio" name="q33"> 14</label>
+<div class="answer">Correct Answer: 0</div></div>
+
+<div class="question"><p>34. (−9)×7 = ______.</p>
+<label><input type="radio" name="q34"> 63</label><label class="correct"><input class="correct" type="radio" name="q34"> −63</label><label><input type="radio" name="q34"> −16</label><label><input type="radio" name="q34"> 16</label>
+<div class="answer">Correct Answer: −63</div></div>
+
+<div class="question"><p>35. (−81)÷(−9) = ______.</p>
+<label><input type="radio" name="q35"> −9</label><label class="correct"><input class="correct" type="radio" name="q35"> 9</label><label><input type="radio" name="q35"> −72</label><label><input type="radio" name="q35"> 72</label>
+<div class="answer">Correct Answer: 9</div></div>
+
+</div>
+
+<div class="section">
+<h2>Section E — Match the Following (5)</h2>
+
+<div class="question match m1">
+<p>36. Match each expression with its result.</p>
+
+<p>−7 + 12</p>
+<label class="correct"><input class="correct m1a" type="radio" name="m1a"> 5</label><label><input type="radio" name="m1a"> −5</label><label><input type="radio" name="m1a"> 19</label><label><input type="radio" name="m1a"> −19</label>
+
+<p>−15 + 8</p>
+<label><input type="radio" name="m1b"> 7</label><label class="correct"><input class="correct m1b" type="radio" name="m1b"> −7</label><label><input type="radio" name="m1b"> 23</label><label><input type="radio" name="m1b"> −23</label>
+
+<p>−6 × 5</p>
+<label><input type="radio" name="m1c"> 30</label><label class="correct"><input class="correct m1c" type="radio" name="m1c"> −30</label><label><input type="radio" name="m1c"> −11</label><label><input type="radio" name="m1c"> 11</label>
+
+<p>−42 ÷ −7</p>
+<label><input type="radio" name="m1d"> −6</label><label><input type="radio" name="m1d"> −7</label><label class="correct"><input class="correct m1d" type="radio" name="m1d"> 6</label><label><input type="radio" name="m1d"> 7</label>
+
+<div class="answer">Correct matching: 5, −7, −30, 6.</div>
+</div>
+
+<div class="question match m2">
+<p>37. Match each integer with its additive inverse.</p>
+
+<p>−18</p>
+<label class="correct"><input class="correct m2a" type="radio" name="m2a"> 18</label><label><input type="radio" name="m2a"> −18</label><label><input type="radio" name="m2a"> 0</label><label><input type="radio" name="m2a"> 36</label>
+
+<p>24</p>
+<label><input type="radio" name="m2b"> 24</label><label class="correct"><input class="correct m2b" type="radio" name="m2b"> −24</label><label><input type="radio" name="m2b"> −12</label><label><input type="radio" name="m2b"> 48</label>
+
+<p>−31</p>
+<label><input type="radio" name="m2c"> −31</label><label><input type="radio" name="m2c"> 31</label><label class="correct"><input class="correct m2c" type="radio" name="m2c"> 31</label><label><input type="radio" name="m2c"> 62</label>
+
+<p>45</p>
+<label><input type="radio" name="m2d"> 45</label><label><input type="radio" name="m2d"> 90</label><label><input type="radio" name="m2d"> 0</label><label class="correct"><input class="correct m2d" type="radio" name="m2d"> −45</label>
+
+<div class="answer">Correct matching: −18→18, 24→−24, −31→31, 45→−45.</div>
+</div>
+
+<div class="question match m3">
+<p>38. Match each multiplication with its sign.</p>
+
+<p>(−4)×(−9)</p>
+<label class="correct"><input class="correct m3a" type="radio" name="m3a"> Positive</label><label><input type="radio" name="m3a"> Negative</label><label><input type="radio" name="m3a"> Zero</label><label><input type="radio" name="m3a"> Undefined</label>
+
+<p>(−7)×6</p>
+<label><input type="radio" name="m3b"> Positive</label><label class="correct"><input class="correct m3b" type="radio" name="m3b"> Negative</label><label><input type="radio" name="m3b"> Zero</label><label><input type="radio" name="m3b"> Undefined</label>
+
+<p>8×0</p>
+<label><input type="radio" name="m3c"> Positive</label><label><input type="radio" name="m3c"> Negative</label><label class="correct"><input class="correct m3c" type="radio" name="m3c"> Zero</label><label><input type="radio" name="m3c"> Undefined</label>
+
+<p>(−12)×(−2)</p>
+<label class="correct"><input class="correct m3d" type="radio" name="m3d"> Positive</label><label><input type="radio" name="m3d"> Negative</label><label><input type="radio" name="m3d"> Zero</label><label><input type="radio" name="m3d"> Undefined</label>
+
+<div class="answer">Correct matching: Positive, Negative, Zero, Positive.</div>
+</div>
+
+<div class="question match m4">
+<p>39. Match the expression with its value.</p>
+
+<p>−20 − 15</p>
+<label class="correct"><input class="correct m4a" type="radio" name="m4a"> −35</label><label><input type="radio" name="m4a"> −5</label><label><input type="radio" name="m4a"> 35</label><label><input type="radio" name="m4a"> 5</label>
+
+<p>18 − (−7)</p>
+<label><input type="radio" name="m4b"> 11</label><label class="correct"><input class="correct m4b" type="radio" name="m4b"> 25</label><label><input type="radio" name="m4b"> −25</label><label><input type="radio" name="m4b"> −11</label>
+
+<p>−32 + 19</p>
+<label><input type="radio" name="m4c"> 13</label><label class="correct"><input class="correct m4c" type="radio" name="m4c"> −13</label><label><input type="radio" name="m4c"> −51</label><label><input type="radio" name="m4c"> 51</label>
+
+<p>45 ÷ (−5)</p>
+<label><input type="radio" name="m4d"> 9</label><label class="correct"><input class="correct m4d" type="radio" name="m4d"> −9</label><label><input type="radio" name="m4d"> −40</label><label><input type="radio" name="m4d"> 40</label>
+
+<div class="answer">Correct matching: −35, 25, −13, −9.</div>
+</div>
+
+<div class="question match m5">
+<p>40. Match the situation with the integer representation.</p>
+
+<p>8 floors below ground</p>
+<label class="correct"><input class="correct m5a" type="radio" name="m5a"> −8</label><label><input type="radio" name="m5a"> 8</label><label><input type="radio" name="m5a"> 0</label><label><input type="radio" name="m5a"> −16</label>
+
+<p>Temperature 6° below zero</p>
+<label><input type="radio" name="m5b"> 6</label><label class="correct"><input class="correct m5b" type="radio" name="m5b"> −6</label><label><input type="radio" name="m5b"> 0</label><label><input type="radio" name="m5b"> −12</label>
+
+<p>Profit of ₹450</p>
+<label><input type="radio" name="m5c"> −450</label><label class="correct"><input class="correct m5c" type="radio" name="m5c"> +450</label><label><input type="radio" name="m5c"> 0</label><label><input type="radio" name="m5c"> −45</label>
+
+<p>Withdrawal of ₹200</p>
+<label><input type="radio" name="m5d"> +200</label><label><input type="radio" name="m5d"> +20</label><label class="correct"><input class="correct m5d" type="radio" name="m5d"> −200</label><label><input type="radio" name="m5d"> 0</label>
+
+<div class="answer">Correct matching: below ground→negative; below zero→negative; profit→positive; withdrawal→negative.</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Section F — Drag & Drop Style (5)</h2>
+
+<div class="question drag">
+<p>41. Drag the correct result: −13 + 21 =</p>
+<label><input type="radio" name="q41"> −34</label>
+<label class="correct"><input class="correct" type="radio" name="q41"> 8</label>
+<label><input type="radio" name="q41"> −8</label>
+<label><input type="radio" name="q41"> 34</label>
+<div class="answer">Correct Answer: 8</div>
+</div>
+
+<div class="question drag">
+<p>42. Drag the correct result: −9 − (−14) =</p>
+<label><input type="radio" name="q42"> −23</label>
+<label><input type="radio" name="q42"> −5</label>
+<label class="correct"><input class="correct" type="radio" name="q42"> 5</label>
+<label><input type="radio" name="q42"> 23</label>
+<div class="answer">Correct Answer: 5</div>
+</div>
+
+<div class="question drag">
+<p>43. Drag the correct result: (−11)×(−8) =</p>
+<label><input type="radio" name="q43"> −88</label>
+<label class="correct"><input class="correct" type="radio" name="q43"> 88</label>
+<label><input type="radio" name="q43"> −19</label>
+<label><input type="radio" name="q43"> 19</label>
+<div class="answer">Correct Answer: 88</div>
+</div>
+
+<div class="question drag">
+<p>44. Drag the correct result: 96÷(−12) =</p>
+<label><input type="radio" name="q44"> 8</label>
+<label class="correct"><input class="correct" type="radio" name="q44"> −8</label>
+<label><input type="radio" name="q44"> −12</label>
+<label><input type="radio" name="q44"> 12</label>
+<div class="answer">Correct Answer: −8</div>
+</div>
+
+<div class="question drag">
+<p>45. Drag the correct integer: Which number is 7 units to the left of 3 on a number line?</p>
+<label><input type="radio" name="q45"> 10</label>
+<label><input type="radio" name="q45"> 4</label>
+<label class="correct"><input class="correct" type="radio" name="q45"> −4</label>
+<label><input type="radio" name="q45"> −10</label>
+<div class="answer">Correct Answer: −4</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Section G — HOTS (10)</h2>
+
+<div class="question">
+<p>46. A submarine is at −85 m. It rises 37 m. What is its new position?</p>
+<label><input type="radio" name="q46"> −122 m</label>
+<label class="correct"><input class="correct" type="radio" name="q46"> −48 m</label>
+<label><input type="radio" name="q46"> 48 m</label>
+<label><input type="radio" name="q46"> 122 m</label>
+<div class="answer">Correct Answer: −48 m.</div>
+</div>
+
+<div class="question">
+<p>47. The temperature is −6°C at night and rises by 14°C in the morning. What is the morning temperature?</p>
+<label><input type="radio" name="q47"> −20°C</label>
+<label class="correct"><input class="correct" type="radio" name="q47"> 8°C</label>
+<label><input type="radio" name="q47"> 20°C</label>
+<label><input type="radio" name="q47"> −8°C</label>
+<div class="answer">Correct Answer: 8°C.</div>
+</div>
+
+<div class="question">
+<p>48. A game gives +6 points for a correct answer and −4 for an incorrect answer. A player gets 7 correct and 3 incorrect. Find the score.</p>
+<label><input type="radio" name="q48"> 30</label>
+<label class="correct"><input class="correct" type="radio" name="q48"> 30</label>
+<label><input type="radio" name="q48"> 36</label>
+<label><input type="radio" name="q48"> 18</label>
+<div class="answer">Correct Answer: 30. Score = 7×6 − 3×4 = 42−12 = 30.</div>
+</div>
+
+<div class="question">
+<p>49. Simplify: −18 + 7 − 12 + 25.</p>
+<label><input type="radio" name="q49"> −48</label>
+<label><input type="radio" name="q49"> −2</label>
+<label class="correct"><input class="correct" type="radio" name="q49"> 2</label>
+<label><input type="radio" name="q49"> 12</label>
+<div class="answer">Correct Answer: 2.</div>
+</div>
+
+<div class="question">
+<p>50. A bank account has a balance of −₹750. A deposit of ₹1,200 is made. What is the new balance?</p>
+<label><input type="radio" name="q50"> −₹1,950</label>
+<label><input type="radio" name="q50"> −₹450</label>
+<label class="correct"><input class="correct" type="radio" name="q50"> ₹450</label>
+<label><input type="radio" name="q50"> ₹1,950</label>
+<div class="answer">Correct Answer: ₹450.</div>
+</div>
+
+<div class="question">
+<p>51. A lift starts at floor −3, moves up 8 floors, then down 5 floors. At which floor does it stop?</p>
+<label><input type="radio" name="q51"> −10</label>
+<label class="correct"><input class="correct" type="radio" name="q51"> 0</label>
+<label><input type="radio" name="q51"> 5</label>
+<label><input type="radio" name="q51"> 10</label>
+<div class="answer">Correct Answer: 0. −3+8−5=0.</div>
+</div>
+
+<div class="question">
+<p>52. Find the missing integer: −15 + x = 9.</p>
+<label><input type="radio" name="q52"> −24</label>
+<label><input type="radio" name="q52"> −6</label>
+<label class="correct"><input class="correct" type="radio" name="q52"> 24</label>
+<label><input type="radio" name="q52"> 6</label>
+<div class="answer">Correct Answer: x=24.</div>
+</div>
+
+<div class="question">
+<p>53. A number is multiplied by −7 and the result is 56. What is the number?</p>
+<label><input type="radio" name="q53"> 8</label>
+<label class="correct"><input class="correct" type="radio" name="q53"> −8</label>
+<label><input type="radio" name="q53"> −49</label>
+<label><input type="radio" name="q53"> 49</label>
+<div class="answer">Correct Answer: −8, because (−8)×(−7)=56.</div>
+</div>
+
+<div class="question">
+<p>54. Without calculating every step, determine the sign of (−3)×(−5)×(−2).</p>
+<label class="correct"><input class="correct" type="radio" name="q54"> Negative</label>
+<label><input type="radio" name="q54"> Positive</label>
+<label><input type="radio" name="q54"> Zero</label>
+<label><input type="radio" name="q54"> Cannot be determined</label>
+<div class="answer">Correct Answer: Negative. There are three negative factors, an odd number.</div>
+</div>
+
+<div class="question">
+<p>55. A student says: −12−8 = −4 because 12−8=4. What is the correct explanation?</p>
+<label><input type="radio" name="q55"> The student is correct.</label>
+<label class="correct"><input class="correct" type="radio" name="q55"> Both numbers are negative, so their magnitudes add: −12−8=−20.</label>
+<label><input type="radio" name="q55"> The answer is +20.</label>
+<label><input type="radio" name="q55"> Negative signs should always be ignored.</label>
+<div class="answer">Correct Answer: −20. Subtracting 8 from −12 moves 8 more units left on the number line.</div>
+</div>
+
+</div>
+
+<div class="score">
+<h2>Final Score</h2>
+<div class="score-number"></div>
+<p>Score updates automatically as answers are selected.</p>
+</div>
+
+</div>
+</body>
+</html>

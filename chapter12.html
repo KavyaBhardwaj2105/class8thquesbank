@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 12 - Another Peek Beyond the Point</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:#f3f6fb;
+ color:#111827;
+ font-weight:700
+}
+header{
+ background:#111827;
+ color:white;
+ padding:28px 18px;
+ text-align:center
+}
+header h1{margin:0 0 8px;font-size:30px}
+header p{margin:0;color:#dbeafe}
+.wrap{max-width:1100px;margin:auto;padding:24px}
+section{margin:28px 0}
+section>h2{
+ background:#1d4ed8;
+ color:white;
+ padding:12px 16px;
+ border-radius:12px
+}
+.question{
+ background:white;
+ border:1px solid #cbd5e1;
+ border-radius:14px;
+ padding:18px;
+ margin:14px 0;
+ box-shadow:0 4px 12px #00000010
+}
+.question h3{margin:0 0 12px}
+.option{
+ display:block;
+ padding:9px 12px;
+ margin:7px 0;
+ border:1px solid #dbeafe;
+ border-radius:9px;
+ background:#f8fafc;
+ cursor:pointer
+}
+.option:hover{background:#eff6ff}
+.answer{
+ display:none;
+ margin-top:12px;
+ padding:12px;
+ border-radius:10px;
+ background:#dcfce7;
+ border-left:5px solid #16a34a
+}
+.question:has(input:checked) .answer{display:block}
+.match-row{
+ margin:10px 0;
+ padding:10px;
+ border-radius:10px;
+ background:#f8fafc;
+ border:1px solid #e2e8f0
+}
+.drag{
+ border:2px dashed #94a3b8;
+ background:#f8fafc
+}
+.score-card{
+ position:sticky;
+ bottom:12px;
+ background:#111827;
+ color:white;
+ padding:18px;
+ border-radius:16px;
+ text-align:center;
+ margin-top:30px
+}
+.score-number{font-size:28px}
+input{margin-right:8px}
+
+.quiz{counter-reset:score}
+.question:not(.match):has(.correct:checked){counter-increment:score}
+
+.match.m1:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){counter-increment:score}
+.match.m2:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){counter-increment:score}
+.match.m3:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){counter-increment:score}
+.match.m4:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){counter-increment:score}
+.match.m5:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){counter-increment:score}
+
+.score-number::after{content:counter(score) " / 55"}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Chapter 12 — Another Peek Beyond the Point</h1>
+<p>Ganita Prakash Part II • Class 7 Mathematics • 55 Question Revision Test</p>
+</header>
+
+<div class="wrap quiz">
+
+<section>
+<h2>Section A — Multiple Choice Questions</h2>
+
+<div class="question"><h3>1. What is 2.4 × 3?</h3>
+<label class="option"><input type="radio" name="q1"> A) 6.2</label>
+<label class="option"><input type="radio" name="q1" class="correct"> B) 7.2</label>
+<label class="option"><input type="radio" name="q1"> C) 7.4</label>
+<label class="option"><input type="radio" name="q1"> D) 8.2</label>
+<div class="answer">Correct Answer: B) 7.2</div></div>
+
+<div class="question"><h3>2. Calculate 0.6 × 0.5.</h3>
+<label class="option"><input type="radio" name="q2"> A) 0.03</label>
+<label class="option"><input type="radio" name="q2" class="correct"> B) 0.30</label>
+<label class="option"><input type="radio" name="q2"> C) 3.0</label>
+<label class="option"><input type="radio" name="q2"> D) 30</label>
+<div class="answer">Correct Answer: B) 0.30</div></div>
+
+<div class="question"><h3>3. What is 4.8 ÷ 0.6?</h3>
+<label class="option"><input type="radio" name="q3"> A) 0.8</label>
+<label class="option"><input type="radio" name="q3" class="correct"> B) 8</label>
+<label class="option"><input type="radio" name="q3"> C) 80</label>
+<label class="option"><input type="radio" name="q3"> D) 2.88</label>
+<div class="answer">Correct Answer: B) 8</div></div>
+
+<div class="question"><h3>4. Which fraction is equal to 0.75?</h3>
+<label class="option"><input type="radio" name="q4"> A) 1/4</label>
+<label class="option"><input type="radio" name="q4"> B) 2/3</label>
+<label class="option"><input type="radio" name="q4" class="correct"> C) 3/4</label>
+<label class="option"><input type="radio" name="q4"> D) 4/5</label>
+<div class="answer">Correct Answer: C) 3/4</div></div>
+
+<div class="question"><h3>5. Which decimal represents 7/10?</h3>
+<label class="option"><input type="radio" name="q5"> A) 0.07</label>
+<label class="option"><input type="radio" name="q5" class="correct"> B) 0.7</label>
+<label class="option"><input type="radio" name="q5"> C) 7.0</label>
+<label class="option"><input type="radio" name="q5"> D) 0.007</label>
+<div class="answer">Correct Answer: B) 0.7</div></div>
+
+<div class="question"><h3>6. Which decimal is equivalent to 5/8?</h3>
+<label class="option"><input type="radio" name="q6"> A) 0.525</label>
+<label class="option"><input type="radio" name="q6" class="correct"> B) 0.625</label>
+<label class="option"><input type="radio" name="q6"> C) 0.825</label>
+<label class="option"><input type="radio" name="q6"> D) 0.875</label>
+<div class="answer">Correct Answer: B) 0.625</div></div>
+
+<div class="question"><h3>7. Which is a terminating decimal?</h3>
+<label class="option"><input type="radio" name="q7" class="correct"> A) 0.125</label>
+<label class="option"><input type="radio" name="q7"> B) 0.333...</label>
+<label class="option"><input type="radio" name="q7"> C) 0.272727...</label>
+<label class="option"><input type="radio" name="q7"> D) 0.121212...</label>
+<div class="answer">Correct Answer: A) 0.125</div></div>
+
+<div class="question"><h3>8. Which decimal is repeating?</h3>
+<label class="option"><input type="radio" name="q8"> A) 0.25</label>
+<label class="option"><input type="radio" name="q8"> B) 0.625</label>
+<label class="option"><input type="radio" name="q8" class="correct"> C) 0.333...</label>
+<label class="option"><input type="radio" name="q8"> D) 0.8</label>
+<div class="answer">Correct Answer: C) 0.333...</div></div>
+
+<div class="question"><h3>9. What is 12.5 × 0.4?</h3>
+<label class="option"><input type="radio" name="q9"> A) 0.5</label>
+<label class="option"><input type="radio" name="q9"> B) 4.5</label>
+<label class="option"><input type="radio" name="q9" class="correct"> C) 5</label>
+<label class="option"><input type="radio" name="q9"> D) 50</label>
+<div class="answer">Correct Answer: C) 5</div></div>
+
+<div class="question"><h3>10. Calculate 7.2 ÷ 0.9.</h3>
+<label class="option"><input type="radio" name="q10"> A) 0.8</label>
+<label class="option"><input type="radio" name="q10" class="correct"> B) 8</label>
+<label class="option"><input type="radio" name="q10"> C) 80</label>
+<label class="option"><input type="radio" name="q10"> D) 6.3</label>
+<div class="answer">Correct Answer: B) 8</div></div>
+
+<div class="question"><h3>11. 25% as a decimal is:</h3>
+<label class="option"><input type="radio" name="q11"> A) 2.5</label>
+<label class="option"><input type="radio" name="q11" class="correct"> B) 0.25</label>
+<label class="option"><input type="radio" name="q11"> C) 0.025</label>
+<label class="option"><input type="radio" name="q11"> D) 25</label>
+<div class="answer">Correct Answer: B) 0.25</div></div>
+
+<div class="question"><h3>12. 0.4 as a percentage is:</h3>
+<label class="option"><input type="radio" name="q12"> A) 4%</label>
+<label class="option"><input type="radio" name="q12" class="correct"> B) 40%</label>
+<label class="option"><input type="radio" name="q12"> C) 400%</label>
+<label class="option"><input type="radio" name="q12"> D) 0.4%</label>
+<div class="answer">Correct Answer: B) 40%</div></div>
+
+<div class="question"><h3>13. A shirt marked ₹800 is sold at 10% discount. What is the discount amount?</h3>
+<label class="option"><input type="radio" name="q13"> A) ₹40</label>
+<label class="option"><input type="radio" name="q13" class="correct"> B) ₹80</label>
+<label class="option"><input type="radio" name="q13"> C) ₹90</label>
+<label class="option"><input type="radio" name="q13"> D) ₹720</label>
+<div class="answer">Correct Answer: B) ₹80</div></div>
+
+<div class="question"><h3>14. Which is greater?</h3>
+<label class="option"><input type="radio" name="q14" class="correct"> A) 0.56</label>
+<label class="option"><input type="radio" name="q14"> B) 0.506</label>
+<label class="option"><input type="radio" name="q14"> C) 0.056</label>
+<label class="option"><input type="radio" name="q14"> D) 0.5060</label>
+<div class="answer">Correct Answer: A) 0.56</div></div>
+
+<div class="question"><h3>15. What is 3/5 as a decimal?</h3>
+<label class="option"><input type="radio" name="q15"> A) 0.3</label>
+<label class="option"><input type="radio" name="q15" class="correct"> B) 0.6</label>
+<label class="option"><input type="radio" name="q15"> C) 0.35</label>
+<label class="option"><input type="radio" name="q15"> D) 0.8</label>
+<div class="answer">Correct Answer: B) 0.6</div></div>
+</section>
+
+<section>
+<h2>Section B — True / False</h2>
+
+<div class="question"><h3>16. Multiplying a decimal by 10 shifts its decimal point one place to the right.</h3>
+<label class="option"><input type="radio" name="q16" class="correct"> True</label>
+<label class="option"><input type="radio" name="q16"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>17. 0.5 × 0.2 = 1.</h3>
+<label class="option"><input type="radio" name="q17"> True</label>
+<label class="option"><input type="radio" name="q17" class="correct"> False</label>
+<div class="answer">Correct Answer: False. 0.5 × 0.2 = 0.1.</div></div>
+
+<div class="question"><h3>18. 0.75 = 75/100.</h3>
+<label class="option"><input type="radio" name="q18" class="correct"> True</label>
+<label class="option"><input type="radio" name="q18"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>19. 1/3 has a repeating decimal representation.</h3>
+<label class="option"><input type="radio" name="q19" class="correct"> True</label>
+<label class="option"><input type="radio" name="q19"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>20. 0.4 = 4%.</h3>
+<label class="option"><input type="radio" name="q20"> True</label>
+<label class="option"><input type="radio" name="q20" class="correct"> False</label>
+<div class="answer">Correct Answer: False. 0.4 = 40%.</div></div>
+
+<div class="question"><h3>21. Dividing 5.6 by 0.7 gives 8.</h3>
+<label class="option"><input type="radio" name="q21" class="correct"> True</label>
+<label class="option"><input type="radio" name="q21"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>22. 2.5 × 100 = 25.</h3>
+<label class="option"><input type="radio" name="q22"> True</label>
+<label class="option"><input type="radio" name="q22" class="correct"> False</label>
+<div class="answer">Correct Answer: False. 2.5 × 100 = 250.</div></div>
+
+<div class="question"><h3>23. 50% is equal to 0.5.</h3>
+<label class="option"><input type="radio" name="q23" class="correct"> True</label>
+<label class="option"><input type="radio" name="q23"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>24. 0.25 and 0.250 represent the same number.</h3>
+<label class="option"><input type="radio" name="q24" class="correct"> True</label>
+<label class="option"><input type="radio" name="q24"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>25. Every fraction has a terminating decimal expansion.</h3>
+<label class="option"><input type="radio" name="q25"> True</label>
+<label class="option"><input type="radio" name="q25" class="correct"> False</label>
+<div class="answer">Correct Answer: False.</div></div>
+</section>
+
+<section>
+<h2>Section C — Assertion & Reasoning</h2>
+<p>A = Both A and R are true and R explains A<br>
+B = Both true but R does not explain A<br>
+C = A true, R false<br>
+D = A false, R true</p>
+
+<div class="question"><h3>26. Assertion: 2.5 × 0.4 = 1.<br>Reason: 25 × 4 = 100 and the decimal places are restored in the product.</h3>
+<label class="option"><input type="radio" name="q26" class="correct"> A</label>
+<label class="option"><input type="radio" name="q26"> B</label>
+<label class="option"><input type="radio" name="q26"> C</label>
+<label class="option"><input type="radio" name="q26"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>27. Assertion: 0.6 ÷ 0.2 = 3.<br>Reason: 6 tenths divided into groups of 2 tenths gives 3 groups.</h3>
+<label class="option"><input type="radio" name="q27" class="correct"> A</label>
+<label class="option"><input type="radio" name="q27"> B</label>
+<label class="option"><input type="radio" name="q27"> C</label>
+<label class="option"><input type="radio" name="q27"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>28. Assertion: 3/8 has a terminating decimal representation.<br>Reason: 3/8 = 0.375.</h3>
+<label class="option"><input type="radio" name="q28" class="correct"> A</label>
+<label class="option"><input type="radio" name="q28"> B</label>
+<label class="option"><input type="radio" name="q28"> C</label>
+<label class="option"><input type="radio" name="q28"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>29. Assertion: 25% = 0.25.<br>Reason: Percent means “per hundred”.</h3>
+<label class="option"><input type="radio" name="q29" class="correct"> A</label>
+<label class="option"><input type="radio" name="q29"> B</label>
+<label class="option"><input type="radio" name="q29"> C</label>
+<label class="option"><input type="radio" name="q29"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>30. Assertion: 0.7 is greater than 0.65.<br>Reason: 0.7 can be written as 0.70, and 70 hundredths is greater than 65 hundredths.</h3>
+<label class="option"><input type="radio" name="q30" class="correct"> A</label>
+<label class="option"><input type="radio" name="q30"> B</label>
+<label class="option"><input type="radio" name="q30"> C</label>
+<label class="option"><input type="radio" name="q30"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+</section>
+
+<section>
+<h2>Section D — Fill in the Blanks</h2>
+
+<div class="question"><h3>31. 0.8 × 10 = ______.</h3>
+<label class="option"><input type="radio" name="q31" class="correct"> 8</label>
+<label class="option"><input type="radio" name="q31"> 0.08</label>
+<label class="option"><input type="radio" name="q31"> 80</label>
+<label class="option"><input type="radio" name="q31"> 0.8</label>
+<div class="answer">Correct Answer: 8</div></div>
+
+<div class="question"><h3>32. 6.3 ÷ 10 = ______.</h3>
+<label class="option"><input type="radio" name="q32" class="correct"> 0.63</label>
+<label class="option"><input type="radio" name="q32"> 63</label>
+<label class="option"><input type="radio" name="q32"> 6.03</label>
+<label class="option"><input type="radio" name="q32"> 0.063</label>
+<div class="answer">Correct Answer: 0.63</div></div>
+
+<div class="question"><h3>33. 7/20 written as a decimal is ______.</h3>
+<label class="option"><input type="radio" name="q33"> 0.07</label>
+<label class="option"><input type="radio" name="q33" class="correct"> 0.35</label>
+<label class="option"><input type="radio" name="q33"> 0.7</label>
+<label class="option"><input type="radio" name="q33"> 0.25</label>
+<div class="answer">Correct Answer: 0.35</div></div>
+
+<div class="question"><h3>34. 0.125 written as a fraction in simplest form is ______.</h3>
+<label class="option"><input type="radio" name="q34"> 1/4</label>
+<label class="option"><input type="radio" name="q34" class="correct"> 1/8</label>
+<label class="option"><input type="radio" name="q34"> 1/6</label>
+<label class="option"><input type="radio" name="q34"> 1/10</label>
+<div class="answer">Correct Answer: 1/8</div></div>
+
+<div class="question"><h3>35. 35% as a decimal is ______.</h3>
+<label class="option"><input type="radio" name="q35"> 3.5</label>
+<label class="option"><input type="radio" name="q35" class="correct"> 0.35</label>
+<label class="option"><input type="radio" name="q35"> 0.035</label>
+<label class="option"><input type="radio" name="q35"> 35</label>
+<div class="answer">Correct Answer: 0.35</div></div>
+</section>
+
+<section>
+<h2>Section E — Match the Following</h2>
+
+<div class="question match m1"><h3>36. Match each decimal multiplication with its result.</h3>
+<div class="match-row">1.2 × 5 → <label><input type="radio" name="m1a" class="m1a correct">6</label><label><input type="radio" name="m1a" class="m1a">60</label></div>
+<div class="match-row">2.5 × 4 → <label><input type="radio" name="m1b" class="m1b">8</label><label><input type="radio" name="m1b" class="m1b correct">10</label></div>
+<div class="match-row">0.7 × 0.3 → <label><input type="radio" name="m1c" class="m1c correct">0.21</label><label><input type="radio" name="m1c" class="m1c">2.1</label></div>
+<div class="match-row">4.5 × 0.2 → <label><input type="radio" name="m1d" class="m1d">0.09</label><label><input type="radio" name="m1d" class="m1d correct">0.9</label></div>
+<div class="answer">Correct matches: 6, 10, 0.21, 0.9.</div></div>
+
+<div class="question match m2"><h3>37. Match each decimal division with its result.</h3>
+<div class="match-row">6.4 ÷ 0.8 → <label><input type="radio" name="m2a" class="m2a correct">8</label><label><input type="radio" name="m2a" class="m2a">0.8</label></div>
+<div class="match-row">4.5 ÷ 0.5 → <label><input type="radio" name="m2b" class="m2b">5</label><label><input type="radio" name="m2b" class="m2b correct">9</label></div>
+<div class="match-row">2.4 ÷ 0.6 → <label><input type="radio" name="m2c" class="m2c correct">4</label><label><input type="radio" name="m2c" class="m2c">0.4</label></div>
+<div class="match-row">7.2 ÷ 0.9 → <label><input type="radio" name="m2d" class="m2d">6</label><label><input type="radio" name="m2d" class="m2d correct">8</label></div>
+<div class="answer">Correct matches: 8, 9, 4, 8.</div></div>
+
+<div class="question match m3"><h3>38. Match fractions with decimals.</h3>
+<div class="match-row">1/2 → <label><input type="radio" name="m3a" class="m3a correct">0.5</label><label><input type="radio" name="m3a" class="m3a">0.25</label></div>
+<div class="match-row">3/4 → <label><input type="radio" name="m3b" class="m3b">0.35</label><label><input type="radio" name="m3b" class="m3b correct">0.75</label></div>
+<div class="match-row">1/5 → <label><input type="radio" name="m3c" class="m3c correct">0.2</label><label><input type="radio" name="m3c" class="m3c">0.4</label></div>
+<div class="match-row">7/10 → <label><input type="radio" name="m3d" class="m3d">0.07</label><label><input type="radio" name="m3d" class="m3d correct">0.7</label></div>
+<div class="answer">Correct matches: 0.5, 0.75, 0.2, 0.7.</div></div>
+
+<div class="question match m4"><h3>39. Match percentage with decimal.</h3>
+<div class="match-row">10% → <label><input type="radio" name="m4a" class="m4a correct">0.10</label><label><input type="radio" name="m4a" class="m4a">1.0</label></div>
+<div class="match-row">25% → <label><input type="radio" name="m4b" class="m4b">0.5</label><label><input type="radio" name="m4b" class="m4b correct">0.25</label></div>
+<div class="match-row">60% → <label><input type="radio" name="m4c" class="m4c correct">0.60</label><label><input type="radio" name="m4c" class="m4c">0.06</label></div>
+<div class="match-row">85% → <label><input type="radio" name="m4d" class="m4d">0.085</label><label><input type="radio" name="m4d" class="m4d correct">0.85</label></div>
+<div class="answer">Correct matches: 0.10, 0.25, 0.60, 0.85.</div></div>
+
+<div class="question match m5"><h3>40. Match each situation with the correct calculation.</h3>
+<div class="match-row">20% of 200 → <label><input type="radio" name="m5a" class="m5a correct">40</label><label><input type="radio" name="m5a" class="m5a">20</label></div>
+<div class="match-row">10% discount on ₹500 → <label><input type="radio" name="m5b" class="m5b correct">₹50</label><label><input type="radio" name="m5b" class="m5b">₹450</label></div>
+<div class="match-row">0.25 of 80 → <label><input type="radio" name="m5c" class="m5c">15</label><label><input type="radio" name="m5c" class="m5c correct">20</label></div>
+<div class="match-row">0.75 of 40 → <label><input type="radio" name="m5d" class="m5d correct">30</label><label><input type="radio" name="m5d" class="m5d">35</label></div>
+<div class="answer">Correct matches: 40, ₹50, 20, 30.</div></div>
+</section>
+
+<section>
+<h2>Section F — Drag & Drop Style Questions</h2>
+
+<div class="question drag"><h3>41. Select the correct result: 3.6 × 2.5</h3>
+<label class="option"><input type="radio" name="q41"> 7.5</label>
+<label class="option"><input type="radio" name="q41" class="correct"> 9</label>
+<label class="option"><input type="radio" name="q41"> 90</label>
+<div class="answer">Correct Answer: 9</div></div>
+
+<div class="question drag"><h3>42. Choose the equivalent fraction for 0.625.</h3>
+<label class="option"><input type="radio" name="q42"> 3/5</label>
+<label class="option"><input type="radio" name="q42" class="correct"> 5/8</label>
+<label class="option"><input type="radio" name="q42"> 7/8</label>
+<div class="answer">Correct Answer: 5/8</div></div>
+
+<div class="question drag"><h3>43. Choose the correct value: 9.6 ÷ 1.2</h3>
+<label class="option"><input type="radio" name="q43"> 6</label>
+<label class="option"><input type="radio" name="q43" class="correct"> 8</label>
+<label class="option"><input type="radio" name="q43"> 12</label>
+<div class="answer">Correct Answer: 8</div></div>
+
+<div class="question drag"><h3>44. Select the greater number.</h3>
+<label class="option"><input type="radio" name="q44" class="correct"> 0.804</label>
+<label class="option"><input type="radio" name="q44"> 0.84</label>
+<label class="option"><input type="radio" name="q44"> 0.084</label>
+<div class="answer">Correct Answer: 0.84. Note: 0.84 = 0.840, which is greater than 0.804.</div></div>
+
+<div class="question drag"><h3>45. Select the percentage represented by 0.72.</h3>
+<label class="option"><input type="radio" name="q45"> 7.2%</label>
+<label class="option"><input type="radio" name="q45" class="correct"> 72%</label>
+<label class="option"><input type="radio" name="q45"> 720%</label>
+<div class="answer">Correct Answer: 72%</div></div>
+</section>
+
+<section>
+<h2>Section G — HOTS / Exam Challenge</h2>
+
+<div class="question"><h3>46. A 7.5 m ribbon is cut into pieces of 0.5 m each. How many pieces are obtained?</h3>
+<label class="option"><input type="radio" name="q46"> 10</label>
+<label class="option"><input type="radio" name="q46" class="correct"> 15</label>
+<label class="option"><input type="radio" name="q46"> 20</label>
+<label class="option"><input type="radio" name="q46"> 25</label>
+<div class="answer">Correct Answer: 15 pieces. 7.5 ÷ 0.5 = 15.</div></div>
+
+<div class="question"><h3>47. A rectangular field is 12.5 m long and 8.4 m wide. Find its area.</h3>
+<label class="option"><input type="radio" name="q47"> 96 m²</label>
+<label class="option"><input type="radio" name="q47" class="correct"> 105 m²</label>
+<label class="option"><input type="radio" name="q47"> 108.5 m²</label>
+<label class="option"><input type="radio" name="q47"> 110 m²</label>
+<div class="answer">Correct Answer: 105 m². 12.5 × 8.4 = 105.</div></div>
+
+<div class="question"><h3>48. A bottle contains 2.4 L of juice. It is poured equally into 6 glasses. How much juice does each glass receive?</h3>
+<label class="option"><input type="radio" name="q48"> 0.2 L</label>
+<label class="option"><input type="radio" name="q48" class="correct"> 0.4 L</label>
+<label class="option"><input type="radio" name="q48"> 0.6 L</label>
+<label class="option"><input type="radio" name="q48"> 4 L</label>
+<div class="answer">Correct Answer: 0.4 L.</div></div>
+
+<div class="question"><h3>49. A student scores 72 out of 100. Express the score as a decimal and percentage.</h3>
+<label class="option"><input type="radio" name="q49"> 0.072 and 7.2%</label>
+<label class="option"><input type="radio" name="q49" class="correct"> 0.72 and 72%</label>
+<label class="option"><input type="radio" name="q49"> 7.2 and 720%</label>
+<label class="option"><input type="radio" name="q49"> 0.072 and 72%</label>
+<div class="answer">Correct Answer: 0.72 and 72%.</div></div>
+
+<div class="question"><h3>50. A ₹1200 bag is sold at a 15% discount. Find its selling price.</h3>
+<label class="option"><input type="radio" name="q50"> ₹1000</label>
+<label class="option"><input type="radio" name="q50"> ₹1010</label>
+<label class="option"><input type="radio" name="q50" class="correct"> ₹1020</label>
+<label class="option"><input type="radio" name="q50"> ₹1185</label>
+<div class="answer">Correct Answer: ₹1020. Discount = 15% of ₹1200 = ₹180; selling price = ₹1020.</div></div>
+
+<div class="question"><h3>51. Without using a calculator, decide which is greater: 3.75 × 0.4 or 1.5.</h3>
+<label class="option"><input type="radio" name="q51"> 3.75 × 0.4 is greater</label>
+<label class="option"><input type="radio" name="q51" class="correct"> They are equal</label>
+<label class="option"><input type="radio" name="q51"> 1.5 is greater</label>
+<label class="option"><input type="radio" name="q51"> Cannot compare</label>
+<div class="answer">Correct Answer: They are equal because 3.75 × 0.4 = 1.5.</div></div>
+
+<div class="question"><h3>52. A number is multiplied by 0.1 and the result is 4.7. What was the original number?</h3>
+<label class="option"><input type="radio" name="q52"> 0.47</label>
+<label class="option"><input type="radio" name="q52"> 4.7</label>
+<label class="option"><input type="radio" name="q52" class="correct"> 47</label>
+<label class="option"><input type="radio" name="q52"> 470</label>
+<div class="answer">Correct Answer: 47 because 47 × 0.1 = 4.7.</div></div>
+
+<div class="question"><h3>53. Which is greater: 5/8 or 0.6?</h3>
+<label class="option"><input type="radio" name="q53" class="correct"> 5/8</label>
+<label class="option"><input type="radio" name="q53"> 0.6</label>
+<label class="option"><input type="radio" name="q53"> They are equal</label>
+<label class="option"><input type="radio" name="q53"> Cannot be determined</label>
+<div class="answer">Correct Answer: 5/8, because 5/8 = 0.625 > 0.6.</div></div>
+
+<div class="question"><h3>54. A shopkeeper buys an item for ₹800 and sells it for ₹920. What is the percentage increase based on the original price?</h3>
+<label class="option"><input type="radio" name="q54"> 10%</label>
+<label class="option"><input type="radio" name="q54" class="correct"> 15%</label>
+<label class="option"><input type="radio" name="q54"> 20%</label>
+<label class="option"><input type="radio" name="q54"> 25%</label>
+<div class="answer">Correct Answer: 15%. Increase = ₹120; 120/800 × 100 = 15%.</div></div>
+
+<div class="question"><h3>55. A student calculates 0.24 ÷ 0.06 as 0.4. Identify the correct result and reason.</h3>
+<label class="option"><input type="radio" name="q55"> 0.04, because decimals are divided directly</label>
+<label class="option"><input type="radio" name="q55" class="correct"> 4, because 24 hundredths ÷ 6 hundredths = 4</label>
+<label class="option"><input type="radio" name="q55"> 40, because two decimal places are removed</label>
+<label class="option"><input type="radio" name="q55"> 0.4, because 24 ÷ 6 = 4 and decimals remain</label>
+<div class="answer">Correct Answer: 4. 0.24 ÷ 0.06 = 24 ÷ 6 = 4.</div></div>
+
+</section>
+
+<div class="score-card">
+<h2>Final Score</h2>
+<div class="score-number"></div>
+<p>Correctly answered questions are counted automatically.</p>
+</div>
+
+</div>
+</body>
+</html>

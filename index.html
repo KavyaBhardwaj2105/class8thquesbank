@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Class 7 Mathematics | Ganita Prakash Question Bank</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top left, #dbeafe 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #e0e7ff 0%, transparent 35%),
+                #f8fafc;
+            color: #111827;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: auto;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 50px;
+            background: #111827;
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 6vw, 64px);
+            font-weight: 900;
+            line-height: 1.05;
+            color: #0f172a;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #4f46e5;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.7;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 10px auto 55px;
+            max-width: 850px;
+        }
+
+        .stat {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 22px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 28px;
+            font-weight: 900;
+            color: #4f46e5;
+            margin-bottom: 5px;
+        }
+
+        .stat span {
+            font-size: 13px;
+            font-weight: 800;
+            color: #475569;
+        }
+
+        /* SECTION */
+
+        .part {
+            margin-bottom: 55px;
+        }
+
+        .part-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .part-number {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111827;
+            color: white;
+            border-radius: 15px;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .part-header h2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #0f172a;
+        }
+
+        .part-header p {
+            font-weight: 700;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        /* CHAPTER GRID */
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .chapter-card {
+            position: relative;
+            overflow: hidden;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 25px;
+            min-height: 205px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+            transition: 0.25s ease;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-6px);
+            border-color: #818cf8;
+            box-shadow: 0 18px 40px rgba(79, 70, 229, 0.15);
+        }
+
+        .chapter-number {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            font-size: 80px;
+            line-height: 1;
+            font-weight: 900;
+            color: #f1f5f9;
+            z-index: 0;
+        }
+
+        .chapter-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .chapter-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #4f46e5;
+            background: #eef2ff;
+            padding: 7px 11px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .chapter-card h3 {
+            font-size: 21px;
+            line-height: 1.3;
+            font-weight: 900;
+            color: #111827;
+            max-width: 90%;
+        }
+
+        .chapter-info {
+            margin-top: 12px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #64748b;
+        }
+
+        .start-btn {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            width: fit-content;
+            margin-top: 18px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: #111827;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 900;
+            transition: 0.2s ease;
+        }
+
+        .start-btn:hover {
+            background: #4f46e5;
+            transform: translateX(3px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 30px;
+            padding: 35px 20px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        footer h3 {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 13px;
+            font-weight: 700;
+            color: #cbd5e1;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 40px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .part-header h2 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="container">
+
+            <div class="badge">
+                CLASS 7 MATHEMATICS • GANITA PRAKASH
+            </div>
+
+            <h1>
+                Mathematics<br>
+                <span>Question Bank</span>
+            </h1>
+
+            <p>
+                Chapter-wise medium to hard level question bank designed
+                for Class 7 half-yearly examination preparation.
+                Test your concepts, reasoning and problem-solving skills.
+            </p>
+
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- STATS -->
+
+        <section class="stats">
+
+            <div class="stat">
+                <strong>15</strong>
+                <span>Total Chapters</span>
+            </div>
+
+            <div class="stat">
+                <strong>825</strong>
+                <span>Total Questions</span>
+            </div>
+
+            <div class="stat">
+                <strong>55</strong>
+                <span>Questions / Chapter</span>
+            </div>
+
+        </section>
+
+
+        <!-- PART I -->
+
+        <section class="part">
+
+            <div class="part-header">
+
+                <div class="part-number">
+                    I
+                </div>
+
+                <div>
+                    <h2>Ganita Prakash — Part I</h2>
+                    <p>Chapters 1–8</p>
+                </div>
+
+            </div>
+
+
+            <div class="chapter-grid">
+
+                <!-- CHAPTER 1 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">01</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 01
+                        </div>
+
+                        <h3>
+                            Large Numbers Around Us
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter1.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 2 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">02</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 02
+                        </div>
+
+                        <h3>
+                            Arithmetic Expressions
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter2.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 3 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">03</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 03
+                        </div>
+
+                        <h3>
+                            A Peek Beyond the Point
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter3.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 4 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">04</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 04
+                        </div>
+
+                        <h3>
+                            Expressions using Letter-Numbers
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter4.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 5 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">05</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 05
+                        </div>
+
+                        <h3>
+                            Parallel and Intersecting Lines
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter5.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 6 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">06</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 06
+                        </div>
+
+                        <h3>
+                            Number Play
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter6.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 7 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">07</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 07
+                        </div>
+
+                        <h3>
+                            A Tale of Three Intersecting Lines
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter7.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 8 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">08</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 08
+                        </div>
+
+                        <h3>
+                            Working with Fractions
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter8.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PART II -->
+
+        <section class="part">
+
+            <div class="part-header">
+
+                <div class="part-number">
+                    II
+                </div>
+
+                <div>
+                    <h2>Ganita Prakash — Part II</h2>
+                    <p>Chapters 9–15</p>
+                </div>
+
+            </div>
+
+
+            <div class="chapter-grid">
+
+                <!-- CHAPTER 9 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">09</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 09
+                        </div>
+
+                        <h3>
+                            Geometric Twins
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter9.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 10 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">10</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 10
+                        </div>
+
+                        <h3>
+                            Operations with Integers
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter10.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 11 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">11</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 11
+                        </div>
+
+                        <h3>
+                            Finding Common Ground
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter11.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 12 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">12</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 12
+                        </div>
+
+                        <h3>
+                            Another Peek Beyond the Point
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter12.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 13 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">13</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 13
+                        </div>
+
+                        <h3>
+                            Connecting the Dots...
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter13.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 14 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">14</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 14
+                        </div>
+
+                        <h3>
+                            Constructions and Tilings
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter14.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+
+                <!-- CHAPTER 15 -->
+
+                <article class="chapter-card">
+
+                    <div class="chapter-number">15</div>
+
+                    <div class="chapter-content">
+
+                        <div class="chapter-label">
+                            CHAPTER 15
+                        </div>
+
+                        <h3>
+                            Finding the Unknown
+                        </h3>
+
+                        <div class="chapter-info">
+                            55 Questions • Exam Preparation
+                        </div>
+
+                    </div>
+
+                    <a href="chapter15.html" class="start-btn">
+                        Start Chapter →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <h3>Class 7 Mathematics • Ganita Prakash</h3>
+
+        <p>
+            15 Chapters • 825 Questions • Medium to Hard Level
+            • Half-Yearly Examination Preparation
+        </p>
+
+    </footer>
+
+</body>
+</html>

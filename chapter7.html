@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 7 - A Tale of Three Intersecting Lines</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#17202a}
+header{background:#182848;color:white;padding:28px 20px;text-align:center}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0}
+.quiz{max-width:1050px;margin:25px auto;padding:0 15px;counter-reset:score}
+.section{background:white;margin:25px 0;padding:22px;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.section h2{color:#182848;border-bottom:2px solid #dbe4ef;padding-bottom:10px}
+.question{margin:20px 0;padding:18px;border:1px solid #dce3eb;border-radius:12px;background:#fafcff}
+.question h3{margin-top:0;font-size:17px}
+label{display:block;padding:10px;margin:7px 0;background:#f0f4f8;border-radius:8px;cursor:pointer;font-weight:600}
+label:hover{background:#e1eaf3}
+input{margin-right:8px}
+.answer{display:none;margin-top:12px;padding:11px;border-radius:8px;background:#e8f6ec;color:#155724;font-weight:bold}
+.question:has(input:checked) .answer{display:block}
+.question:not(.match):has(.correct:checked){counter-increment:score}
+
+.match.m1:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){counter-increment:score}
+.match.m2:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){counter-increment:score}
+.match.m3:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){counter-increment:score}
+.match.m4:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){counter-increment:score}
+.match.m5:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){counter-increment:score}
+
+.match-row{margin:14px 0;padding:12px;background:#f3f7fb;border-radius:9px}
+.match-row strong{display:block;margin-bottom:8px}
+.score-card{background:#182848;color:white;padding:30px;text-align:center;border-radius:16px;margin:30px 0}
+.score-card h2{margin:0 0 10px}
+.score-number{font-size:34px;font-weight:bold}
+.score-number::after{content:counter(score)" / 55"}
+.note{background:#fff5d9;padding:12px;border-radius:8px;font-weight:bold}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Chapter 7: A Tale of Three Intersecting Lines</h1>
+<p>Class 8 Mathematics — Ganita Prakash</p>
+</header>
+
+<div class="quiz">
+
+<div class="note">Click an option to reveal the correct answer.</div>
+
+<div class="section">
+<h2>Section A — Multiple Choice Questions</h2>
+
+<div class="question"><h3>1. When two lines intersect, how many angles are formed?</h3>
+<label><input type="radio" name="q1">2</label>
+<label><input type="radio" name="q1" class="correct">4</label>
+<label><input type="radio" name="q1">6</label>
+<label><input type="radio" name="q1">8</label>
+<div class="answer">Correct Answer: 4</div></div>
+
+<div class="question"><h3>2. If one angle formed by two intersecting lines is 68°, its vertically opposite angle is:</h3>
+<label><input type="radio" name="q2">112°</label>
+<label><input type="radio" name="q2" class="correct">68°</label>
+<label><input type="radio" name="q2">34°</label>
+<label><input type="radio" name="q2">136°</label>
+<div class="answer">Correct Answer: 68°</div></div>
+
+<div class="question"><h3>3. The sum of angles in a linear pair is:</h3>
+<label><input type="radio" name="q3">90°</label>
+<label><input type="radio" name="q3">270°</label>
+<label><input type="radio" name="q3" class="correct">180°</label>
+<label><input type="radio" name="q3">360°</label>
+<div class="answer">Correct Answer: 180°</div></div>
+
+<div class="question"><h3>4. Three lines intersecting at one point form how many sectors around that point?</h3>
+<label><input type="radio" name="q4">3</label>
+<label><input type="radio" name="q4">4</label>
+<label><input type="radio" name="q4" class="correct">6</label>
+<label><input type="radio" name="q4">8</label>
+<div class="answer">Correct Answer: 6</div></div>
+
+<div class="question"><h3>5. Two adjacent angles are 73° and x°. If they form a linear pair, x equals:</h3>
+<label><input type="radio" name="q5">97°</label>
+<label><input type="radio" name="q5" class="correct">107°</label>
+<label><input type="radio" name="q5">117°</label>
+<label><input type="radio" name="q5">113°</label>
+<div class="answer">Correct Answer: 107°</div></div>
+
+<div class="question"><h3>6. An angle is 132°. Its adjacent angle in a linear pair is:</h3>
+<label><input type="radio" name="q6" class="correct">48°</label>
+<label><input type="radio" name="q6">58°</label>
+<label><input type="radio" name="q6">38°</label>
+<label><input type="radio" name="q6">68°</label>
+<div class="answer">Correct Answer: 48°</div></div>
+
+<div class="question"><h3>7. If one angle formed by two intersecting lines is 90°, the other three angles are:</h3>
+<label><input type="radio" name="q7">45°, 45°, 90°</label>
+<label><input type="radio" name="q7" class="correct">90°, 90°, 90°</label>
+<label><input type="radio" name="q7">60°, 60°, 120°</label>
+<label><input type="radio" name="q7">30°, 60°, 90°</label>
+<div class="answer">Correct Answer: 90°, 90°, 90°</div></div>
+
+<div class="question"><h3>8. If two adjacent angles are equal and form a straight angle, each angle measures:</h3>
+<label><input type="radio" name="q8">30°</label>
+<label><input type="radio" name="q8">60°</label>
+<label><input type="radio" name="q8" class="correct">90°</label>
+<label><input type="radio" name="q8">120°</label>
+<div class="answer">Correct Answer: 90°</div></div>
+
+<div class="question"><h3>9. Three concurrent lines divide the complete angle around their common point into:</h3>
+<label><input type="radio" name="q9">3 sectors</label>
+<label><input type="radio" name="q9" class="correct">6 sectors</label>
+<label><input type="radio" name="q9">9 sectors</label>
+<label><input type="radio" name="q9">12 sectors</label>
+<div class="answer">Correct Answer: 6 sectors</div></div>
+
+<div class="question"><h3>10. If one angle at an intersection is 47°, the angle adjacent to it in a linear pair is:</h3>
+<label><input type="radio" name="q10">47°</label>
+<label><input type="radio" name="q10">123°</label>
+<label><input type="radio" name="q10" class="correct">133°</label>
+<label><input type="radio" name="q10">143°</label>
+<div class="answer">Correct Answer: 133°</div></div>
+
+<div class="question"><h3>11. Three lines pass through the same point. How many pairs of vertically opposite angles are formed?</h3>
+<label><input type="radio" name="q11">2</label>
+<label><input type="radio" name="q11" class="correct">3</label>
+<label><input type="radio" name="q11">4</label>
+<label><input type="radio" name="q11">6</label>
+<div class="answer">Correct Answer: 3 pairs</div></div>
+
+<div class="question"><h3>12. The angles around a single point have a total measure of:</h3>
+<label><input type="radio" name="q12">90°</label>
+<label><input type="radio" name="q12">180°</label>
+<label><input type="radio" name="q12" class="correct">360°</label>
+<label><input type="radio" name="q12">720°</label>
+<div class="answer">Correct Answer: 360°</div></div>
+
+<div class="question"><h3>13. If x° and (x + 40)° form a linear pair, x is:</h3>
+<label><input type="radio" name="q13">60°</label>
+<label><input type="radio" name="q13" class="correct">70°</label>
+<label><input type="radio" name="q13">80°</label>
+<label><input type="radio" name="q13">90°</label>
+<div class="answer">Correct Answer: 70°</div></div>
+
+<div class="question"><h3>14. If an angle is 50°, its vertically opposite angle is:</h3>
+<label><input type="radio" name="q14">40°</label>
+<label><input type="radio" name="q14">90°</label>
+<label><input type="radio" name="q14" class="correct">50°</label>
+<label><input type="radio" name="q14">130°</label>
+<div class="answer">Correct Answer: 50°</div></div>
+
+<div class="question"><h3>15. Which statement is always true for vertically opposite angles?</h3>
+<label><input type="radio" name="q15">Their sum is always 90°</label>
+<label><input type="radio" name="q15" class="correct">They are equal</label>
+<label><input type="radio" name="q15">They are always supplementary</label>
+<label><input type="radio" name="q15">They are always unequal</label>
+<div class="answer">Correct Answer: They are equal</div></div>
+
+</div>
+
+<div class="section">
+<h2>Section B — True / False</h2>
+
+<div class="question"><h3>16. Vertically opposite angles are equal.</h3>
+<label><input type="radio" name="q16" class="correct">True</label><label><input type="radio" name="q16">False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>17. A straight angle measures 90°.</h3>
+<label><input type="radio" name="q17">True</label><label><input type="radio" name="q17" class="correct">False</label>
+<div class="answer">Correct Answer: False — it measures 180°.</div></div>
+
+<div class="question"><h3>18. Angles around a point add up to 360°.</h3>
+<label><input type="radio" name="q18" class="correct">True</label><label><input type="radio" name="q18">False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>19. The angles of a linear pair have a sum of 180°.</h3>
+<label><input type="radio" name="q19" class="correct">True</label><label><input type="radio" name="q19">False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>20. Three concurrent lines create four sectors at their common point.</h3>
+<label><input type="radio" name="q20">True</label><label><input type="radio" name="q20" class="correct">False</label>
+<div class="answer">Correct Answer: False — they create six sectors.</div></div>
+
+<div class="question"><h3>21. Vertically opposite angles can measure 70° and 110°.</h3>
+<label><input type="radio" name="q21">True</label><label><input type="radio" name="q21" class="correct">False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><h3>22. The two angles of a linear pair need not be equal.</h3>
+<label><input type="radio" name="q22" class="correct">True</label><label><input type="radio" name="q22">False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>23. If one angle at an intersection is 115°, its vertically opposite angle is 65°.</h3>
+<label><input type="radio" name="q23">True</label><label><input type="radio" name="q23" class="correct">False</label>
+<div class="answer">Correct Answer: False — it is 115°.</div></div>
+
+<div class="question"><h3>24. A linear pair consists of adjacent angles whose non-common arms form a straight line.</h3>
+<label><input type="radio" name="q24" class="correct">True</label><label><input type="radio" name="q24">False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>25. Three concurrent lines produce three pairs of vertically opposite angles.</h3>
+<label><input type="radio" name="q25" class="correct">True</label><label><input type="radio" name="q25">False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+</div>
+
+<div class="section">
+<h2>Section C — Assertion & Reasoning</h2>
+<p><b>A:</b> Both true and R explains A &nbsp; <b>B:</b> Both true but R does not explain A &nbsp; <b>C:</b> A true, R false &nbsp; <b>D:</b> A false, R true</p>
+
+<div class="question"><h3>26. Assertion: Vertically opposite angles are equal.<br>Reason: They are formed when two lines intersect.</h3>
+<label><input type="radio" name="q26">A</label><label><input type="radio" name="q26" class="correct">B</label><label><input type="radio" name="q26">C</label><label><input type="radio" name="q26">D</label>
+<div class="answer">Correct Answer: B</div></div>
+
+<div class="question"><h3>27. Assertion: A linear pair is supplementary.<br>Reason: Its non-common arms form a straight line.</h3>
+<label><input type="radio" name="q27" class="correct">A</label><label><input type="radio" name="q27">B</label><label><input type="radio" name="q27">C</label><label><input type="radio" name="q27">D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>28. Assertion: If one angle is 82°, its vertically opposite angle is 82°.<br>Reason: Vertically opposite angles are equal.</h3>
+<label><input type="radio" name="q28" class="correct">A</label><label><input type="radio" name="q28">B</label><label><input type="radio" name="q28">C</label><label><input type="radio" name="q28">D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>29. Assertion: All six angles formed by three concurrent lines must be equal.<br>Reason: Angles around a point total 360°.</h3>
+<label><input type="radio" name="q29">A</label><label><input type="radio" name="q29">B</label><label><input type="radio" name="q29">C</label><label><input type="radio" name="q29" class="correct">D</label>
+<div class="answer">Correct Answer: D</div></div>
+
+<div class="question"><h3>30. Assertion: Two angles forming a linear pair are supplementary.<br>Reason: All supplementary angles are equal.</h3>
+<label><input type="radio" name="q30">A</label><label><input type="radio" name="q30">B</label><label><input type="radio" name="q30" class="correct">C</label><label><input type="radio" name="q30">D</label>
+<div class="answer">Correct Answer: C</div></div>
+
+</div>
+
+<div class="section">
+<h2>Section D — Fill in the Blanks</h2>
+
+<div class="question"><h3>31. A straight angle measures ______ degrees.</h3>
+<label><input type="radio" name="q31">90</label><label><input type="radio" name="q31" class="correct">180</label><label><input type="radio" name="q31">270</label><label><input type="radio" name="q31">360</label>
+<div class="answer">Correct Answer: 180°</div></div>
+
+<div class="question"><h3>32. ______ angles are equal when two lines intersect.</h3>
+<label><input type="radio" name="q32">Adjacent</label><label><input type="radio" name="q32" class="correct">Vertically opposite</label><label><input type="radio" name="q32">Complementary</label><label><input type="radio" name="q32">Reflex</label>
+<div class="answer">Correct Answer: Vertically opposite</div></div>
+
+<div class="question"><h3>33. A complete turn around a point measures ______ degrees.</h3>
+<label><input type="radio" name="q33">90</label><label><input type="radio" name="q33">180</label><label><input type="radio" name="q33" class="correct">360</label><label><input type="radio" name="q33">720</label>
+<div class="answer">Correct Answer: 360°</div></div>
+
+<div class="question"><h3>34. Two angles whose sum is 180° are called ______ angles.</h3>
+<label><input type="radio" name="q34">Complementary</label><label><input type="radio" name="q34" class="correct">Supplementary</label><label><input type="radio" name="q34">Vertical</label><label><input type="radio" name="q34">Reflex</label>
+<div class="answer">Correct Answer: Supplementary</div></div>
+
+<div class="question"><h3>35. Lines passing through the same point are called ______ lines.</h3>
+<label><input type="radio" name="q35">Parallel</label><label><input type="radio" name="q35">Perpendicular</label><label><input type="radio" name="q35" class="correct">Concurrent</label><label><input type="radio" name="q35">Curved</label>
+<div class="answer">Correct Answer: Concurrent</div></div>
+
+</div>
+
+<div class="section">
+<h2>Section E — Match the Following</h2>
+
+<div class="question match m1"><h3>36. Match the concept with its property.</h3>
+<div class="match-row"><strong>1. Vertically opposite angles</strong><label><input type="radio" name="m1a">Sum 180°</label><label><input type="radio" name="m1a" class="correct">Equal</label><label><input type="radio" name="m1a">Sum 90°</label><label><input type="radio" name="m1a">Sum 360°</label></div>
+<div class="match-row"><strong>2. Linear pair</strong><label><input type="radio" name="m1b" class="correct">Sum 180°</label><label><input type="radio" name="m1b">Equal</label><label><input type="radio" name="m1b">Sum 90°</label><label><input type="radio" name="m1b">Sum 360°</label></div>
+<div class="match-row"><strong>3. Angles around a point</strong><label><input type="radio" name="m1c">Sum 90°</label><label><input type="radio" name="m1c">Sum 180°</label><label><input type="radio" name="m1c" class="correct">Sum 360°</label><label><input type="radio" name="m1c">Always equal</label></div>
+<div class="match-row"><strong>4. Complementary angles</strong><label><input type="radio" name="m1d">Sum 180°</label><label><input type="radio" name="m1d" class="correct">Sum 90°</label><label><input type="radio" name="m1d">Sum 360°</label><label><input type="radio" name="m1d">Always reflex</label></div>
+<div class="answer">Correct: 1–Equal, 2–180°, 3–360°, 4–90°.</div></div>
+
+<div class="question match m2"><h3>37. Match each angle with its supplement.</h3>
+<div class="match-row"><strong>1. 47°</strong><label><input type="radio" name="m2a" class="correct">133°</label><label><input type="radio" name="m2a">143°</label><label><input type="radio" name="m2a">123°</label><label><input type="radio" name="m2a">113°</label></div>
+<div class="match-row"><strong>2. 68°</strong><label><input type="radio" name="m2b">122°</label><label><input type="radio" name="m2b" class="correct">112°</label><label><input type="radio" name="m2b">102°</label><label><input type="radio" name="m2b">108°</label></div>
+<div class="match-row"><strong>3. 91°</strong><label><input type="radio" name="m2c">79°</label><label><input type="radio" name="m2c">99°</label><label><input type="radio" name="m2c" class="correct">89°</label><label><input type="radio" name="m2c">81°</label></div>
+<div class="match-row"><strong>4. 124°</strong><label><input type="radio" name="m2d">66°</label><label><input type="radio" name="m2d">46°</label><label><input type="radio" name="m2d">76°</label><label><input type="radio" name="m2d" class="correct">56°</label></div>
+<div class="answer">Correct: 47–133°, 68–112°, 91–89°, 124–56°.</div></div>
+
+<div class="question match m3"><h3>38. Match each equation with x.</h3>
+<div class="match-row"><strong>1. x + 55 = 180</strong><label><input type="radio" name="m3a" class="correct">125</label><label><input type="radio" name="m3a">115</label><label><input type="radio" name="m3a">135</label><label><input type="radio" name="m3a">105</label></div>
+<div class="match-row"><strong>2. 2x + 20 = 180</strong><label><input type="radio" name="m3b">70</label><label><input type="radio" name="m3b">90</label><label><input type="radio" name="m3b" class="correct">80</label><label><input type="radio" name="m3b">60</label></div>
+<div class="match-row"><strong>3. 3x = 90</strong><label><input type="radio" name="m3c">20</label><label><input type="radio" name="m3c" class="correct">30</label><label><input type="radio" name="m3c">40</label><label><input type="radio" name="m3c">45</label></div>
+<div class="match-row"><strong>4. 4x + 20 = 180</strong><label><input type="radio" name="m3d">30</label><label><input type="radio" name="m3d">50</label><label><input type="radio" name="m3d" class="correct">40</label><label><input type="radio" name="m3d">45</label></div>
+<div class="answer">Correct: 1–125, 2–80, 3–30, 4–40.</div></div>
+
+<div class="question match m4"><h3>39. Match each angle with its vertically opposite angle.</h3>
+<div class="match-row"><strong>1. 38°</strong><label><input type="radio" name="m4a">42°</label><label><input type="radio" name="m4a" class="correct">38°</label><label><input type="radio" name="m4a">52°</label><label><input type="radio" name="m4a">142°</label></div>
+<div class="match-row"><strong>2. 74°</strong><label><input type="radio" name="m4b" class="correct">74°</label><label><input type="radio" name="m4b">106°</label><label><input type="radio" name="m4b">84°</label><label><input type="radio" name="m4b">116°</label></div>
+<div class="match-row"><strong>3. 109°</strong><label><input type="radio" name="m4c">71°</label><label><input type="radio" name="m4c">81°</label><label><input type="radio" name="m4c" class="correct">109°</label><label><input type="radio" name="m4c">99°</label></div>
+<div class="match-row"><strong>4. 156°</strong><label><input type="radio" name="m4d">24°</label><label><input type="radio" name="m4d">34°</label><label><input type="radio" name="m4d">44°</label><label><input type="radio" name="m4d" class="correct">156°</label></div>
+<div class="answer">Correct: 38–38, 74–74, 109–109, 156–156.</div></div>
+
+<div class="question match m5"><h3>40. Match each angle with its complement.</h3>
+<div class="match-row"><strong>1. 18°</strong><label><input type="radio" name="m5a">62°</label><label><input type="radio" name="m5a" class="correct">72°</label><label><input type="radio" name="m5a">82°</label><label><input type="radio" name="m5a">68°</label></div>
+<div class="match-row"><strong>2. 27°</strong><label><input type="radio" name="m5b">53°</label><label><input type="radio" name="m5b">73°</label><label><input type="radio" name="m5b" class="correct">63°</label><label><input type="radio" name="m5b">83°</label></div>
+<div class="match-row"><strong>3. 44°</strong><label><input type="radio" name="m5c">56°</label><label><input type="radio" name="m5c" class="correct">46°</label><label><input type="radio" name="m5c">36°</label><label><input type="radio" name="m5c">54°</label></div>
+<div class="match-row"><strong>4. 59°</strong><label><input type="radio" name="m5d">41°</label><label><input type="radio" name="m5d" class="correct">31°</label><label><input type="radio" name="m5d">21°</label><label><input type="radio" name="m5d">39°</label></div>
+<div class="answer">Correct: 18–72°, 27–63°, 44–46°, 59–31°.</div></div>
+
+</div>
+
+<div class="section">
+<h2>Section F — Drag & Drop Style</h2>
+
+<div class="question"><h3>41. Which angle completes a straight angle with 64°?</h3>
+<label><input type="radio" name="q41">106°</label><label><input type="radio" name="q41" class="correct">116°</label><label><input type="radio" name="q41">126°</label><label><input type="radio" name="q41">124°</label>
+<div class="answer">Correct Answer: 116°</div></div>
+
+<div class="question"><h3>42. If an angle is vertically opposite to 93°, its measure is:</h3>
+<label><input type="radio" name="q42">87°</label><label><input type="radio" name="q42">183°</label><label><input type="radio" name="q42" class="correct">93°</label><label><input type="radio" name="q42">267°</label>
+<div class="answer">Correct Answer: 93°</div></div>
+
+<div class="question"><h3>43. Two adjacent angles are 2x and x. They form a linear pair. Find x.</h3>
+<label><input type="radio" name="q43">40°</label><label><input type="radio" name="q43">50°</label><label><input type="radio" name="q43" class="correct">60°</label><label><input type="radio" name="q43">70°</label>
+<div class="answer">Correct Answer: 60°</div></div>
+
+<div class="question"><h3>44. If one angle is 121°, select its adjacent linear-pair angle.</h3>
+<label><input type="radio" name="q44">49°</label><label><input type="radio" name="q44" class="correct">59°</label><label><input type="radio" name="q44">69°</label><label><input type="radio" name="q44">79°</label>
+<div class="answer">Correct Answer: 59°</div></div>
+
+<div class="question"><h3>45. Three consecutive sectors around a point are 40°, 65° and x°. Their sum is 180°. Find x.</h3>
+<label><input type="radio" name="q45">65°</label><label><input type="radio" name="q45">70°</label><label><input type="radio" name="q45" class="correct">75°</label><label><input type="radio" name="q45">80°</label>
+<div class="answer">Correct Answer: 75°</div></div>
+
+</div>
+
+<div class="section">
+<h2>Section G — HOTS</h2>
+
+<div class="question"><h3>46. Two adjacent angles form a linear pair and are in the ratio 1 : 2. Find both angles.</h3>
+<label><input type="radio" name="q46">45° and 135°</label><label><input type="radio" name="q46" class="correct">60° and 120°</label><label><input type="radio" name="q46">70° and 110°</label><label><input type="radio" name="q46">80° and 100°</label>
+<div class="answer">Correct Answer: 60° and 120°.</div></div>
+
+<div class="question"><h3>47. Three concurrent lines form six angles in order as a, b, c, a, b, c. If a = 40° and b = 60°, find c.</h3>
+<label><input type="radio" name="q47">60°</label><label><input type="radio" name="q47">70°</label><label><input type="radio" name="q47" class="correct">80°</label><label><input type="radio" name="q47">100°</label>
+<div class="answer">Correct Answer: 80°.</div></div>
+
+<div class="question"><h3>48. Three lines intersect at one point. Three consecutive angles are x, 2x and 3x. Find x.</h3>
+<label><input type="radio" name="q48">20°</label><label><input type="radio" name="q48" class="correct">30°</label><label><input type="radio" name="q48">40°</label><label><input type="radio" name="q48">45°</label>
+<div class="answer">Correct Answer: 30°.</div></div>
+
+<div class="question"><h3>49. Two adjacent angles are (3x + 10)° and (2x + 20)°. They form a linear pair. Find the two angles.</h3>
+<label><input type="radio" name="q49">90° and 90°</label><label><input type="radio" name="q49">95° and 85°</label><label><input type="radio" name="q49" class="correct">100° and 80°</label><label><input type="radio" name="q49">110° and 70°</label>
+<div class="answer">Correct Answer: 100° and 80°.</div></div>
+
+<div class="question"><h3>50. Two lines are perpendicular. A third ray divides one right angle into 35° and x°. Find x.</h3>
+<label><input type="radio" name="q50">45°</label><label><input type="radio" name="q50" class="correct">55°</label><label><input type="radio" name="q50">65°</label><label><input type="radio" name="q50">75°</label>
+<div class="answer">Correct Answer: 55°.</div></div>
+
+<div class="question"><h3>51. Two adjacent angles are (4x + 5)° and (2x + 55)°. They form a linear pair. Find x.</h3>
+<label><input type="radio" name="q51">15</label><label><input type="radio" name="q51" class="correct">20</label><label><input type="radio" name="q51">25</label><label><input type="radio" name="q51">30</label>
+<div class="answer">Correct Answer: 20.</div></div>
+
+<div class="question"><h3>52. Six angles made by three concurrent lines occur as a,b,c,a,b,c. If a=72° and b=48°, find c.</h3>
+<label><input type="radio" name="q52">50°</label><label><input type="radio" name="q52">55°</label><label><input type="radio" name="q52" class="correct">60°</label><label><input type="radio" name="q52">70°</label>
+<div class="answer">Correct Answer: 60°.</div></div>
+
+<div class="question"><h3>53. Three consecutive sectors formed by three concurrent lines are in the ratio 2 : 3 : 4. Find the three sector angles.</h3>
+<label><input type="radio" name="q53">30°, 45°, 60°</label><label><input type="radio" name="q53" class="correct">40°, 60°, 80°</label><label><input type="radio" name="q53">20°, 60°, 100°</label><label><input type="radio" name="q53">45°, 60°, 75°</label>
+<div class="answer">Correct Answer: 40°, 60°, 80°.</div></div>
+
+<div class="question"><h3>54. A student says: “If one angle formed by two intersecting lines is 125°, all four angles are 125°.” Which conclusion is correct?</h3>
+<label><input type="radio" name="q54">The student is correct.</label>
+<label><input type="radio" name="q54" class="correct">The student is incorrect; the angles are 125°, 55°, 125°, 55°.</label>
+<label><input type="radio" name="q54">All four angles are 55°.</label>
+<label><input type="radio" name="q54">All four angles are 90°.</label>
+<div class="answer">Correct Answer: 125°, 55°, 125°, 55°.</div></div>
+
+<div class="question"><h3>55. Two adjacent angles differ by 36° and form a linear pair. Find the smaller angle.</h3>
+<label><input type="radio" name="q55">62°</label><label><input type="radio" name="q55">68°</label><label><input type="radio" name="q55" class="correct">72°</label><label><input type="radio" name="q55">78°</label>
+<div class="answer">Correct Answer: 72°.</div></div>
+
+</div>
+
+<div class="score-card">
+<h2>Final Score</h2>
+<div class="score-number"></div>
+<p>Maximum Score: 55</p>
+</div>
+
+</div>
+</body>
+</html>

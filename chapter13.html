@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 13 - Connecting the Dots...</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:#f3f6fb;
+ color:#111827;
+ font-weight:700
+}
+header{
+ background:#111827;
+ color:#fff;
+ padding:28px 18px;
+ text-align:center
+}
+header h1{margin:0 0 8px;font-size:30px}
+header p{margin:0;color:#dbeafe}
+.wrap{max-width:1100px;margin:auto;padding:24px}
+section{margin:28px 0}
+section>h2{
+ background:#1d4ed8;
+ color:#fff;
+ padding:12px 16px;
+ border-radius:12px
+}
+.question{
+ background:#fff;
+ border:1px solid #cbd5e1;
+ border-radius:14px;
+ padding:18px;
+ margin:14px 0;
+ box-shadow:0 4px 12px #00000010
+}
+.question h3{margin:0 0 12px}
+.option{
+ display:block;
+ padding:9px 12px;
+ margin:7px 0;
+ border:1px solid #dbeafe;
+ border-radius:9px;
+ background:#f8fafc;
+ cursor:pointer
+}
+.option:hover{background:#eff6ff}
+.answer{
+ display:none;
+ margin-top:12px;
+ padding:12px;
+ border-radius:10px;
+ background:#dcfce7;
+ border-left:5px solid #16a34a
+}
+.question:has(input:checked) .answer{display:block}
+.match-row{
+ margin:10px 0;
+ padding:10px;
+ border-radius:10px;
+ background:#f8fafc;
+ border:1px solid #e2e8f0
+}
+.drag{
+ border:2px dashed #94a3b8;
+ background:#f8fafc
+}
+.score-card{
+ position:sticky;
+ bottom:12px;
+ background:#111827;
+ color:#fff;
+ padding:18px;
+ border-radius:16px;
+ text-align:center;
+ margin-top:30px
+}
+.score-number{font-size:28px}
+input{margin-right:8px}
+
+.quiz{counter-reset:score}
+.question:not(.match):has(.correct:checked){
+ counter-increment:score
+}
+
+.match.m1:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){counter-increment:score}
+.match.m2:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){counter-increment:score}
+.match.m3:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){counter-increment:score}
+.match.m4:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){counter-increment:score}
+.match.m5:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){counter-increment:score}
+
+.score-number::after{content:counter(score) " / 55"}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Chapter 13 — Connecting the Dots...</h1>
+<p>Ganita Prakash Part II • Class 7 Mathematics • 55 Question Revision Test</p>
+</header>
+
+<div class="wrap quiz">
+
+<section>
+<h2>Section A — Multiple Choice Questions</h2>
+
+<div class="question"><h3>1. A line segment joining two points on a circle is called a:</h3>
+<label class="option"><input type="radio" name="q1"> A) Radius</label>
+<label class="option"><input type="radio" name="q1" class="correct"> B) Chord</label>
+<label class="option"><input type="radio" name="q1"> C) Diameter</label>
+<label class="option"><input type="radio" name="q1"> D) Arc</label>
+<div class="answer">Correct Answer: B) Chord</div></div>
+
+<div class="question"><h3>2. A chord passing through the centre of a circle is called its:</h3>
+<label class="option"><input type="radio" name="q2"> A) Radius</label>
+<label class="option"><input type="radio" name="q2" class="correct"> B) Diameter</label>
+<label class="option"><input type="radio" name="q2"> C) Arc</label>
+<label class="option"><input type="radio" name="q2"> D) Sector</label>
+<div class="answer">Correct Answer: B) Diameter</div></div>
+
+<div class="question"><h3>3. If the radius of a circle is 7 cm, its diameter is:</h3>
+<label class="option"><input type="radio" name="q3"> A) 3.5 cm</label>
+<label class="option"><input type="radio" name="q3" class="correct"> B) 14 cm</label>
+<label class="option"><input type="radio" name="q3"> C) 21 cm</label>
+<label class="option"><input type="radio" name="q3"> D) 49 cm</label>
+<div class="answer">Correct Answer: B) 14 cm</div></div>
+
+<div class="question"><h3>4. Which point is equally distant from every point on a circle?</h3>
+<label class="option"><input type="radio" name="q4"> A) Any point on circumference</label>
+<label class="option"><input type="radio" name="q4" class="correct"> B) Centre</label>
+<label class="option"><input type="radio" name="q4"> C) Endpoint of a chord</label>
+<label class="option"><input type="radio" name="q4"> D) Any point outside</label>
+<div class="answer">Correct Answer: B) Centre</div></div>
+
+<div class="question"><h3>5. Two circles having the same centre are called:</h3>
+<label class="option"><input type="radio" name="q5"> A) Equal circles</label>
+<label class="option"><input type="radio" name="q5" class="correct"> B) Concentric circles</label>
+<label class="option"><input type="radio" name="q5"> C) Intersecting circles</label>
+<label class="option"><input type="radio" name="q5"> D) Parallel circles</label>
+<div class="answer">Correct Answer: B) Concentric circles</div></div>
+
+<div class="question"><h3>6. How many radii can be drawn in a circle?</h3>
+<label class="option"><input type="radio" name="q6"> A) 2</label>
+<label class="option"><input type="radio" name="q6"> B) 4</label>
+<label class="option"><input type="radio" name="q6"> C) 100</label>
+<label class="option"><input type="radio" name="q6" class="correct"> D) Infinitely many</label>
+<div class="answer">Correct Answer: D) Infinitely many</div></div>
+
+<div class="question"><h3>7. If two chords of a circle have equal lengths, they are:</h3>
+<label class="option"><input type="radio" name="q7" class="correct"> A) Equidistant from the centre</label>
+<label class="option"><input type="radio" name="q7"> B) Always diameters</label>
+<label class="option"><input type="radio" name="q7"> C) Always perpendicular</label>
+<label class="option"><input type="radio" name="q7"> D) Always parallel</label>
+<div class="answer">Correct Answer: A) Equidistant from the centre</div></div>
+
+<div class="question"><h3>8. A diameter divides a circle into:</h3>
+<label class="option"><input type="radio" name="q8"> A) Four equal sectors</label>
+<label class="option"><input type="radio" name="q8" class="correct"> B) Two semicircles</label>
+<label class="option"><input type="radio" name="q8"> C) Two radii</label>
+<label class="option"><input type="radio" name="q8"> D) Three arcs</label>
+<div class="answer">Correct Answer: B) Two semicircles</div></div>
+
+<div class="question"><h3>9. If AB is a diameter and O is the centre, which relation is correct?</h3>
+<label class="option"><input type="radio" name="q9"> A) AB = OA</label>
+<label class="option"><input type="radio" name="q9" class="correct"> B) AB = 2OA</label>
+<label class="option"><input type="radio" name="q9"> C) OA = 2AB</label>
+<label class="option"><input type="radio" name="q9"> D) AB = OA/2</label>
+<div class="answer">Correct Answer: B) AB = 2OA</div></div>
+
+<div class="question"><h3>10. A circle has radius 12 cm. What is its diameter?</h3>
+<label class="option"><input type="radio" name="q10"> A) 6 cm</label>
+<label class="option"><input type="radio" name="q10"> B) 18 cm</label>
+<label class="option"><input type="radio" name="q10" class="correct"> C) 24 cm</label>
+<label class="option"><input type="radio" name="q10"> D) 36 cm</label>
+<div class="answer">Correct Answer: C) 24 cm</div></div>
+
+<div class="question"><h3>11. Which of the following is NOT a chord?</h3>
+<label class="option"><input type="radio" name="q11"> A) A line segment joining two points of circumference</label>
+<label class="option"><input type="radio" name="q11" class="correct"> B) A radius</label>
+<label class="option"><input type="radio" name="q11"> C) A diameter</label>
+<label class="option"><input type="radio" name="q11"> D) A segment with both endpoints on the circle</label>
+<div class="answer">Correct Answer: B) A radius</div></div>
+
+<div class="question"><h3>12. The perpendicular from the centre of a circle to a chord:</h3>
+<label class="option"><input type="radio" name="q12"> A) Doubles the chord</label>
+<label class="option"><input type="radio" name="q12" class="correct"> B) Bisects the chord</label>
+<label class="option"><input type="radio" name="q12"> C) Is parallel to the chord</label>
+<label class="option"><input type="radio" name="q12"> D) Never meets the chord</label>
+<div class="answer">Correct Answer: B) Bisects the chord</div></div>
+
+<div class="question"><h3>13. If two chords are at the same distance from the centre, then they are:</h3>
+<label class="option"><input type="radio" name="q13"> A) Unequal</label>
+<label class="option"><input type="radio" name="q13" class="correct"> B) Equal in length</label>
+<label class="option"><input type="radio" name="q13"> C) Diameters only</label>
+<label class="option"><input type="radio" name="q13"> D) Perpendicular</label>
+<div class="answer">Correct Answer: B) Equal in length</div></div>
+
+<div class="question"><h3>14. A circle with centre O has OP = 9 cm and OQ = 9 cm. What can be concluded?</h3>
+<label class="option"><input type="radio" name="q14" class="correct"> A) P and Q lie on the same circle centred at O</label>
+<label class="option"><input type="radio" name="q14"> B) PQ must be a diameter</label>
+<label class="option"><input type="radio" name="q14"> C) P and Q must be opposite points</label>
+<label class="option"><input type="radio" name="q14"> D) P and Q must coincide</label>
+<div class="answer">Correct Answer: A) P and Q lie on the same circle centred at O</div></div>
+
+<div class="question"><h3>15. If a chord is 16 cm long and its midpoint is 5 cm from the centre, what does the perpendicular from the centre divide it into?</h3>
+<label class="option"><input type="radio" name="q15"> A) 4 cm and 12 cm</label>
+<label class="option"><input type="radio" name="q15" class="correct"> B) 8 cm and 8 cm</label>
+<label class="option"><input type="radio" name="q15"> C) 5 cm and 11 cm</label>
+<label class="option"><input type="radio" name="q15"> D) 6 cm and 10 cm</label>
+<div class="answer">Correct Answer: B) 8 cm and 8 cm</div></div>
+
+</section>
+
+<section>
+<h2>Section B — True / False</h2>
+
+<div class="question"><h3>16. Every diameter is a chord.</h3>
+<label class="option"><input type="radio" name="q16" class="correct"> True</label>
+<label class="option"><input type="radio" name="q16"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>17. Every chord is a diameter.</h3>
+<label class="option"><input type="radio" name="q17"> True</label>
+<label class="option"><input type="radio" name="q17" class="correct"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><h3>18. All radii of the same circle have equal lengths.</h3>
+<label class="option"><input type="radio" name="q18" class="correct"> True</label>
+<label class="option"><input type="radio" name="q18"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>19. The diameter of a circle is twice its radius.</h3>
+<label class="option"><input type="radio" name="q19" class="correct"> True</label>
+<label class="option"><input type="radio" name="q19"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>20. Two circles with the same centre must have the same radius.</h3>
+<label class="option"><input type="radio" name="q20"> True</label>
+<label class="option"><input type="radio" name="q20" class="correct"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><h3>21. The perpendicular from the centre to a chord bisects the chord.</h3>
+<label class="option"><input type="radio" name="q21" class="correct"> True</label>
+<label class="option"><input type="radio" name="q21"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>22. A radius has both endpoints on the circumference.</h3>
+<label class="option"><input type="radio" name="q22"> True</label>
+<label class="option"><input type="radio" name="q22" class="correct"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><h3>23. A diameter is the longest chord of a circle.</h3>
+<label class="option"><input type="radio" name="q23" class="correct"> True</label>
+<label class="option"><input type="radio" name="q23"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>24. Equal chords of the same circle are equally distant from the centre.</h3>
+<label class="option"><input type="radio" name="q24" class="correct"> True</label>
+<label class="option"><input type="radio" name="q24"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>25. A point inside a circle is always on its circumference.</h3>
+<label class="option"><input type="radio" name="q25"> True</label>
+<label class="option"><input type="radio" name="q25" class="correct"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+</section>
+
+<section>
+<h2>Section C — Assertion & Reasoning</h2>
+<p>A = Both A and R are true and R explains A<br>
+B = Both true but R does not explain A<br>
+C = A true, R false<br>
+D = A false, R true</p>
+
+<div class="question"><h3>26. Assertion: Every diameter is a chord.<br>
+Reason: A diameter has both endpoints on the circumference.</h3>
+<label class="option"><input type="radio" name="q26" class="correct"> A</label>
+<label class="option"><input type="radio" name="q26"> B</label>
+<label class="option"><input type="radio" name="q26"> C</label>
+<label class="option"><input type="radio" name="q26"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>27. Assertion: Every chord passes through the centre.<br>
+Reason: A diameter is a special chord passing through the centre.</h3>
+<label class="option"><input type="radio" name="q27"> A</label>
+<label class="option"><input type="radio" name="q27"> B</label>
+<label class="option"><input type="radio" name="q27"> C</label>
+<label class="option"><input type="radio" name="q27" class="correct"> D</label>
+<div class="answer">Correct Answer: D — Assertion is false, Reason is true.</div></div>
+
+<div class="question"><h3>28. Assertion: All radii of a circle are equal.<br>
+Reason: Every radius joins the centre to a point on the same circle.</h3>
+<label class="option"><input type="radio" name="q28" class="correct"> A</label>
+<label class="option"><input type="radio" name="q28"> B</label>
+<label class="option"><input type="radio" name="q28"> C</label>
+<label class="option"><input type="radio" name="q28"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>29. Assertion: The diameter of a circle of radius 11 cm is 22 cm.<br>
+Reason: A diameter consists of two radii placed end-to-end through the centre.</h3>
+<label class="option"><input type="radio" name="q29" class="correct"> A</label>
+<label class="option"><input type="radio" name="q29"> B</label>
+<label class="option"><input type="radio" name="q29"> C</label>
+<label class="option"><input type="radio" name="q29"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>30. Assertion: Equal chords of a circle are equally distant from its centre.<br>
+Reason: Chords of equal length are symmetric with respect to the centre.</h3>
+<label class="option"><input type="radio" name="q30" class="correct"> A</label>
+<label class="option"><input type="radio" name="q30"> B</label>
+<label class="option"><input type="radio" name="q30"> C</label>
+<label class="option"><input type="radio" name="q30"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+</section>
+
+<section>
+<h2>Section D — Fill in the Blanks</h2>
+
+<div class="question"><h3>31. The fixed point inside a circle is called its ______.</h3>
+<label class="option"><input type="radio" name="q31" class="correct"> Centre</label>
+<label class="option"><input type="radio" name="q31"> Chord</label>
+<label class="option"><input type="radio" name="q31"> Arc</label>
+<label class="option"><input type="radio" name="q31"> Diameter</label>
+<div class="answer">Correct Answer: Centre</div></div>
+
+<div class="question"><h3>32. A line segment joining the centre to a point on the circle is a ______.</h3>
+<label class="option"><input type="radio" name="q32" class="correct"> Radius</label>
+<label class="option"><input type="radio" name="q32"> Chord</label>
+<label class="option"><input type="radio" name="q32"> Diameter</label>
+<label class="option"><input type="radio" name="q32"> Secant</label>
+<div class="answer">Correct Answer: Radius</div></div>
+
+<div class="question"><h3>33. The longest chord of a circle is its ______.</h3>
+<label class="option"><input type="radio" name="q33"> Radius</label>
+<label class="option"><input type="radio" name="q33" class="correct"> Diameter</label>
+<label class="option"><input type="radio" name="q33"> Arc</label>
+<label class="option"><input type="radio" name="q33"> Sector</label>
+<div class="answer">Correct Answer: Diameter</div></div>
+
+<div class="question"><h3>34. Two circles with the same centre are called ______ circles.</h3>
+<label class="option"><input type="radio" name="q34"> Equal</label>
+<label class="option"><input type="radio" name="q34" class="correct"> Concentric</label>
+<label class="option"><input type="radio" name="q34"> Parallel</label>
+<label class="option"><input type="radio" name="q34"> Similar</label>
+<div class="answer">Correct Answer: Concentric</div></div>
+
+<div class="question"><h3>35. A diameter divides a circle into two ______.</h3>
+<label class="option"><input type="radio" name="q35"> Chords</label>
+<label class="option"><input type="radio" name="q35" class="correct"> Semicircles</label>
+<label class="option"><input type="radio" name="q35"> Radii</label>
+<label class="option"><input type="radio" name="q35"> Centres</label>
+<div class="answer">Correct Answer: Semicircles</div></div>
+
+</section>
+
+<section>
+<h2>Section E — Match the Following</h2>
+
+<div class="question match m1"><h3>36. Match the term with its meaning.</h3>
+
+<div class="match-row">Radius →
+<label><input type="radio" name="m1a" class="m1a correct"> Centre to circumference</label>
+<label><input type="radio" name="m1a" class="m1a"> Circumference to circumference</label>
+</div>
+
+<div class="match-row">Chord →
+<label><input type="radio" name="m1b" class="m1b"> Centre to circumference</label>
+<label><input type="radio" name="m1b" class="m1b correct"> Joins two points on circle</label>
+</div>
+
+<div class="match-row">Diameter →
+<label><input type="radio" name="m1c" class="m1c"> Any radius</label>
+<label><input type="radio" name="m1c" class="m1c correct"> Chord through centre</label>
+</div>
+
+<div class="match-row">Centre →
+<label><input type="radio" name="m1d" class="m1d correct"> Equidistant from circumference</label>
+<label><input type="radio" name="m1d" class="m1d"> Endpoint of every chord</label>
+</div>
+
+<div class="answer">Correct matches: Radius → centre to circumference; Chord → joins two circle points; Diameter → chord through centre; Centre → equidistant from circumference.</div>
+</div>
+
+<div class="question match m2"><h3>37. Match radius with diameter.</h3>
+
+<div class="match-row">r = 4 cm →
+<label><input type="radio" name="m2a" class="m2a correct"> 8 cm</label>
+<label><input type="radio" name="m2a" class="m2a"> 12 cm</label>
+</div>
+
+<div class="match-row">r = 6.5 cm →
+<label><input type="radio" name="m2b" class="m2b"> 6.5 cm</label>
+<label><input type="radio" name="m2b" class="m2b correct"> 13 cm</label>
+</div>
+
+<div class="match-row">r = 9 cm →
+<label><input type="radio" name="m2c" class="m2c correct"> 18 cm</label>
+<label><input type="radio" name="m2c" class="m2c"> 27 cm</label>
+</div>
+
+<div class="match-row">r = 12 cm →
+<label><input type="radio" name="m2d" class="m2d"> 12 cm</label>
+<label><input type="radio" name="m2d" class="m2d correct"> 24 cm</label>
+</div>
+
+<div class="answer">Correct matches: 8 cm, 13 cm, 18 cm, 24 cm.</div>
+</div>
+
+<div class="question match m3"><h3>38. Match the property with the correct statement.</h3>
+
+<div class="match-row">Equal radii →
+<label><input type="radio" name="m3a" class="m3a correct"> Same circle</label>
+<label><input type="radio" name="m3a" class="m3a"> Different centres necessarily</label>
+</div>
+
+<div class="match-row">Equal chords →
+<label><input type="radio" name="m3b" class="m3b correct"> Equal distances from centre</label>
+<label><input type="radio" name="m3b" class="m3b"> Must be diameters</label>
+</div>
+
+<div class="match-row">Perpendicular from centre to chord →
+<label><input type="radio" name="m3c" class="m3c"> Doubles chord</label>
+<label><input type="radio" name="m3c" class="m3c correct"> Bisects chord</label>
+</div>
+
+<div class="match-row">Diameter →
+<label><input type="radio" name="m3d" class="m3d correct"> Longest chord</label>
+<label><input type="radio" name="m3d" class="m3d"> Shortest chord</label>
+</div>
+
+<div class="answer">Correct matches: Same circle; equal distances; bisects chord; longest chord.</div>
+</div>
+
+<div class="question match m4"><h3>39. Match the circle measurement.</h3>
+
+<div class="match-row">Diameter 18 cm →
+<label><input type="radio" name="m4a" class="m4a correct"> Radius 9 cm</label>
+<label><input type="radio" name="m4a" class="m4a"> Radius 36 cm</label>
+</div>
+
+<div class="match-row">Diameter 30 cm →
+<label><input type="radio" name="m4b" class="m4b"> Radius 10 cm</label>
+<label><input type="radio" name="m4b" class="m4b correct"> Radius 15 cm</label>
+</div>
+
+<div class="match-row">Radius 11 cm →
+<label><input type="radio" name="m4c" class="m4c correct"> Diameter 22 cm</label>
+<label><input type="radio" name="m4c" class="m4c"> Diameter 33 cm</label>
+</div>
+
+<div class="match-row">Radius 15.5 cm →
+<label><input type="radio" name="m4d" class="m4d"> Diameter 20 cm</label>
+<label><input type="radio" name="m4d" class="m4d correct"> Diameter 31 cm</label>
+</div>
+
+<div class="answer">Correct matches: 9 cm, 15 cm, 22 cm, 31 cm.</div>
+</div>
+
+<div class="question match m5"><h3>40. Match the situation with the correct conclusion.</h3>
+
+<div class="match-row">Same centre, different radii →
+<label><input type="radio" name="m5a" class="m5a correct"> Concentric circles</label>
+<label><input type="radio" name="m5a" class="m5a"> Same circle</label>
+</div>
+
+<div class="match-row">Chord through centre →
+<label><input type="radio" name="m5b" class="m5b"> Radius</label>
+<label><input type="radio" name="m5b" class="m5b correct"> Diameter</label>
+</div>
+
+<div class="match-row">Chord endpoints on circumference →
+<label><input type="radio" name="m5c" class="m5c correct"> Chord</label>
+<label><input type="radio" name="m5c" class="m5c"> Centre</label>
+</div>
+
+<div class="match-row">Centre to circumference →
+<label><input type="radio" name="m5d" class="m5d"> Chord</label>
+<label><input type="radio" name="m5d" class="m5d correct"> Radius</label>
+</div>
+
+<div class="answer">Correct matches: Concentric circles; Diameter; Chord; Radius.</div>
+</div>
+
+</section>
+
+<section>
+<h2>Section F — Drag & Drop Style Questions</h2>
+
+<div class="question drag"><h3>41. Choose the correct diameter when radius = 8.5 cm.</h3>
+<label class="option"><input type="radio" name="q41"> 8.5 cm</label>
+<label class="option"><input type="radio" name="q41" class="correct"> 17 cm</label>
+<label class="option"><input type="radio" name="q41"> 25.5 cm</label>
+<div class="answer">Correct Answer: 17 cm</div></div>
+
+<div class="question drag"><h3>42. Which is the longest chord of a circle?</h3>
+<label class="option"><input type="radio" name="q42"> Radius</label>
+<label class="option"><input type="radio" name="q42" class="correct"> Diameter</label>
+<label class="option"><input type="radio" name="q42"> Any short chord</label>
+<div class="answer">Correct Answer: Diameter</div></div>
+
+<div class="question drag"><h3>43. A chord is 20 cm long. Its perpendicular distance from the centre is drawn to its midpoint. What is the length of each half?</h3>
+<label class="option"><input type="radio" name="q43"> 5 cm</label>
+<label class="option"><input type="radio" name="q43" class="correct"> 10 cm</label>
+<label class="option"><input type="radio" name="q43"> 20 cm</label>
+<div class="answer">Correct Answer: 10 cm</div></div>
+
+<div class="question drag"><h3>44. Select the statement that must be true for a diameter.</h3>
+<label class="option"><input type="radio" name="q44"> It has only one endpoint</label>
+<label class="option"><input type="radio" name="q44" class="correct"> It passes through the centre</label>
+<label class="option"><input type="radio" name="q44"> It is shorter than every radius</label>
+<div class="answer">Correct Answer: It passes through the centre.</div></div>
+
+<div class="question drag"><h3>45. A circle has diameter 26 cm. Select its radius.</h3>
+<label class="option"><input type="radio" name="q45"> 10 cm</label>
+<label class="option"><input type="radio" name="q45" class="correct"> 13 cm</label>
+<label class="option"><input type="radio" name="q45"> 52 cm</label>
+<div class="answer">Correct Answer: 13 cm</div></div>
+
+</section>
+
+<section>
+<h2>Section G — HOTS / Exam Challenge</h2>
+
+<div class="question"><h3>46. A circle has radius 13 cm. A chord is 10 cm long. What is the length of each half of the chord when the perpendicular from the centre bisects it?</h3>
+<label class="option"><input type="radio" name="q46"> 2.5 cm</label>
+<label class="option"><input type="radio" name="q46" class="correct"> 5 cm</label>
+<label class="option"><input type="radio" name="q46"> 10 cm</label>
+<label class="option"><input type="radio" name="q46"> 13 cm</label>
+<div class="answer">Correct Answer: 5 cm.</div></div>
+
+<div class="question"><h3>47. Two chords of the same circle are 14 cm and 14 cm long. Compare their distances from the centre.</h3>
+<label class="option"><input type="radio" name="q47"> First is greater</label>
+<label class="option"><input type="radio" name="q47"> Second is greater</label>
+<label class="option"><input type="radio" name="q47" class="correct"> They are equal</label>
+<label class="option"><input type="radio" name="q47"> Cannot ever be compared</label>
+<div class="answer">Correct Answer: They are equal.</div></div>
+
+<div class="question"><h3>48. Circle A has radius 9 cm and Circle B has radius 9 cm. Their centres are different. What can definitely be said?</h3>
+<label class="option"><input type="radio" name="q48" class="correct"> The circles are equal in size</label>
+<label class="option"><input type="radio" name="q48"> They are concentric</label>
+<label class="option"><input type="radio" name="q48"> They must overlap completely</label>
+<label class="option"><input type="radio" name="q48"> They have the same centre</label>
+<div class="answer">Correct Answer: The circles are equal in size.</div></div>
+
+<div class="question"><h3>49. A diameter of a circle is 34 cm. A student says its radius is 68 cm. What is the error?</h3>
+<label class="option"><input type="radio" name="q49"> Radius is found by multiplying diameter by 2</label>
+<label class="option"><input type="radio" name="q49" class="correct"> Radius is half the diameter</label>
+<label class="option"><input type="radio" name="q49"> Radius equals diameter always</label>
+<label class="option"><input type="radio" name="q49"> Radius cannot be calculated</label>
+<div class="answer">Correct Answer: Radius = 34 ÷ 2 = 17 cm.</div></div>
+
+<div class="question"><h3>50. A chord is 18 cm long. Its perpendicular distance from the centre meets it at M. What is AM if AB is the chord?</h3>
+<label class="option"><input type="radio" name="q50"> 6 cm</label>
+<label class="option"><input type="radio" name="q50" class="correct"> 9 cm</label>
+<label class="option"><input type="radio" name="q50"> 18 cm</label>
+<label class="option"><input type="radio" name="q50"> 36 cm</label>
+<div class="answer">Correct Answer: 9 cm, because the perpendicular from the centre bisects the chord.</div></div>
+
+<div class="question"><h3>51. Three circles have radii 4 cm, 7 cm and 10 cm, all with the same centre. What type of arrangement is this?</h3>
+<label class="option"><input type="radio" name="q51"> Intersecting circles</label>
+<label class="option"><input type="radio" name="q51" class="correct"> Concentric circles</label>
+<label class="option"><input type="radio" name="q51"> Equal circles</label>
+<label class="option"><input type="radio" name="q51"> Parallel circles</label>
+<div class="answer">Correct Answer: Concentric circles.</div></div>
+
+<div class="question"><h3>52. A circle has radius 15 cm. A chord is 24 cm long. What is the distance from the centre to the midpoint of the chord?</h3>
+<label class="option"><input type="radio" name="q52"> 7 cm</label>
+<label class="option"><input type="radio" name="q52" class="correct"> 9 cm</label>
+<label class="option"><input type="radio" name="q52"> 12 cm</label>
+<label class="option"><input type="radio" name="q52"> 15 cm</label>
+<div class="answer">Correct Answer: 9 cm. Half-chord = 12 cm; radius = 15 cm; by right triangle, distance = √(15²−12²)=9 cm.</div></div>
+
+<div class="question"><h3>53. Two chords of a circle are at distances 4 cm and 7 cm from the centre. Which chord is longer?</h3>
+<label class="option"><input type="radio" name="q53" class="correct"> The chord 4 cm from the centre</label>
+<label class="option"><input type="radio" name="q53"> The chord 7 cm from the centre</label>
+<label class="option"><input type="radio" name="q53"> Both must be equal</label>
+<label class="option"><input type="radio" name="q53"> No relation exists</label>
+<div class="answer">Correct Answer: The chord closer to the centre is longer.</div></div>
+
+<div class="question"><h3>54. A circle has diameter 50 cm. A chord of length 48 cm is drawn. Find the distance of the chord from the centre.</h3>
+<label class="option"><input type="radio" name="q54"> 5 cm</label>
+<label class="option"><input type="radio" name="q54" class="correct"> 7 cm</label>
+<label class="option"><input type="radio" name="q54"> 12 cm</label>
+<label class="option"><input type="radio" name="q54"> 24 cm</label>
+<div class="answer">Correct Answer: 7 cm. Radius = 25 cm, half chord = 24 cm, so distance = √(25²−24²)=7 cm.</div></div>
+
+<div class="question"><h3>55. A student claims that two equal chords can be at different distances from the centre of the same circle. Is the claim correct?</h3>
+<label class="option"><input type="radio" name="q55"> Yes, always</label>
+<label class="option"><input type="radio" name="q55"> Yes, if both are chords</label>
+<label class="option"><input type="radio" name="q55" class="correct"> No, equal chords are equally distant from the centre</label>
+<label class="option"><input type="radio" name="q55"> Only when they are diameters</label>
+<div class="answer">Correct Answer: No, equal chords of the same circle are equally distant from the centre.</div></div>
+
+</section>
+
+<div class="score-card">
+<h2>Final Score</h2>
+<div class="score-number"></div>
+<p>Correctly answered questions are counted automatically.</p>
+</div>
+
+</div>
+</body>
+</html>

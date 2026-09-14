@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 11 - Finding Common Ground</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:#f3f6fb;
+ color:#111827;
+ font-weight:700
+}
+header{
+ background:#111827;
+ color:white;
+ padding:28px 18px;
+ text-align:center
+}
+header h1{margin:0 0 8px;font-size:30px}
+header p{margin:0;color:#dbeafe}
+.wrap{max-width:1100px;margin:auto;padding:24px}
+section{margin:28px 0}
+section>h2{
+ background:#1d4ed8;
+ color:white;
+ padding:12px 16px;
+ border-radius:12px
+}
+.question{
+ background:white;
+ border:1px solid #cbd5e1;
+ border-radius:14px;
+ padding:18px;
+ margin:14px 0;
+ box-shadow:0 4px 12px #00000010
+}
+.question h3{margin:0 0 12px}
+.option{
+ display:block;
+ padding:9px 12px;
+ margin:7px 0;
+ border:1px solid #dbeafe;
+ border-radius:9px;
+ background:#f8fafc;
+ cursor:pointer
+}
+.option:hover{background:#eff6ff}
+.answer{
+ display:none;
+ margin-top:12px;
+ padding:12px;
+ border-radius:10px;
+ background:#dcfce7;
+ border-left:5px solid #16a34a
+}
+.question:has(input:checked) .answer{display:block}
+.match-row{
+ margin:10px 0;
+ padding:10px;
+ border-radius:10px;
+ background:#f8fafc;
+ border:1px solid #e2e8f0
+}
+.drag{
+ border:2px dashed #94a3b8;
+ background:#f8fafc
+}
+.score-card{
+ position:sticky;
+ bottom:12px;
+ background:#111827;
+ color:white;
+ padding:18px;
+ border-radius:16px;
+ text-align:center;
+ margin-top:30px
+}
+.score-number{font-size:28px}
+input{margin-right:8px}
+
+.quiz{counter-reset:score}
+
+.question:not(.match):has(.correct:checked){
+ counter-increment:score
+}
+
+.match.m1:has(.m1a.correct:checked):has(.m1b.correct:checked):has(.m1c.correct:checked):has(.m1d.correct:checked){counter-increment:score}
+.match.m2:has(.m2a.correct:checked):has(.m2b.correct:checked):has(.m2c.correct:checked):has(.m2d.correct:checked){counter-increment:score}
+.match.m3:has(.m3a.correct:checked):has(.m3b.correct:checked):has(.m3c.correct:checked):has(.m3d.correct:checked){counter-increment:score}
+.match.m4:has(.m4a.correct:checked):has(.m4b.correct:checked):has(.m4c.correct:checked):has(.m4d.correct:checked){counter-increment:score}
+.match.m5:has(.m5a.correct:checked):has(.m5b.correct:checked):has(.m5c.correct:checked):has(.m5d.correct:checked){counter-increment:score}
+
+.score-number::after{
+ content:counter(score) " / 55"
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Chapter 11 — Finding Common Ground</h1>
+<p>Ganita Prakash Part II • Class 7 Mathematics • 55 Question Revision Test</p>
+</header>
+
+<div class="wrap quiz">
+
+<!-- MCQ -->
+<section>
+<h2>Section A — Multiple Choice Questions</h2>
+
+<div class="question"><h3>1. What is the HCF of 24 and 36?</h3>
+<label class="option"><input type="radio" name="q1"> A) 4</label>
+<label class="option"><input type="radio" name="q1" class="correct"> B) 12</label>
+<label class="option"><input type="radio" name="q1"> C) 18</label>
+<label class="option"><input type="radio" name="q1"> D) 24</label>
+<div class="answer">Correct Answer: B) 12</div></div>
+
+<div class="question"><h3>2. Which is the prime factorisation of 84?</h3>
+<label class="option"><input type="radio" name="q2"> A) 2 × 42</label>
+<label class="option"><input type="radio" name="q2" class="correct"> B) 2² × 3 × 7</label>
+<label class="option"><input type="radio" name="q2"> C) 4 × 21</label>
+<label class="option"><input type="radio" name="q2"> D) 6 × 14</label>
+<div class="answer">Correct Answer: B) 2² × 3 × 7</div></div>
+
+<div class="question"><h3>3. What is the LCM of 8 and 12?</h3>
+<label class="option"><input type="radio" name="q3"> A) 16</label>
+<label class="option"><input type="radio" name="q3"> B) 20</label>
+<label class="option"><input type="radio" name="q3" class="correct"> C) 24</label>
+<label class="option"><input type="radio" name="q3"> D) 48</label>
+<div class="answer">Correct Answer: C) 24</div></div>
+
+<div class="question"><h3>4. Which number is a common factor of 18, 30 and 42?</h3>
+<label class="option"><input type="radio" name="q4"> A) 4</label>
+<label class="option"><input type="radio" name="q4" class="correct"> B) 6</label>
+<label class="option"><input type="radio" name="q4"> C) 9</label>
+<label class="option"><input type="radio" name="q4"> D) 12</label>
+<div class="answer">Correct Answer: B) 6</div></div>
+
+<div class="question"><h3>5. The greatest common factor of 45 and 75 is:</h3>
+<label class="option"><input type="radio" name="q5"> A) 5</label>
+<label class="option"><input type="radio" name="q5"> B) 10</label>
+<label class="option"><input type="radio" name="q5" class="correct"> C) 15</label>
+<label class="option"><input type="radio" name="q5"> D) 25</label>
+<div class="answer">Correct Answer: C) 15</div></div>
+
+<div class="question"><h3>6. Which pair has HCF 1?</h3>
+<label class="option"><input type="radio" name="q6"> A) 18, 24</label>
+<label class="option"><input type="radio" name="q6"> B) 21, 35</label>
+<label class="option"><input type="radio" name="q6" class="correct"> C) 14, 25</label>
+<label class="option"><input type="radio" name="q6"> D) 27, 45</label>
+<div class="answer">Correct Answer: C) 14, 25</div></div>
+
+<div class="question"><h3>7. What is the LCM of 15 and 20?</h3>
+<label class="option"><input type="radio" name="q7"> A) 30</label>
+<label class="option"><input type="radio" name="q7"> B) 45</label>
+<label class="option"><input type="radio" name="q7" class="correct"> C) 60</label>
+<label class="option"><input type="radio" name="q7"> D) 75</label>
+<div class="answer">Correct Answer: C) 60</div></div>
+
+<div class="question"><h3>8. Which statement about prime factorisation is correct?</h3>
+<label class="option"><input type="radio" name="q8"> A) Every number has only one factor</label>
+<label class="option"><input type="radio" name="q8" class="correct"> B) A composite number can be expressed as a product of primes</label>
+<label class="option"><input type="radio" name="q8"> C) Prime numbers have more than two factors</label>
+<label class="option"><input type="radio" name="q8"> D) 1 is a prime number</label>
+<div class="answer">Correct Answer: B) A composite number can be expressed as a product of primes</div></div>
+
+<div class="question"><h3>9. The HCF of 32 and 48 is:</h3>
+<label class="option"><input type="radio" name="q9"> A) 4</label>
+<label class="option"><input type="radio" name="q9"> B) 8</label>
+<label class="option"><input type="radio" name="q9" class="correct"> C) 16</label>
+<label class="option"><input type="radio" name="q9"> D) 24</label>
+<div class="answer">Correct Answer: C) 16</div></div>
+
+<div class="question"><h3>10. The smallest positive common multiple of 9 and 12 is:</h3>
+<label class="option"><input type="radio" name="q10"> A) 18</label>
+<label class="option"><input type="radio" name="q10"> B) 24</label>
+<label class="option"><input type="radio" name="q10" class="correct"> C) 36</label>
+<label class="option"><input type="radio" name="q10"> D) 72</label>
+<div class="answer">Correct Answer: C) 36</div></div>
+
+<div class="question"><h3>11. If two numbers are 18 and 30, their HCF × LCM equals:</h3>
+<label class="option"><input type="radio" name="q11"> A) 180</label>
+<label class="option"><input type="radio" name="q11"> B) 360</label>
+<label class="option"><input type="radio" name="q11" class="correct"> C) 540</label>
+<label class="option"><input type="radio" name="q11"> D) 720</label>
+<div class="answer">Correct Answer: C) 540, because HCF × LCM = 18 × 30.</div></div>
+
+<div class="question"><h3>12. Which number is a factor of every positive integer?</h3>
+<label class="option"><input type="radio" name="q12"> A) 0</label>
+<label class="option"><input type="radio" name="q12" class="correct"> B) 1</label>
+<label class="option"><input type="radio" name="q12"> C) 2</label>
+<label class="option"><input type="radio" name="q12"> D) 10</label>
+<div class="answer">Correct Answer: B) 1</div></div>
+
+<div class="question"><h3>13. Two bells ring every 6 minutes and 8 minutes. After how many minutes will they ring together again?</h3>
+<label class="option"><input type="radio" name="q13"> A) 12</label>
+<label class="option"><input type="radio" name="q13"> B) 18</label>
+<label class="option"><input type="radio" name="q13" class="correct"> C) 24</label>
+<label class="option"><input type="radio" name="q13"> D) 48</label>
+<div class="answer">Correct Answer: C) 24 minutes.</div></div>
+
+<div class="question"><h3>14. What is the HCF of 72 and 120?</h3>
+<label class="option"><input type="radio" name="q14"> A) 12</label>
+<label class="option"><input type="radio" name="q14" class="correct"> B) 24</label>
+<label class="option"><input type="radio" name="q14"> C) 36</label>
+<label class="option"><input type="radio" name="q14"> D) 48</label>
+<div class="answer">Correct Answer: B) 24</div></div>
+
+<div class="question"><h3>15. Which situation most naturally requires HCF?</h3>
+<label class="option"><input type="radio" name="q15"> A) Finding when two buses meet again</label>
+<label class="option"><input type="radio" name="q15"> B) Finding the next common ringing time</label>
+<label class="option"><input type="radio" name="q15" class="correct"> C) Cutting ribbons into the longest equal pieces</label>
+<label class="option"><input type="radio" name="q15"> D) Finding the first common multiple</label>
+<div class="answer">Correct Answer: C) Cutting ribbons into the longest equal pieces.</div></div>
+
+</section>
+
+<!-- TRUE FALSE -->
+<section>
+<h2>Section B — True / False</h2>
+
+<div class="question"><h3>16. The HCF of two numbers can never be greater than either number.</h3>
+<label class="option"><input type="radio" name="q16" class="correct"> True</label>
+<label class="option"><input type="radio" name="q16"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>17. Every multiple of a number is smaller than the number.</h3>
+<label class="option"><input type="radio" name="q17"> True</label>
+<label class="option"><input type="radio" name="q17" class="correct"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><h3>18. 2 × 3 × 5 is the prime factorisation of 30.</h3>
+<label class="option"><input type="radio" name="q18" class="correct"> True</label>
+<label class="option"><input type="radio" name="q18"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>19. The LCM of two numbers is always at least as large as each number.</h3>
+<label class="option"><input type="radio" name="q19" class="correct"> True</label>
+<label class="option"><input type="radio" name="q19"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>20. 1 is a prime number.</h3>
+<label class="option"><input type="radio" name="q20"> True</label>
+<label class="option"><input type="radio" name="q20" class="correct"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><h3>21. The HCF of 16 and 24 is 8.</h3>
+<label class="option"><input type="radio" name="q21" class="correct"> True</label>
+<label class="option"><input type="radio" name="q21"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>22. The LCM of 5 and 7 is 12.</h3>
+<label class="option"><input type="radio" name="q22"> True</label>
+<label class="option"><input type="radio" name="q22" class="correct"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+
+<div class="question"><h3>23. If two numbers are co-prime, their HCF is 1.</h3>
+<label class="option"><input type="radio" name="q23" class="correct"> True</label>
+<label class="option"><input type="radio" name="q23"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>24. 36 is a common multiple of 6 and 9.</h3>
+<label class="option"><input type="radio" name="q24" class="correct"> True</label>
+<label class="option"><input type="radio" name="q24"> False</label>
+<div class="answer">Correct Answer: True</div></div>
+
+<div class="question"><h3>25. HCF × LCM = sum of the two numbers.</h3>
+<label class="option"><input type="radio" name="q25"> True</label>
+<label class="option"><input type="radio" name="q25" class="correct"> False</label>
+<div class="answer">Correct Answer: False</div></div>
+</section>
+
+<!-- ASSERTION REASON -->
+<section>
+<h2>Section C — Assertion & Reasoning</h2>
+<p>A = Both A and R are true and R explains A<br>
+B = Both true but R does not explain A<br>
+C = A true, R false<br>
+D = A false, R true</p>
+
+<div class="question"><h3>26. Assertion: The HCF of 18 and 24 is 6.<br>Reason: 6 is the greatest number that divides both 18 and 24 exactly.</h3>
+<label class="option"><input type="radio" name="q26" class="correct"> A</label>
+<label class="option"><input type="radio" name="q26"> B</label>
+<label class="option"><input type="radio" name="q26"> C</label>
+<label class="option"><input type="radio" name="q26"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>27. Assertion: The LCM of 8 and 12 is 24.<br>Reason: 24 is the smallest positive number divisible by both 8 and 12.</h3>
+<label class="option"><input type="radio" name="q27" class="correct"> A</label>
+<label class="option"><input type="radio" name="q27"> B</label>
+<label class="option"><input type="radio" name="q27"> C</label>
+<label class="option"><input type="radio" name="q27"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>28. Assertion: 35 and 64 are co-prime.<br>Reason: Their only common factor is 1.</h3>
+<label class="option"><input type="radio" name="q28" class="correct"> A</label>
+<label class="option"><input type="radio" name="q28"> B</label>
+<label class="option"><input type="radio" name="q28"> C</label>
+<label class="option"><input type="radio" name="q28"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>29. Assertion: Prime factorisation helps find HCF and LCM.<br>Reason: Common prime factors help determine HCF and the highest powers of prime factors help determine LCM.</h3>
+<label class="option"><input type="radio" name="q29" class="correct"> A</label>
+<label class="option"><input type="radio" name="q29"> B</label>
+<label class="option"><input type="radio" name="q29"> C</label>
+<label class="option"><input type="radio" name="q29"> D</label>
+<div class="answer">Correct Answer: A</div></div>
+
+<div class="question"><h3>30. Assertion: The LCM of 9 and 15 is 45.<br>Reason: 45 is a common multiple of 9 and 15.</h3>
+<label class="option"><input type="radio" name="q30"> A</label>
+<label class="option"><input type="radio" name="q30" class="correct"> B</label>
+<label class="option"><input type="radio" name="q30"> C</label>
+<label class="option"><input type="radio" name="q30"> D</label>
+<div class="answer">Correct Answer: B — both statements are true, but merely being a common multiple does not establish that 45 is the least one.</div></div>
+</section>
+
+<!-- FILL -->
+<section>
+<h2>Section D — Fill in the Blanks</h2>
+
+<div class="question"><h3>31. The greatest factor common to two or more numbers is called their ______.</h3>
+<label class="option"><input type="radio" name="q31" class="correct"> HCF</label>
+<label class="option"><input type="radio" name="q31"> LCM</label>
+<label class="option"><input type="radio" name="q31"> Prime</label>
+<label class="option"><input type="radio" name="q31"> Product</label>
+<div class="answer">Correct Answer: HCF</div></div>
+
+<div class="question"><h3>32. The smallest positive common multiple is called the ______.</h3>
+<label class="option"><input type="radio" name="q32"> HCF</label>
+<label class="option"><input type="radio" name="q32" class="correct"> LCM</label>
+<label class="option"><input type="radio" name="q32"> Factor</label>
+<label class="option"><input type="radio" name="q32"> Divisor</label>
+<div class="answer">Correct Answer: LCM</div></div>
+
+<div class="question"><h3>33. The prime factorisation of 48 contains the prime factor ______ twice.</h3>
+<label class="option"><input type="radio" name="q33"> 3</label>
+<label class="option"><input type="radio" name="q33" class="correct"> 2</label>
+<label class="option"><input type="radio" name="q33"> 5</label>
+<label class="option"><input type="radio" name="q33"> 7</label>
+<div class="answer">Correct Answer: 2. 48 = 2⁴ × 3, so 2 occurs four times.</div></div>
+
+<div class="question"><h3>34. HCF × LCM of two numbers equals their ______.</h3>
+<label class="option"><input type="radio" name="q34"> Difference</label>
+<label class="option"><input type="radio" name="q34"> Sum</label>
+<label class="option"><input type="radio" name="q34" class="correct"> Product</label>
+<label class="option"><input type="radio" name="q34"> Quotient</label>
+<div class="answer">Correct Answer: Product</div></div>
+
+<div class="question"><h3>35. The numbers having exactly two factors are called ______ numbers.</h3>
+<label class="option"><input type="radio" name="q35" class="correct"> Prime</label>
+<label class="option"><input type="radio" name="q35"> Composite</label>
+<label class="option"><input type="radio" name="q35"> Even</label>
+<label class="option"><input type="radio" name="q35"> Perfect</label>
+<div class="answer">Correct Answer: Prime</div></div>
+</section>
+
+<!-- MATCH -->
+<section>
+<h2>Section E — Match the Following</h2>
+
+<div class="question match m1"><h3>36. Match the number with its HCF partner.</h3>
+<div class="match-row">24 and 36 →
+<label><input type="radio" name="m1a" class="m1a correct"> 12</label>
+<label><input type="radio" name="m1a" class="m1a"> 6</label>
+<label><input type="radio" name="m1a" class="m1a"> 18</label></div>
+<div class="match-row">28 and 42 →
+<label><input type="radio" name="m1b" class="m1b"> 7</label>
+<label><input type="radio" name="m1b" class="m1b correct"> 14</label>
+<label><input type="radio" name="m1b" class="m1b"> 21</label></div>
+<div class="match-row">32 and 48 →
+<label><input type="radio" name="m1c" class="m1c"> 8</label>
+<label><input type="radio" name="m1c" class="m1c correct"> 16</label>
+<label><input type="radio" name="m1c" class="m1c"> 24</label></div>
+<div class="match-row">45 and 60 →
+<label><input type="radio" name="m1d" class="m1d"> 5</label>
+<label><input type="radio" name="m1d" class="m1d correct"> 15</label>
+<label><input type="radio" name="m1d" class="m1d"> 30</label></div>
+<div class="answer">Correct matches: 24,36→12; 28,42→14; 32,48→16; 45,60→15.</div></div>
+
+<div class="question match m2"><h3>37. Match the pair with its LCM.</h3>
+<div class="match-row">6, 8 → <label><input type="radio" name="m2a" class="m2a correct">24</label><label><input type="radio" name="m2a" class="m2a">18</label></div>
+<div class="match-row">9, 12 → <label><input type="radio" name="m2b" class="m2b">24</label><label><input type="radio" name="m2b" class="m2b correct">36</label></div>
+<div class="match-row">10, 15 → <label><input type="radio" name="m2c" class="m2c correct">30</label><label><input type="radio" name="m2c" class="m2c">45</label></div>
+<div class="match-row">7, 14 → <label><input type="radio" name="m2d" class="m2d">21</label><label><input type="radio" name="m2d" class="m2d correct">14</label></div>
+<div class="answer">Correct matches: 24, 36, 30, 14.</div></div>
+
+<div class="question match m3"><h3>38. Match each prime factorisation with the number.</h3>
+<div class="match-row">2² × 3 → <label><input type="radio" name="m3a" class="m3a correct">12</label><label><input type="radio" name="m3a" class="m3a">18</label></div>
+<div class="match-row">2 × 3² → <label><input type="radio" name="m3b" class="m3b correct">18</label><label><input type="radio" name="m3b" class="m3b">24</label></div>
+<div class="match-row">2³ × 5 → <label><input type="radio" name="m3c" class="m3c correct">40</label><label><input type="radio" name="m3c" class="m3c">30</label></div>
+<div class="match-row">3 × 5 × 7 → <label><input type="radio" name="m3d" class="m3d correct">105</label><label><input type="radio" name="m3d" class="m3d">75</label></div>
+<div class="answer">Correct matches: 12, 18, 40, 105.</div></div>
+
+<div class="question match m4"><h3>39. Match the situation with HCF or LCM.</h3>
+<div class="match-row">Largest equal tile size → <label><input type="radio" name="m4a" class="m4a correct">HCF</label><label><input type="radio" name="m4a" class="m4a">LCM</label></div>
+<div class="match-row">Next common bell ringing → <label><input type="radio" name="m4b" class="m4b">HCF</label><label><input type="radio" name="m4b" class="m4b correct">LCM</label></div>
+<div class="match-row">Longest equal ribbon pieces → <label><input type="radio" name="m4c" class="m4c correct">HCF</label><label><input type="radio" name="m4c" class="m4c">LCM</label></div>
+<div class="match-row">First time two schedules coincide → <label><input type="radio" name="m4d" class="m4d">HCF</label><label><input type="radio" name="m4d" class="m4d correct">LCM</label></div>
+<div class="answer">Correct matches: HCF, LCM, HCF, LCM.</div></div>
+
+<div class="question match m5"><h3>40. Match the number with one of its prime factors.</h3>
+<div class="match-row">42 → <label><input type="radio" name="m5a" class="m5a correct">7</label><label><input type="radio" name="m5a" class="m5a">11</label></div>
+<div class="match-row">55 → <label><input type="radio" name="m5b" class="m5b correct">11</label><label><input type="radio" name="m5b" class="m5b">13</label></div>
+<div class="match-row">91 → <label><input type="radio" name="m5c" class="m5c correct">13</label><label><input type="radio" name="m5c" class="m5c">17</label></div>
+<div class="match-row">143 → <label><input type="radio" name="m5d" class="m5d correct">11</label><label><input type="radio" name="m5d" class="m5d">9</label></div>
+<div class="answer">Correct matches: 7, 11, 13, 11.</div></div>
+</section>
+
+<!-- DRAG -->
+<section>
+<h2>Section F — Drag & Drop Style Questions</h2>
+
+<div class="question drag"><h3>41. Select the correct HCF of 54 and 90.</h3>
+<label class="option"><input type="radio" name="q41"> 6</label>
+<label class="option"><input type="radio" name="q41" class="correct"> 18</label>
+<label class="option"><input type="radio" name="q41"> 27</label>
+<div class="answer">Correct Answer: 18</div></div>
+
+<div class="question drag"><h3>42. Select the correct LCM of 12 and 18.</h3>
+<label class="option"><input type="radio" name="q42"> 24</label>
+<label class="option"><input type="radio" name="q42" class="correct"> 36</label>
+<label class="option"><input type="radio" name="q42"> 54</label>
+<div class="answer">Correct Answer: 36</div></div>
+
+<div class="question drag"><h3>43. Choose the common factor of 36 and 54.</h3>
+<label class="option"><input type="radio" name="q43"> 8</label>
+<label class="option"><input type="radio" name="q43" class="correct"> 9</label>
+<label class="option"><input type="radio" name="q43"> 16</label>
+<div class="answer">Correct Answer: 9</div></div>
+
+<div class="question drag"><h3>44. Choose the smallest common multiple of 4 and 10.</h3>
+<label class="option"><input type="radio" name="q44"> 14</label>
+<label class="option"><input type="radio" name="q44" class="correct"> 20</label>
+<label class="option"><input type="radio" name="q44"> 40</label>
+<div class="answer">Correct Answer: 20</div></div>
+
+<div class="question drag"><h3>45. Select the correct prime factorisation of 90.</h3>
+<label class="option"><input type="radio" name="q45"> 2 × 3 × 15</label>
+<label class="option"><input type="radio" name="q45" class="correct"> 2 × 3² × 5</label>
+<label class="option"><input type="radio" name="q45"> 9 × 10</label>
+<div class="answer">Correct Answer: 2 × 3² × 5</div></div>
+</section>
+
+<!-- HOTS -->
+<section>
+<h2>Section G — HOTS / Exam Challenge</h2>
+
+<div class="question"><h3>46. Two ropes are 84 m and 126 m long. They must be cut into equal pieces of maximum possible length. What should be the length of each piece?</h3>
+<label class="option"><input type="radio" name="q46"> 21 m</label>
+<label class="option"><input type="radio" name="q46" class="correct"> 42 m</label>
+<label class="option"><input type="radio" name="q46"> 63 m</label>
+<label class="option"><input type="radio" name="q46"> 84 m</label>
+<div class="answer">Correct Answer: 42 m. HCF(84,126)=42.</div></div>
+
+<div class="question"><h3>47. Three lights blink every 8, 12 and 18 seconds. If they blink together now, after how many seconds will they blink together again?</h3>
+<label class="option"><input type="radio" name="q47"> 36</label>
+<label class="option"><input type="radio" name="q47"> 48</label>
+<label class="option"><input type="radio" name="q47" class="correct"> 72</label>
+<label class="option"><input type="radio" name="q47"> 144</label>
+<div class="answer">Correct Answer: 72 seconds. LCM(8,12,18)=72.</div></div>
+
+<div class="question"><h3>48. Find the HCF and LCM of 45 and 75.</h3>
+<label class="option"><input type="radio" name="q48"> HCF 5, LCM 675</label>
+<label class="option"><input type="radio" name="q48" class="correct"> HCF 15, LCM 225</label>
+<label class="option"><input type="radio" name="q48"> HCF 25, LCM 135</label>
+<label class="option"><input type="radio" name="q48"> HCF 15, LCM 180</label>
+<div class="answer">Correct Answer: HCF = 15 and LCM = 225.</div></div>
+
+<div class="question"><h3>49. A 120 cm × 168 cm rectangular sheet is to be divided into the largest possible identical squares. What is the side of each square?</h3>
+<label class="option"><input type="radio" name="q49"> 12 cm</label>
+<label class="option"><input type="radio" name="q49" class="correct"> 24 cm</label>
+<label class="option"><input type="radio" name="q49"> 36 cm</label>
+<label class="option"><input type="radio" name="q49"> 48 cm</label>
+<div class="answer">Correct Answer: 24 cm. HCF(120,168)=24.</div></div>
+
+<div class="question"><h3>50. If HCF of two numbers is 6 and their LCM is 180, what is the product of the numbers?</h3>
+<label class="option"><input type="radio" name="q50"> 186</label>
+<label class="option"><input type="radio" name="q50"> 540</label>
+<label class="option"><input type="radio" name="q50" class="correct"> 1080</label>
+<label class="option"><input type="radio" name="q50"> 1200</label>
+<div class="answer">Correct Answer: 1080 because HCF × LCM = product.</div></div>
+
+<div class="question"><h3>51. Two numbers have HCF 8 and LCM 120. If one number is 24, find the other.</h3>
+<label class="option"><input type="radio" name="q51"> 30</label>
+<label class="option"><input type="radio" name="q51" class="correct"> 40</label>
+<label class="option"><input type="radio" name="q51"> 48</label>
+<label class="option"><input type="radio" name="q51"> 60</label>
+<div class="answer">Correct Answer: 40. 8 × 120 = 24 × other number.</div></div>
+
+<div class="question"><h3>52. A student says the prime factorisation of 72 is 6 × 12. Is the statement complete?</h3>
+<label class="option"><input type="radio" name="q52"> Yes, because 6 and 12 are prime</label>
+<label class="option"><input type="radio" name="q52" class="correct"> No, because 6 and 12 are composite; prime factors must be broken down further</label>
+<label class="option"><input type="radio" name="q52"> Yes, because every factorisation is prime</label>
+<label class="option"><input type="radio" name="q52"> No, because 72 is prime</label>
+<div class="answer">Correct Answer: B. 72 = 2³ × 3².</div></div>
+
+<div class="question"><h3>53. Find the smallest number divisible by 6, 8 and 15.</h3>
+<label class="option"><input type="radio" name="q53"> 60</label>
+<label class="option"><input type="radio" name="q53"> 90</label>
+<label class="option"><input type="radio" name="q53" class="correct"> 120</label>
+<label class="option"><input type="radio" name="q53"> 240</label>
+<div class="answer">Correct Answer: 120. LCM(6,8,15)=120.</div></div>
+
+<div class="question"><h3>54. The HCF of 48 and 72 is 24. Without calculating LCM directly, find it.</h3>
+<label class="option"><input type="radio" name="q54"> 96</label>
+<label class="option"><input type="radio" name="q54" class="correct"> 144</label>
+<label class="option"><input type="radio" name="q54"> 168</label>
+<label class="option"><input type="radio" name="q54"> 192</label>
+<div class="answer">Correct Answer: 144. LCM = (48 × 72) ÷ 24 = 144.</div></div>
+
+<div class="question"><h3>55. A school has 96 boys and 72 girls. They want to form the greatest possible number of identical groups, with the same number of boys and girls in every group. How many groups can be formed?</h3>
+<label class="option"><input type="radio" name="q55"> 12</label>
+<label class="option"><input type="radio" name="q55"> 18</label>
+<label class="option"><input type="radio" name="q55" class="correct"> 24</label>
+<label class="option"><input type="radio" name="q55"> 36</label>
+<div class="answer">Correct Answer: 24 groups. HCF(96,72)=24.</div></div>
+
+</section>
+
+<div class="score-card">
+<h2>Final Score</h2>
+<div class="score-number"></div>
+<p>Correctly answered questions are counted automatically.</p>
+</div>
+
+</div>
+</body>
+</html>
